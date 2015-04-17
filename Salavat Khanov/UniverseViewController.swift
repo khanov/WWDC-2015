@@ -41,6 +41,15 @@ class UniverseViewController: UIViewController {
         }
     }
     
+    @IBAction func buttonPressed(sender: UIButton) {
+        sender.backgroundColor = UIColor.whiteColor()
+        sender.titleLabel?.textColor = UIColor.blackColor()
+    }
+    
+    @IBAction func buttonUnpressed(sender: UIButton) {
+        sender.backgroundColor = UIColor.blackColor()
+        sender.titleLabel?.textColor = UIColor.whiteColor()
+    }
     
     // Mark: - Page View Controller
 
