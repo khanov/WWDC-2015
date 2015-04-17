@@ -15,8 +15,7 @@
 		A65514021AE0FA12005DB5AD /* UIColor+SLAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A65513FC1AE0FA12005DB5AD /* UIColor+SLAddition.m */; };
 		A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = A65513FE1AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m */; };
 		A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65514011AE0FA12005DB5AD /* SLPagingViewController.m */; };
-		A661FE651ADFDA9900394718 /* WorkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A661FE641ADFDA9900394718 /* WorkTableViewController.swift */; };
-		A661FE671ADFEB5A00394718 /* WorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A661FE661ADFEB5A00394718 /* WorkTableViewCell.swift */; };
+		A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A661FE641ADFDA9900394718 /* WorkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +34,7 @@
 		A65514001AE0FA12005DB5AD /* SLPagingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLPagingViewController.h; path = Dependencies/SLPagingView/SLPagingViewController.h; sourceTree = "<group>"; };
 		A65514011AE0FA12005DB5AD /* SLPagingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLPagingViewController.m; path = Dependencies/SLPagingView/SLPagingViewController.m; sourceTree = "<group>"; };
 		A655140A1AE0FAAC005DB5AD /* Salavat_Khanov-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Salavat_Khanov-Bridging-Header.h"; sourceTree = "<group>"; };
-		A661FE641ADFDA9900394718 /* WorkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTableViewController.swift; sourceTree = "<group>"; };
-		A661FE661ADFEB5A00394718 /* WorkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTableViewCell.swift; sourceTree = "<group>"; };
+		A661FE641ADFDA9900394718 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +69,7 @@
 			children = (
 				A61B7C861ADE4E7F00FFF0AD /* AppDelegate.swift */,
 				A61B7C881ADE4E7F00FFF0AD /* UniverseViewController.swift */,
-				A661FE641ADFDA9900394718 /* WorkTableViewController.swift */,
-				A661FE661ADFEB5A00394718 /* WorkTableViewCell.swift */,
+				A661FE641ADFDA9900394718 /* WorkViewController.swift */,
 				A61B7C8A1ADE4E7F00FFF0AD /* Main.storyboard */,
 				A61B7C8D1ADE4E7F00FFF0AD /* Images.xcassets */,
 				A61B7C8F1ADE4E7F00FFF0AD /* LaunchScreen.xib */,
@@ -192,10 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A661FE671ADFEB5A00394718 /* WorkTableViewCell.swift in Sources */,
 				A61B7C891ADE4E7F00FFF0AD /* UniverseViewController.swift in Sources */,
 				A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */,
-				A661FE651ADFDA9900394718 /* WorkTableViewController.swift in Sources */,
+				A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */,
 				A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */,
 				A65514021AE0FA12005DB5AD /* UIColor+SLAddition.m in Sources */,
 				A61B7C871ADE4E7F00FFF0AD /* AppDelegate.swift in Sources */,

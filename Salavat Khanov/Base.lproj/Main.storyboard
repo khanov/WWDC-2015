@@ -95,97 +95,137 @@
                     </view>
                     <navigationItem key="navigationItem" id="SWz-lM-evm"/>
                     <connections>
-                        <segue destination="xsK-yk-QfA" kind="custom" identifier="sl_0" customClass="SLPagingViewControllerSegueSetController" id="jN8-zP-sx6"/>
-                        <segue destination="wEX-AU-bxk" kind="custom" identifier="sl_1" customClass="SLPagingViewControllerSegueSetController" id="njg-Uu-h8I"/>
+                        <segue destination="wfV-hG-0Dm" kind="custom" identifier="sl_0" customClass="SLPagingViewControllerSegueSetController" id="ZX2-gL-U51"/>
+                        <segue destination="Swr-Qa-nht" kind="custom" identifier="sl_1" customClass="SLPagingViewControllerSegueSetController" id="KaU-J5-bDD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Gn-SD-yVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2060" y="1061"/>
         </scene>
-        <!--MyPocket-->
-        <scene sceneID="aqv-Du-BCt">
+        <!--VKarmane-->
+        <scene sceneID="gSi-3s-FHz">
             <objects>
-                <tableViewController title="MyPocket" id="xsK-yk-QfA" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0wf-dI-BqH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <viewController title="VKarmane" id="wfV-hG-0Dm" customClass="WorkViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ddc-Gl-qA7"/>
+                        <viewControllerLayoutGuide type="bottom" id="BRJ-G4-dBZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="53P-2X-nSd">
+                        <rect key="frame" x="0.0" y="0.0" width="740" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kip-dC-0qV">
+                                <rect key="frame" x="0.0" y="0.0" width="740" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UG-g1-JAY" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="740" height="533"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyPocket-Cover" translatesAutoresizingMaskIntoConstraints="NO" id="K7g-1S-wGU">
+                                                <rect key="frame" x="0.0" y="0.0" width="740" height="330"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="330" id="cha-ah-CNx"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6S-zH-EkT">
+                                                <rect key="frame" x="20" y="354" width="129" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 2014 - Dec 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhr-r1-hje">
+                                                <rect key="frame" x="20" y="382" width="141" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6z-4b-9gV">
+                                                <rect key="frame" x="20" y="435" width="700" height="70"/>
+                                                <mutableString key="text">Helped build an iOS app, which was featured by Apple and hit #1 in Top Paid on the Russian App Store. 
+• Implemented app integration with Touch ID. • Added two new document templates and event tracking via analytics. • Implemented support for attaching more than one scan to a document. </mutableString>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="639393959" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNG-Ku-T7R">
+                                                <rect key="frame" x="640" y="377" width="74" height="34"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="MyPocket">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="wfV-hG-0Dm" eventType="touchUpInside" id="KOY-MQ-nUc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="639393959" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRm-QB-eR6">
+                                                <rect key="frame" x="641" y="303" width="72" height="72"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="gjc-Hl-0wP"/>
+                                                    <constraint firstAttribute="height" constant="72" id="kVZ-G3-szX"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="MyPocket-Icon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="wfV-hG-0Dm" eventType="touchUpInside" id="LhR-NE-TJX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="K7g-1S-wGU" firstAttribute="top" secondItem="7UG-g1-JAY" secondAttribute="top" id="0LP-kz-Nlp"/>
+                                            <constraint firstAttribute="bottom" secondItem="t6z-4b-9gV" secondAttribute="bottom" constant="28" id="2LD-n5-UjN"/>
+                                            <constraint firstItem="t6z-4b-9gV" firstAttribute="top" secondItem="nRm-QB-eR6" secondAttribute="bottom" constant="60" id="4Ln-Dz-4V7"/>
+                                            <constraint firstAttribute="trailing" secondItem="t6z-4b-9gV" secondAttribute="trailing" constant="20" id="5f7-pt-bhz"/>
+                                            <constraint firstItem="u6S-zH-EkT" firstAttribute="leading" secondItem="7UG-g1-JAY" secondAttribute="leading" constant="20" id="8Z3-FI-ryI"/>
+                                            <constraint firstItem="K7g-1S-wGU" firstAttribute="leading" secondItem="7UG-g1-JAY" secondAttribute="leading" id="Eoc-7Q-fKY"/>
+                                            <constraint firstAttribute="trailing" secondItem="nRm-QB-eR6" secondAttribute="trailing" constant="27" id="QTI-h3-LHm"/>
+                                            <constraint firstItem="mNG-Ku-T7R" firstAttribute="top" secondItem="nRm-QB-eR6" secondAttribute="bottom" constant="2" id="QnW-ar-dqQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="K7g-1S-wGU" secondAttribute="trailing" id="TQO-Qo-bHo"/>
+                                            <constraint firstItem="Zhr-r1-hje" firstAttribute="leading" secondItem="7UG-g1-JAY" secondAttribute="leading" constant="20" id="bIs-xl-zjv"/>
+                                            <constraint firstItem="u6S-zH-EkT" firstAttribute="top" secondItem="K7g-1S-wGU" secondAttribute="bottom" constant="24" id="qMt-t6-M32"/>
+                                            <constraint firstItem="Zhr-r1-hje" firstAttribute="top" secondItem="u6S-zH-EkT" secondAttribute="bottom" constant="4" id="rHo-X5-zxL"/>
+                                            <constraint firstItem="t6z-4b-9gV" firstAttribute="leading" secondItem="7UG-g1-JAY" secondAttribute="leading" constant="20" id="s24-pE-9Lg"/>
+                                            <constraint firstItem="t6z-4b-9gV" firstAttribute="top" secondItem="Zhr-r1-hje" secondAttribute="bottom" constant="35" id="v1P-Bk-Ph7"/>
+                                            <constraint firstAttribute="trailing" secondItem="mNG-Ku-T7R" secondAttribute="trailing" constant="26" id="xT7-Bo-UNB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7UG-g1-JAY" secondAttribute="trailing" id="H64-id-O8L"/>
+                                    <constraint firstItem="7UG-g1-JAY" firstAttribute="leading" secondItem="Kip-dC-0qV" secondAttribute="leading" id="MB0-qE-et1"/>
+                                    <constraint firstItem="7UG-g1-JAY" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="top" id="dSw-lF-OTj"/>
+                                    <constraint firstAttribute="bottom" secondItem="7UG-g1-JAY" secondAttribute="bottom" id="h2T-oQ-9ub"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="ifX-CI-QBm">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xQA-M7-2qj">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQA-M7-2qj" id="OA9-z6-XHg">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cLk-ks-D7Q">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLk-ks-D7Q" id="jra-3s-UE8">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="f0y-Ut-n4W">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f0y-Ut-n4W" id="ihe-fu-K3D">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="xsK-yk-QfA" id="d79-LH-Bfh"/>
-                            <outlet property="delegate" destination="xsK-yk-QfA" id="lWa-wA-826"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Kc-EY-I5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="Kip-dC-0qV" firstAttribute="leading" secondItem="53P-2X-nSd" secondAttribute="leading" id="85D-Hh-xdA"/>
+                            <constraint firstAttribute="trailing" secondItem="Kip-dC-0qV" secondAttribute="trailing" id="9Zg-Td-yVw"/>
+                            <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" id="AuX-Zm-RiY"/>
+                            <constraint firstItem="Kip-dC-0qV" firstAttribute="top" secondItem="53P-2X-nSd" secondAttribute="top" id="hh9-BI-dqa"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="740" height="600"/>
+                    <connections>
+                        <outlet property="containerView" destination="7UG-g1-JAY" id="c4s-Mi-5Gg"/>
+                        <outlet property="iconButton" destination="nRm-QB-eR6" id="dJM-aq-hHa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0Y-NN-wam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2856" y="738"/>
-        </scene>
-        <!--Lapka-->
-        <scene sceneID="Ljw-KM-Oy1">
-            <objects>
-                <tableViewController title="Lapka" id="wEX-AU-bxk" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1Hn-Pu-tqe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="xOC-r3-4Ij">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pvH-JZ-XO4">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pvH-JZ-XO4" id="hk5-GT-wyj">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="d3c-nF-Idc">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d3c-nF-Idc" id="71B-QL-Saf">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VUy-7T-kge">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VUy-7T-kge" id="XOG-kQ-b5H">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="wEX-AU-bxk" id="NaW-WV-GeY"/>
-                            <outlet property="delegate" destination="wEX-AU-bxk" id="slI-5R-5YX"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mx4-h5-zBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2856" y="1407"/>
+            <point key="canvasLocation" x="2951" y="755"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ilb-hz-OJC">
@@ -210,5 +250,171 @@
             </objects>
             <point key="canvasLocation" x="1248" y="1061"/>
         </scene>
+        <!--Lapka-->
+        <scene sceneID="Ee8-ui-B5L">
+            <objects>
+                <viewController title="Lapka" id="Swr-Qa-nht" customClass="WorkViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fLg-5z-BVz"/>
+                        <viewControllerLayoutGuide type="bottom" id="T8M-dn-sDq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eV2-3P-3fI">
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlY-Dm-yEw">
+                                <rect key="frame" x="0.0" y="0.0" width="700" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSp-hb-BIP" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="702" height="533"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lapka-Cover" translatesAutoresizingMaskIntoConstraints="NO" id="lnf-oh-rko">
+                                                <rect key="frame" x="0.0" y="0.0" width="702" height="330"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="330" id="qab-Rf-Khk"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFP-Dc-4wP">
+                                                <rect key="frame" x="20" y="354" width="129" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feb 2014 - Aug 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6A-GI-umi">
+                                                <rect key="frame" x="20" y="382" width="142" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6U-EP-baW">
+                                                <rect key="frame" x="20" y="435" width="662" height="70"/>
+                                                <mutableString key="text">• Prototyped and rewrote Lapka Pro from scratch (major app update). • Worked on Lapka BAM’s History screen, fixed bugs, and added Russian localization. • Helped launch Lapka Developer Program by writing documentation and developing sample apps. • Developed authentication API for both Lapka BAM and Lapka Pro on iOS.</mutableString>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="643688346" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEb-dQ-MtR">
+                                                <rect key="frame" x="614" y="377" width="76" height="34"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="Lapka Pro">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="Swr-Qa-nht" eventType="touchUpInside" id="qJ8-Qs-bhT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="643688346" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pjl-4T-Mux">
+                                                <rect key="frame" x="616" y="303" width="72" height="72"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="Jr7-oD-tBg"/>
+                                                    <constraint firstAttribute="width" constant="72" id="hpO-4q-eNJ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="LapkaPro-Icon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="Swr-Qa-nht" eventType="touchUpInside" id="of8-SA-dUV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="765019245" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glk-wE-ulu">
+                                                <rect key="frame" x="514" y="377" width="87" height="34"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="Lapka BAM">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="Swr-Qa-nht" eventType="touchUpInside" id="k7x-3N-vMb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="765019245" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkb-mP-tDW">
+                                                <rect key="frame" x="521" y="303" width="72" height="72"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="E6A-XO-yMj"/>
+                                                    <constraint firstAttribute="height" constant="72" id="bpu-Rz-1ws"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="LapkaBAM-Icon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="Swr-Qa-nht" eventType="touchUpInside" id="Waj-Am-LXL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="lnf-oh-rko" firstAttribute="leading" secondItem="vSp-hb-BIP" secondAttribute="leading" id="1TR-7z-oNg"/>
+                                            <constraint firstAttribute="trailing" secondItem="I6U-EP-baW" secondAttribute="trailing" constant="20" id="A2w-zt-XBz"/>
+                                            <constraint firstAttribute="trailing" secondItem="lnf-oh-rko" secondAttribute="trailing" id="Ntd-Dd-WDf"/>
+                                            <constraint firstItem="I6U-EP-baW" firstAttribute="top" secondItem="o6A-GI-umi" secondAttribute="bottom" constant="35" id="O03-py-ZjX"/>
+                                            <constraint firstItem="glk-wE-ulu" firstAttribute="top" secondItem="jkb-mP-tDW" secondAttribute="bottom" constant="2" id="OHf-MV-vCo"/>
+                                            <constraint firstItem="jkb-mP-tDW" firstAttribute="centerX" secondItem="glk-wE-ulu" secondAttribute="centerX" id="OVw-gw-jMq"/>
+                                            <constraint firstItem="Pjl-4T-Mux" firstAttribute="centerX" secondItem="hEb-dQ-MtR" secondAttribute="centerX" id="Xol-3M-EPM"/>
+                                            <constraint firstItem="ZFP-Dc-4wP" firstAttribute="leading" secondItem="vSp-hb-BIP" secondAttribute="leading" constant="20" id="YNl-EJ-ajD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pjl-4T-Mux" secondAttribute="trailing" constant="14" id="dTJ-LH-K0Z"/>
+                                            <constraint firstItem="o6A-GI-umi" firstAttribute="leading" secondItem="vSp-hb-BIP" secondAttribute="leading" constant="20" id="gQB-0N-Jux"/>
+                                            <constraint firstItem="jkb-mP-tDW" firstAttribute="centerY" secondItem="Pjl-4T-Mux" secondAttribute="centerY" id="isH-7a-Klv"/>
+                                            <constraint firstItem="I6U-EP-baW" firstAttribute="leading" secondItem="vSp-hb-BIP" secondAttribute="leading" constant="20" id="jp3-xR-4N0"/>
+                                            <constraint firstItem="ZFP-Dc-4wP" firstAttribute="top" secondItem="lnf-oh-rko" secondAttribute="bottom" constant="24" id="ju7-4U-M3v"/>
+                                            <constraint firstItem="o6A-GI-umi" firstAttribute="top" secondItem="ZFP-Dc-4wP" secondAttribute="bottom" constant="4" id="mJj-cE-ZwF"/>
+                                            <constraint firstAttribute="bottom" secondItem="I6U-EP-baW" secondAttribute="bottom" constant="28" id="nwP-X2-Wgb"/>
+                                            <constraint firstItem="hEb-dQ-MtR" firstAttribute="top" secondItem="Pjl-4T-Mux" secondAttribute="bottom" constant="2" id="oXj-GC-1yc"/>
+                                            <constraint firstItem="I6U-EP-baW" firstAttribute="top" secondItem="Pjl-4T-Mux" secondAttribute="bottom" constant="60" id="sKZ-G1-Y66"/>
+                                            <constraint firstItem="lnf-oh-rko" firstAttribute="top" secondItem="vSp-hb-BIP" secondAttribute="top" id="sQ2-5n-8Da"/>
+                                            <constraint firstItem="Pjl-4T-Mux" firstAttribute="leading" secondItem="jkb-mP-tDW" secondAttribute="trailing" constant="23" id="uoD-yZ-avN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vSp-hb-BIP" secondAttribute="bottom" id="bzE-Rc-nco"/>
+                                    <constraint firstItem="vSp-hb-BIP" firstAttribute="top" secondItem="QlY-Dm-yEw" secondAttribute="top" id="hw3-4h-lXK"/>
+                                    <constraint firstItem="vSp-hb-BIP" firstAttribute="leading" secondItem="QlY-Dm-yEw" secondAttribute="leading" id="y3k-AE-fgL"/>
+                                    <constraint firstAttribute="trailing" secondItem="vSp-hb-BIP" secondAttribute="trailing" id="z7e-4M-aKa"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QlY-Dm-yEw" secondAttribute="trailing" id="7cE-n0-Pt6"/>
+                            <constraint firstItem="T8M-dn-sDq" firstAttribute="top" secondItem="QlY-Dm-yEw" secondAttribute="bottom" id="Qwf-HW-WcB"/>
+                            <constraint firstItem="QlY-Dm-yEw" firstAttribute="leading" secondItem="eV2-3P-3fI" secondAttribute="leading" id="bFK-CC-kLc"/>
+                            <constraint firstItem="QlY-Dm-yEw" firstAttribute="top" secondItem="eV2-3P-3fI" secondAttribute="top" id="ztj-js-9US"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="700" height="600"/>
+                    <connections>
+                        <outlet property="containerView" destination="vSp-hb-BIP" id="VF5-FD-se4"/>
+                        <outlet property="iconButton" destination="jkb-mP-tDW" id="dQa-dM-f2E"/>
+                        <outlet property="iconButton2" destination="Pjl-4T-Mux" id="o1y-0g-Z9J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfT-Ob-cJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2951" y="1430"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Lapka-Cover" width="375" height="330"/>
+        <image name="LapkaBAM-Icon" width="87" height="87"/>
+        <image name="LapkaPro-Icon" width="87" height="87"/>
+        <image name="MyPocket-Cover" width="375" height="330"/>
+        <image name="MyPocket-Icon" width="87" height="87"/>
+    </resources>
 </document>
