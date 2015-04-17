@@ -176,10 +176,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     // Be notify when the device's orientation change
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(orientationChanged:)
-                                                 name:UIDeviceOrientationDidChangeNotification
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(orientationChanged:)
+//                                                 name:UIDeviceOrientationDidChangeNotification
+//                                               object:nil];
     // Notify all conctrollers
     [self notifyControllers:NSSelectorFromString(@"viewDidAppear:")
                      object:@(animated)
@@ -212,12 +212,37 @@
                  checkIndex:NO];
     [self setCurrentIndex:self.indexSelected
                  animated:NO];
+    
+    // Add Close button
+    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
+    [closeButton setTitle:@"Close" forState:UIControlStateNormal];
+    [closeButton sizeToFit];
+    closeButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.navigationBarView addSubview:closeButton];
+    
+    NSLayoutConstraint *centerYConstraint =
+    [NSLayoutConstraint constraintWithItem:closeButton
+                                 attribute:NSLayoutAttributeCenterY
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.navigationBarView
+                                 attribute:NSLayoutAttributeCenterY
+                                multiplier:1.0
+                                  constant:0.0];
+    [self.navigationBarView addConstraint:centerYConstraint];
+    
+    NSDictionary *views = @{@"subview" : closeButton, @"superview" : self.navigationBarView};
+    [self.navigationBarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[subview]" options:NSLayoutFormatAlignAllBaseline metrics:nil views:views]];
+}
+
+- (void)close {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)dealloc{
     // Remove Observers
-    [[NSNotificationCenter defaultCenter]removeObserver:self
-                                             forKeyPath:UIDeviceOrientationDidChangeNotification];
+//    [[NSNotificationCenter defaultCenter]removeObserver:self
+//                                             forKeyPath:UIDeviceOrientationDidChangeNotification];
     // Close relationships
     _didChangedPage           = nil;
     _pagingViewMoving         = nil;
