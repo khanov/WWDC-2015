@@ -7,3 +7,4 @@
 //
 
 #import "SLPagingViewController.h"
+#import "SKProgressIndicator.h"

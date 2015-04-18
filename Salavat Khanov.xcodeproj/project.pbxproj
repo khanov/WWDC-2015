@@ -17,6 +17,8 @@
 		A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65514011AE0FA12005DB5AD /* SLPagingViewController.m */; };
 		A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A661FE641ADFDA9900394718 /* WorkViewController.swift */; };
 		A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69AFAC41AE17B800055559C /* CircleButton.swift */; };
+		A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */; };
+		A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D045711AE2BE8200865491 /* SKProgressIndicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		A655140A1AE0FAAC005DB5AD /* Salavat_Khanov-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Salavat_Khanov-Bridging-Header.h"; sourceTree = "<group>"; };
 		A661FE641ADFDA9900394718 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 		A69AFAC41AE17B800055559C /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		A6D0456F1AE2BE6500865491 /* SKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProgressIndicator.h; sourceTree = "<group>"; };
+		A6D045711AE2BE8200865491 /* SKProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProgressIndicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				A61B7C861ADE4E7F00FFF0AD /* AppDelegate.swift */,
-				A61B7C881ADE4E7F00FFF0AD /* UniverseViewController.swift */,
-				A69AFAC41AE17B800055559C /* CircleButton.swift */,
+				A6D0456C1AE2B7DB00865491 /* Universe */,
 				A661FE641ADFDA9900394718 /* WorkViewController.swift */,
+				A6D045701AE2BE7000865491 /* Side Projects */,
 				A61B7C8A1ADE4E7F00FFF0AD /* Main.storyboard */,
 				A61B7C8D1ADE4E7F00FFF0AD /* Images.xcassets */,
 				A61B7C8F1ADE4E7F00FFF0AD /* LaunchScreen.xib */,
@@ -120,6 +125,25 @@
 				A65514051AE0FA19005DB5AD /* SLPagingView */,
 			);
 			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		A6D0456C1AE2B7DB00865491 /* Universe */ = {
+			isa = PBXGroup;
+			children = (
+				A61B7C881ADE4E7F00FFF0AD /* UniverseViewController.swift */,
+				A69AFAC41AE17B800055559C /* CircleButton.swift */,
+			);
+			name = Universe;
+			sourceTree = "<group>";
+		};
+		A6D045701AE2BE7000865491 /* Side Projects */ = {
+			isa = PBXGroup;
+			children = (
+				A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */,
+				A6D0456F1AE2BE6500865491 /* SKProgressIndicator.h */,
+				A6D045711AE2BE8200865491 /* SKProgressIndicator.m */,
+			);
+			name = "Side Projects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,11 +216,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */,
 				A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */,
 				A61B7C891ADE4E7F00FFF0AD /* UniverseViewController.swift in Sources */,
 				A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */,
 				A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */,
 				A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */,
+				A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */,
 				A65514021AE0FA12005DB5AD /* UIColor+SLAddition.m in Sources */,
 				A61B7C871ADE4E7F00FFF0AD /* AppDelegate.swift in Sources */,
 			);
