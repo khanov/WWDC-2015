@@ -389,6 +389,24 @@ Helped me get my first job.</string>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" tag="854494573" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs2-Q1-NFZ">
+                                                <rect key="frame" x="459" y="305" width="89" height="28"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <state key="normal" title="App Store">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="8RR-Sb-4Zz" eventType="touchUpInside" id="3mB-RL-h7c"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -401,6 +419,8 @@ Helped me get my first job.</string>
                                             <constraint firstItem="HRe-Zj-yWL" firstAttribute="leading" secondItem="fxt-Nu-JSk" secondAttribute="leading" constant="20" id="XV0-cQ-kmh"/>
                                             <constraint firstItem="Zj1-5O-Yow" firstAttribute="top" secondItem="IZK-fm-0KU" secondAttribute="bottom" constant="25" id="ZZc-FG-L2d"/>
                                             <constraint firstItem="Zj1-5O-Yow" firstAttribute="leading" secondItem="fxt-Nu-JSk" secondAttribute="leading" constant="20" id="cLA-NG-sz5"/>
+                                            <constraint firstItem="Bs2-Q1-NFZ" firstAttribute="top" secondItem="IZK-fm-0KU" secondAttribute="bottom" constant="25" id="hFV-Im-SHn"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bs2-Q1-NFZ" secondAttribute="trailing" constant="20" id="q57-eI-faF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -423,6 +443,7 @@ Helped me get my first job.</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="568" height="700"/>
                     <connections>
+                        <outlet property="appStoreButton" destination="Bs2-Q1-NFZ" id="3CK-AZ-8O0"/>
                         <outlet property="containerView" destination="fxt-Nu-JSk" id="fNa-zb-OSY"/>
                         <outlet property="progressIndicator" destination="LOp-sE-bsU" id="Iyw-xu-jyW"/>
                     </connections>

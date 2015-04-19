@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import StoreKit
 
-class ProjectsViewController: UIViewController {
+class ProjectsViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var progressIndicator: SKProgressIndicator!
+    @IBOutlet weak var appStoreButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +24,23 @@ class ProjectsViewController: UIViewController {
         view.addConstraints([leftConstraint, rightConstraint])
         
         setupProgressView()
+        appStoreButton.layer.borderColor = appStoreButton.tintColor?.CGColor
     }
 
+    // MARK: - Progress View
+    
     func setupProgressView() {
-        progressIndicator.percentInnerCircle = CGFloat(currentProgress)
-        progressIndicator.progressLabel.text = "\(endDate.daysLeft)"
-        progressIndicator.metaLabel.text = "DAYS LEFT"
+        if endDate.compare(NSDate()) == .OrderedDescending {
+            // end date is in the future. show how many days left
+            progressIndicator.percentInnerCircle = CGFloat(currentProgress)
+            progressIndicator.progressLabel.text = "\(endDate.daysLeft)"
+            progressIndicator.metaLabel.text = "DAYS LEFT"
+        } else {
+            // end date is in the past. show done text.
+            progressIndicator.percentInnerCircle = 100.0
+            progressIndicator.progressLabel.text = "✓"
+            progressIndicator.metaLabel.text = "DONE"
+        }
     }
     
     var currentProgress: Double {
@@ -52,6 +65,16 @@ class ProjectsViewController: UIViewController {
         dateComponents.month = 6
         dateComponents.year = 2015
         return NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
+    }
+    
+    // MARK: - App Store Button
+    
+    @IBAction func appStoreButtonPressed(sender: UIButton) {
+        presentStoreProductViewController(iTunesItemIdentifier: "\(sender.tag)", delegate: self)
+    }
+    
+    func productViewControllerDidFinish(viewController: SKStoreProductViewController!) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

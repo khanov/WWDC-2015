@@ -29,17 +29,7 @@ class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate
     }
     
     @IBAction func appStoreButtonPressed(sender: UIButton) {
-        let params = [SKStoreProductParameterITunesItemIdentifier: "\(sender.tag)"]
-        let storeController = SKStoreProductViewController()
-        storeController.delegate = self
-        
-        storeController.loadProductWithParameters(params) { (result, error) -> Void in
-            if result {
-                self.presentViewController(storeController, animated: true, completion: nil)
-            } else {
-                UIAlertView(title: "Uh oh!", message: "There was a problem opening the App Store", delegate: nil, cancelButtonTitle: "OK").show()
-            }
-        }
+        presentStoreProductViewController(iTunesItemIdentifier: "\(sender.tag)", delegate: self)
     }
     
     func productViewControllerDidFinish(viewController: SKStoreProductViewController!) {
