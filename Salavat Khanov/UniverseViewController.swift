@@ -54,7 +54,7 @@ class UniverseViewController: UIViewController {
     // Mark: - Page View Controller
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showWorkScreen" {
+        if segue.identifier == "showWorkScreen" || segue.identifier == "showProjectsScreen" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let pageViewContoller = navigationController.viewControllers.first as! SLPagingViewController
             configurePageViewController(pageViewContoller)

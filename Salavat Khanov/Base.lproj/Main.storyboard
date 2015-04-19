@@ -62,7 +62,7 @@
                                         <connections>
                                             <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchDown" id="nfg-5J-Xsp"/>
                                             <action selector="buttonUnpressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eKk-x0-9jB"/>
-                                            <segue destination="m97-cg-xsd" kind="show" id="0nY-oD-BHl"/>
+                                            <segue destination="m97-cg-xsd" kind="show" identifier="showProjectsScreen" id="0nY-oD-BHl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -258,16 +258,17 @@
                     <navigationItem key="navigationItem" id="qTL-QY-uS9"/>
                     <connections>
                         <segue destination="8RR-Sb-4Zz" kind="custom" identifier="sl_0" customClass="SLPagingViewControllerSegueSetController" id="3xf-tp-oIk"/>
+                        <segue destination="WTe-KM-w8D" kind="custom" identifier="sl_1" customClass="SLPagingViewControllerSegueSetController" id="e8A-jj-MMD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hn5-TX-dd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2057.5" y="-64.5"/>
         </scene>
-        <!--When - Event Countdown-->
+        <!--When-->
         <scene sceneID="OGU-RZ-DIt">
             <objects>
-                <viewController title="When - Event Countdown" id="8RR-Sb-4Zz" customClass="ProjectsViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="When" id="8RR-Sb-4Zz" customClass="ProjectsViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CW4-eI-rjP"/>
                         <viewControllerLayoutGuide type="bottom" id="caS-bL-MQX"/>
@@ -450,7 +451,7 @@ Helped me get my first job.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8A-oc-B2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2856" y="-190"/>
+            <point key="canvasLocation" x="2907" y="-892"/>
         </scene>
         <!--Paging View Controller-->
         <scene sceneID="JQq-PU-KG0">
@@ -803,6 +804,105 @@ Helped me get my first job.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsV-RB-z0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1497.5" y="-64.5"/>
+        </scene>
+        <!--SuperMario Clone-->
+        <scene sceneID="DGX-Zq-tkN">
+            <objects>
+                <viewController title="SuperMario Clone" id="WTe-KM-w8D" customClass="ProjectsViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8eI-2z-sW0"/>
+                        <viewControllerLayoutGuide type="bottom" id="zvH-4L-Sfo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fQA-wA-RHD">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROf-Sn-Gob">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brK-VV-PvB" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="469"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92z-Jl-RP7" userLabel="Video View">
+                                                <rect key="frame" x="0.0" y="0.0" width="568" height="234"/>
+                                                <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edW-o1-vs8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="568" height="234"/>
+                                                        <connections>
+                                                            <segue destination="98U-Fi-au9" kind="embed" identifier="showVideo" id="bx7-cN-zQJ"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="edW-o1-vs8" secondAttribute="bottom" id="1ES-mB-dVE"/>
+                                                    <constraint firstAttribute="height" constant="234" id="Gvw-iW-hXw"/>
+                                                    <constraint firstItem="edW-o1-vs8" firstAttribute="top" secondItem="92z-Jl-RP7" secondAttribute="top" id="Xwt-EU-teo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="edW-o1-vs8" secondAttribute="trailing" id="j1E-if-ynT"/>
+                                                    <constraint firstItem="edW-o1-vs8" firstAttribute="leading" secondItem="92z-Jl-RP7" secondAttribute="leading" id="mBz-7A-wxy"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgH-lG-MZE">
+                                                <rect key="frame" x="20" y="259" width="528" height="160"/>
+                                                <string key="text">When is a countdown timer app with clean minimalistic interface design.
+
+- Beautiful progress view of your events. 
+- Sync events across your devices via iCloud.
+- Share current progress of an event.
+
+Available for iPhone and iPad on the App Store for free. Open-sourced on GitHub.
+
+Helped me get my first job.</string>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="LgH-lG-MZE" secondAttribute="bottom" constant="50" id="1nA-m4-hWI"/>
+                                            <constraint firstItem="LgH-lG-MZE" firstAttribute="top" secondItem="92z-Jl-RP7" secondAttribute="bottom" constant="25" id="G3B-34-Th7"/>
+                                            <constraint firstItem="92z-Jl-RP7" firstAttribute="leading" secondItem="brK-VV-PvB" secondAttribute="leading" id="J34-0x-f9Z"/>
+                                            <constraint firstItem="92z-Jl-RP7" firstAttribute="top" secondItem="brK-VV-PvB" secondAttribute="top" id="P0U-va-URv"/>
+                                            <constraint firstAttribute="trailing" secondItem="92z-Jl-RP7" secondAttribute="trailing" id="URD-11-coc"/>
+                                            <constraint firstAttribute="trailing" secondItem="LgH-lG-MZE" secondAttribute="trailing" constant="20" id="hA8-X1-EvD"/>
+                                            <constraint firstItem="LgH-lG-MZE" firstAttribute="leading" secondItem="brK-VV-PvB" secondAttribute="leading" constant="20" id="lSc-ug-cD0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="brK-VV-PvB" secondAttribute="trailing" id="N7c-BL-MjW"/>
+                                    <constraint firstItem="brK-VV-PvB" firstAttribute="leading" secondItem="ROf-Sn-Gob" secondAttribute="leading" id="iSc-nF-6rE"/>
+                                    <constraint firstItem="brK-VV-PvB" firstAttribute="top" secondItem="ROf-Sn-Gob" secondAttribute="top" id="mwK-Q2-RoR"/>
+                                    <constraint firstAttribute="bottom" secondItem="brK-VV-PvB" secondAttribute="bottom" id="sMO-2L-xgT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ROf-Sn-Gob" firstAttribute="leading" secondItem="fQA-wA-RHD" secondAttribute="leading" id="0MA-Bq-AGc"/>
+                            <constraint firstAttribute="trailing" secondItem="ROf-Sn-Gob" secondAttribute="trailing" id="NCo-zF-dKY"/>
+                            <constraint firstItem="zvH-4L-Sfo" firstAttribute="top" secondItem="ROf-Sn-Gob" secondAttribute="bottom" id="QlC-Bx-ORI"/>
+                            <constraint firstItem="ROf-Sn-Gob" firstAttribute="top" secondItem="fQA-wA-RHD" secondAttribute="top" id="hJD-Ux-HTr"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="568" height="700"/>
+                    <connections>
+                        <outlet property="containerView" destination="brK-VV-PvB" id="e0D-Jd-JJu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="piF-Aa-exc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2907" y="-81"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="gua-ZN-kei">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="98U-Fi-au9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLE-3P-d7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3671" y="-81"/>
         </scene>
     </scenes>
     <resources>

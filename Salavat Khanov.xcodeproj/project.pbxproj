@@ -17,6 +17,7 @@
 		A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65514011AE0FA12005DB5AD /* SLPagingViewController.m */; };
 		A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A661FE641ADFDA9900394718 /* WorkViewController.swift */; };
 		A6800E391AE3821900894E0A /* UIViewController+SKStoreProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6800E381AE3821900894E0A /* UIViewController+SKStoreProductViewController.swift */; };
+		A6800E3C1AE38DB900894E0A /* SuperMario.mov in Resources */ = {isa = PBXBuildFile; fileRef = A6800E3B1AE38DB900894E0A /* SuperMario.mov */; };
 		A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69AFAC41AE17B800055559C /* CircleButton.swift */; };
 		A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */; };
 		A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D045711AE2BE8200865491 /* SKProgressIndicator.m */; };
@@ -40,6 +41,7 @@
 		A655140A1AE0FAAC005DB5AD /* Salavat_Khanov-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Salavat_Khanov-Bridging-Header.h"; sourceTree = "<group>"; };
 		A661FE641ADFDA9900394718 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 		A6800E381AE3821900894E0A /* UIViewController+SKStoreProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SKStoreProductViewController.swift"; sourceTree = "<group>"; };
+		A6800E3B1AE38DB900894E0A /* SuperMario.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = SuperMario.mov; path = Resources/SuperMario.mov; sourceTree = "<group>"; };
 		A69AFAC41AE17B800055559C /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		A6D0456F1AE2BE6500865491 /* SKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProgressIndicator.h; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				A61B7C851ADE4E7F00FFF0AD /* Info.plist */,
 				A655140A1AE0FAAC005DB5AD /* Salavat_Khanov-Bridging-Header.h */,
+				A6800E3B1AE38DB900894E0A /* SuperMario.mov */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A61B7C8C1ADE4E7F00FFF0AD /* Main.storyboard in Resources */,
+				A6800E3C1AE38DB900894E0A /* SuperMario.mov in Resources */,
 				A61B7C911ADE4E7F00FFF0AD /* LaunchScreen.xib in Resources */,
 				A61B7C8E1ADE4E7F00FFF0AD /* Images.xcassets in Resources */,
 			);

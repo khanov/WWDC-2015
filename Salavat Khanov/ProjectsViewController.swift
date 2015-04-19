@@ -8,6 +8,8 @@
 
 import UIKit
 import StoreKit
+import AVKit
+import AVFoundation
 
 class ProjectsViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
@@ -24,7 +26,7 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         view.addConstraints([leftConstraint, rightConstraint])
         
         setupProgressView()
-        appStoreButton.layer.borderColor = appStoreButton.tintColor?.CGColor
+        appStoreButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
     }
 
     // MARK: - Progress View
@@ -32,14 +34,14 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
     func setupProgressView() {
         if endDate.compare(NSDate()) == .OrderedDescending {
             // end date is in the future. show how many days left
-            progressIndicator.percentInnerCircle = CGFloat(currentProgress)
-            progressIndicator.progressLabel.text = "\(endDate.daysLeft)"
-            progressIndicator.metaLabel.text = "DAYS LEFT"
+            progressIndicator?.percentInnerCircle = CGFloat(currentProgress)
+            progressIndicator?.progressLabel.text = "\(endDate.daysLeft)"
+            progressIndicator?.metaLabel.text = "DAYS LEFT"
         } else {
             // end date is in the past. show done text.
-            progressIndicator.percentInnerCircle = 100.0
-            progressIndicator.progressLabel.text = "✓"
-            progressIndicator.metaLabel.text = "DONE"
+            progressIndicator?.percentInnerCircle = 100.0
+            progressIndicator?.progressLabel.text = "✓"
+            progressIndicator?.metaLabel.text = "DONE"
         }
     }
     
@@ -75,6 +77,17 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
     
     func productViewControllerDidFinish(viewController: SKStoreProductViewController!) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showVideo" {
+            let playerViewController = segue.destinationViewController as! AVPlayerViewController
+            let filePath = NSBundle.mainBundle().pathForResource("SuperMario", ofType: "mov")!
+            let fileURL = NSURL(fileURLWithPath: filePath)
+            playerViewController.player = AVPlayer(URL: fileURL)
+        }
     }
 
 }
