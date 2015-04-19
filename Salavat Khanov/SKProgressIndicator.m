@@ -13,7 +13,7 @@ static NSInteger kInnerCircleRadiusiPad = 167;
 static NSInteger kInnnerCircleLineWidthiPhone = 22;
 static NSInteger kInnnerCircleLineWidthiPad = 22;
 
-static NSInteger kOuterCircleRadiusiPhone = 103;
+static NSInteger kOuterCircleRadiusiPhone = 100;
 static NSInteger kOuterCircleRadiusiPad = 188;
 static CGFloat kOuterCircleLineWidthiPhone = 2.5;
 static CGFloat kOuterCircleLineWidthiPad = 2.5;
@@ -44,7 +44,7 @@ static NSString *kColorAnimationKey = @"strokeColor";
 
 - (void)setupColors
 {
-    self.backgroundColor = [UIColor colorWithRed:32.0/255.0 green:32.0/255.0 blue:32.0/255.0 alpha:1.0];
+    self.backgroundColor = [UIColor blackColor];
     self.innerCircleBackgroundColor = [UIColor colorWithRed:82.0/255.0 green:82.0/255.0 blue:82.0/255.0 alpha:1.0];
     self.innerCircleProgressColor = [UIColor colorWithRed:234.0/255.0 green:129.0/255.0 blue:37.0/255.0 alpha:1.0];
     self.outerCircleBackgroundColor = [UIColor colorWithRed:82.0/255.0 green:82.0/255.0 blue:82.0/255.0 alpha:1.0];
