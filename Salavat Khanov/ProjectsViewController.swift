@@ -79,7 +79,7 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK
+    // MARK: - Video
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showVideo" {
@@ -92,7 +92,9 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
 
 }
 
-extension NSDate {
+// MARK: - Helper
+
+private extension NSDate {
     var daysLeft: Int { return lroundf(Float(hoursLeft) / 24.0) }
     var hoursLeft: Int { return lroundf(Float(minutesLeft) / 60.0) }
     var minutesLeft: Int { return lroundf(Float(secondsLeft) / 60.0) }

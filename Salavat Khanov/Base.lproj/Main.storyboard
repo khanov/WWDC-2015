@@ -143,6 +143,7 @@
                                         <connections>
                                             <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchDown" id="tGc-d3-fM2"/>
                                             <action selector="buttonUnpressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IQQ-dy-Ovu"/>
+                                            <segue destination="VC1-dX-TfK" kind="show" identifier="showAboutScreen" id="AzN-s4-4Ci"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -240,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906.5" y="1060.5"/>
+            <point key="canvasLocation" x="700.5" y="1060.5"/>
         </scene>
         <!--Paging View Controller-->
         <scene sceneID="iht-7h-pxg">
@@ -451,7 +452,7 @@ Helped me get my first job.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8A-oc-B2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2907" y="-892"/>
+            <point key="canvasLocation" x="2907" y="-920"/>
         </scene>
         <!--Paging View Controller-->
         <scene sceneID="JQq-PU-KG0">
@@ -782,6 +783,68 @@ Helped me get my first job.</string>
             </objects>
             <point key="canvasLocation" x="2973" y="1428"/>
         </scene>
+        <!--About-->
+        <scene sceneID="qE9-Ax-peD">
+            <objects>
+                <viewController title="About" automaticallyAdjustsScrollViewInsets="NO" id="Kze-x4-all" customClass="AboutViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jr8-Pm-bum"/>
+                        <viewControllerLayoutGuide type="bottom" id="t28-pp-ZZ2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1It-fF-zNh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhX-Ud-2s5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqL-Dv-guE" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="603" placeholder="YES" id="2bL-2D-g8d"/>
+                                            <constraint firstAttribute="width" constant="375" placeholder="YES" id="GGa-fb-UTb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aqL-Dv-guE" firstAttribute="leading" secondItem="qhX-Ud-2s5" secondAttribute="leading" id="AJ3-DO-vLz"/>
+                                    <constraint firstItem="aqL-Dv-guE" firstAttribute="top" secondItem="qhX-Ud-2s5" secondAttribute="top" id="R3p-z3-0dD"/>
+                                    <constraint firstAttribute="trailing" secondItem="aqL-Dv-guE" secondAttribute="trailing" id="TBO-q6-Pqa"/>
+                                    <constraint firstAttribute="bottom" secondItem="aqL-Dv-guE" secondAttribute="bottom" id="jxE-Oy-e8X"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qhX-Ud-2s5" firstAttribute="top" secondItem="1It-fF-zNh" secondAttribute="top" id="5er-LS-pnb"/>
+                            <constraint firstItem="qhX-Ud-2s5" firstAttribute="leading" secondItem="1It-fF-zNh" secondAttribute="leading" id="FOy-nf-vsw"/>
+                            <constraint firstItem="t28-pp-ZZ2" firstAttribute="top" secondItem="qhX-Ud-2s5" secondAttribute="bottom" id="JMp-2l-BTp"/>
+                            <constraint firstAttribute="trailing" secondItem="qhX-Ud-2s5" secondAttribute="trailing" id="JYS-jR-eoL"/>
+                            <constraint firstItem="qhX-Ud-2s5" firstAttribute="top" secondItem="Jr8-Pm-bum" secondAttribute="bottom" id="xkN-AR-XAy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5er-LS-pnb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="jN4-ve-czP">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="XgB-ly-sGZ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="Kze-x4-all" id="Qqv-Oa-h9d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="containerView" destination="aqL-Dv-guE" id="yuj-8e-Mnz"/>
+                        <outlet property="scrollView" destination="qhX-Ud-2s5" id="yKL-4w-32d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUl-sG-bWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057.5" y="1974.5"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kMU-l0-HaJ">
             <objects>
@@ -894,7 +957,7 @@ Helped me get my first job.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piF-Aa-exc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2907" y="-81"/>
+            <point key="canvasLocation" x="2907" y="-64"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="gua-ZN-kei">
@@ -902,7 +965,29 @@ Helped me get my first job.</string>
                 <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="98U-Fi-au9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLE-3P-d7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3671" y="-81"/>
+            <point key="canvasLocation" x="3671" y="-64"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yXQ-q8-U3R">
+            <objects>
+                <navigationController id="VC1-dX-TfK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hRT-Rn-Qsa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kze-x4-all" kind="relationship" relationship="rootViewController" id="DYO-cX-B2z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HBB-Yi-SPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497.5" y="1974.5"/>
         </scene>
     </scenes>
     <resources>
