@@ -59,7 +59,7 @@ class AboutViewController: UIViewController {
         self.hiPageView = hiPageView
         
         let label = UILabel(pageText: "Hi! My name is Salavat Khanov.\nIt’s nice to meet you.")
-        hiPageView.addAndPinLabel(label)
+        hiPageView.addAndPinPageLabel(label)
     }
     
     func setupMapPage() {
@@ -70,14 +70,25 @@ class AboutViewController: UIViewController {
         let mapView = MKMapView()
         mapView.setTranslatesAutoresizingMaskIntoConstraints(false)
         mapView.scrollEnabled = false
+        mapView.zoomEnabled = false
+        mapView.rotateEnabled = false
         mapView.addAnnotation(annotation)
         
         let mapPageView = createNewPageView()
         self.mapPageView = mapPageView
         mapPageView.addAndPinSubviewToEdges(mapView)
         
-        let label = UILabel(pageText: "I am from Ufa, Russia.\n\nSiri told me that’s 6K+ miles away from San Francisco and we have exactly 12 hours time difference.")
-        mapPageView.addAndPinLabel(label)
+        let mainLabel = UILabel(pageText: "I am from Ufa, Russia.\n\nSiri told me that’s 6K+ miles away from San Francisco and we have exactly 12 hours time difference.")
+        mapPageView.addAndPinPageLabel(mainLabel)
+        
+        let hintLabel = UILabel(metaText: "Long-press the map to enable scrolling\nand see for yourself!")
+        hintLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.8)
+        hintLabel.layer.cornerRadius = 5
+        hintLabel.clipsToBounds = true
+        mapPageView.addAndPinMetaLabel(hintLabel)
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "mapPageViewLongPressed:")
+        mapPageView.addGestureRecognizer(longPressRecognizer)
     }
     
     func setupUSATUPage() {
@@ -87,7 +98,7 @@ class AboutViewController: UIViewController {
         
         let label = UILabel(pageText: "I'm currently pursuing my Bachelor's degree of Software Engineering at Ufa State Aviation Technical University.")
         label.textColor = UIColor.whiteColor()
-        usatuPageView.addAndPinLabel(label)
+        usatuPageView.addAndPinPageLabel(label)
     }
     
     func setupMSUMPage() {
@@ -95,12 +106,12 @@ class AboutViewController: UIViewController {
         msumPageView.addPhotoBackground("MSUM-Photo")
         self.msumPageView = msumPageView
         
-        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study Computer Science at Minnesota State University Moorhead for a semester.")
+        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study for a semester Computer Science at Minnesota State University Moorhead.")
         label.textColor = UIColor.whiteColor()
         label.layer.shadowColor = UIColor.blackColor().CGColor
         label.layer.shadowOpacity = 0.7
         label.layer.shadowOffset = CGSizeMake(1.0, 1.0);
-        msumPageView.addAndPinLabel(label)
+        msumPageView.addAndPinPageLabel(label)
     }
     
     // MARK: - Constraints
@@ -131,6 +142,17 @@ class AboutViewController: UIViewController {
             views: ["mapView": mapPageView, "hiView": hiPageView, "usatuView": usatuPageView, "msumView": msumPageView]))
     }
     
+    // MARK: - Gestures
+    
+    func mapPageViewLongPressed(sender: UILongPressGestureRecognizer) {
+        if let mapView = mapPageView.subviews.first as? MKMapView where sender.state == .Began {
+            let enableMap = scrollView.scrollEnabled
+            mapView.scrollEnabled = enableMap
+            mapView.zoomEnabled = enableMap
+            mapView.rotateEnabled = enableMap
+            scrollView.scrollEnabled = !enableMap
+        }
+    }
 }
 
 // MARK: - Helpers
@@ -141,8 +163,18 @@ private extension UILabel {
         setTranslatesAutoresizingMaskIntoConstraints(false)
         numberOfLines = 0
         text = pageText
-        font = UIFont(name: "HelveticaNeue-Light", size: 19)
+        font = UIFont(name: "HelveticaNeue-Thin", size: 19)
         textColor = UIColor.blackColor()
+        sizeToFit()
+    }
+    convenience init(metaText: String) {
+        self.init(frame: CGRectZero)
+        setTranslatesAutoresizingMaskIntoConstraints(false)
+        numberOfLines = 0
+        text = metaText
+        font = UIFont(name: "HelveticaNeue-Light", size: 15)
+        textColor = UIColor.blackColor()
+        textAlignment = .Center
         sizeToFit()
     }
 }
@@ -168,13 +200,25 @@ private extension UIView {
             views: ["subview": subview]))
     }
     
-    func addAndPinLabel(label: UILabel) {
+    func addAndPinPageLabel(label: UILabel) {
         addSubview(label)
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[label]-(>=20)-|",
             options: NSLayoutFormatOptions.allZeros,
             metrics: nil,
             views: ["label": label]))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-25-[label]",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: ["label": label]))
+    }
+    
+    func addAndPinMetaLabel(label: UILabel) {
+        addSubview(label)
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[label]-20-|",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: ["label": label]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[label]-15-|",
             options: NSLayoutFormatOptions.allZeros,
             metrics: nil,
             views: ["label": label]))
