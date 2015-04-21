@@ -16,6 +16,8 @@ class AboutViewController: UIViewController {
     
     weak var hiPageView: UIView!
     weak var mapPageView: UIView!
+    weak var usatuPageView: UIView!
+    weak var msumPageView: UIView!
     
     var didSetupConstraints = false
     
@@ -32,6 +34,8 @@ class AboutViewController: UIViewController {
         
         setupHiPage()
         setupMapPage()
+        setupUSATUPage()
+        setupMSUMPage()
     }
     
     override func viewDidLayoutSubviews() {
@@ -51,26 +55,14 @@ class AboutViewController: UIViewController {
     
     func setupHiPage() {
         let hiPageView = createNewPageView()
+        hiPageView.addPhotoBackground("Sal-Photo")
         self.hiPageView = hiPageView
-        addPhotoBackground("Sal-Photo", toPage: hiPageView)
         
-        let label = createPageLabel("Hi! My name is Salavat Khanov.\nIt’s nice to meet you.")
-        hiPageView.addSubview(label)
-        hiPageView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[label]",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
-        hiPageView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-25-[label]",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
+        let label = UILabel(pageText: "Hi! My name is Salavat Khanov.\nIt’s nice to meet you.")
+        hiPageView.addAndPinLabel(label)
     }
     
     func setupMapPage() {
-        let mapPageView = createNewPageView()
-        mapPageView.backgroundColor = UIColor.orangeColor()
-        self.mapPageView = mapPageView
-        
         let myCoordinates = CLLocationCoordinate2DMake(54.72455119397011, 55.94216976486916)
         let annotation = MKPointAnnotation()
         annotation.coordinate = myCoordinates
@@ -79,26 +71,43 @@ class AboutViewController: UIViewController {
         mapView.setTranslatesAutoresizingMaskIntoConstraints(false)
         mapView.scrollEnabled = false
         mapView.addAnnotation(annotation)
-        addAndPinSubview(mapView, toParent: mapPageView)
         
-        let label = createPageLabel("I am from Ufa, Russia.\nThat’s 6000+ miles from San Francisco.\nExactly 12 hours time difference.")
-        mapPageView.addSubview(label)
-        mapPageView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[label]",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
-        mapPageView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-25-[label]",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
+        let mapPageView = createNewPageView()
+        self.mapPageView = mapPageView
+        mapPageView.addAndPinSubviewToEdges(mapView)
         
+        let label = UILabel(pageText: "I am from Ufa, Russia.\n\nSiri told me that’s 6K+ miles away from San Francisco and we have exactly 12 hours time difference.")
+        mapPageView.addAndPinLabel(label)
+    }
+    
+    func setupUSATUPage() {
+        let usatuPageView = createNewPageView()
+        usatuPageView.addPhotoBackground("USATU-Photo")
+        self.usatuPageView = usatuPageView
+        
+        let label = UILabel(pageText: "I'm currently pursuing my Bachelor's degree of Software Engineering at Ufa State Aviation Technical University.")
+        label.textColor = UIColor.whiteColor()
+        usatuPageView.addAndPinLabel(label)
+    }
+    
+    func setupMSUMPage() {
+        let msumPageView = createNewPageView()
+        msumPageView.addPhotoBackground("MSUM-Photo")
+        self.msumPageView = msumPageView
+        
+        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study Computer Science at Minnesota State University Moorhead for a semester.")
+        label.textColor = UIColor.whiteColor()
+        label.layer.shadowColor = UIColor.blackColor().CGColor
+        label.layer.shadowOpacity = 0.7
+        label.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+        msumPageView.addAndPinLabel(label)
     }
     
     // MARK: - Constraints
     
     func setupPageConstraints() {
 
-        let pages = [hiPageView, mapPageView]
+        let pages = [hiPageView, mapPageView, usatuPageView, msumPageView]
         for pageView in pages {
             containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[pageView]|",
                 options: NSLayoutFormatOptions.allZeros,
@@ -116,50 +125,69 @@ class AboutViewController: UIViewController {
                 views: ["pageView": pageView, "scrollView": scrollView]))
         }
         
-        containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[hiView][mapView]|",
+        containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[hiView][mapView][usatuView][msumView]|",
             options: NSLayoutFormatOptions.allZeros,
             metrics: nil,
-            views: ["mapView": mapPageView, "hiView": hiPageView]))
+            views: ["mapView": mapPageView, "hiView": hiPageView, "usatuView": usatuPageView, "msumView": msumPageView]))
     }
     
-    // MARK: - Helpers
-    
-    func createPageLabel(text: String) -> UILabel {
-        let label = UILabel()
-        label.setTranslatesAutoresizingMaskIntoConstraints(false)
-        label.numberOfLines = 0
-        label.text = text
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 19)
-        label.textColor = UIColor.blackColor()
-        label.sizeToFit()
-        return label
+}
+
+// MARK: - Helpers
+
+private extension UILabel {
+    convenience init(pageText: String) {
+        self.init(frame: CGRectZero)
+        setTranslatesAutoresizingMaskIntoConstraints(false)
+        numberOfLines = 0
+        text = pageText
+        font = UIFont(name: "HelveticaNeue-Light", size: 19)
+        textColor = UIColor.blackColor()
+        sizeToFit()
     }
-    
-    func createNewPageView() -> UIView {
-        let pageView = UIView()
-        pageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        containerView.addSubview(pageView)
-        return pageView
-    }
-    
-    func addPhotoBackground(photoNamed: String, toPage page: UIView) {
+}
+
+private extension UIView {
+    func addPhotoBackground(photoNamed: String) {
         let photo = UIImage(named: photoNamed)
         let imageView = UIImageView(image: photo!)
         imageView.setTranslatesAutoresizingMaskIntoConstraints(false)
         imageView.contentMode = .ScaleAspectFill
-        addAndPinSubview(imageView, toParent: page)
+        addAndPinSubviewToEdges(imageView)
     }
     
-    func addAndPinSubview(subview: UIView, toParent parent: UIView) {
-        parent.addSubview(subview)
-        parent.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[subview]|",
+    func addAndPinSubviewToEdges(subview: UIView) {
+        addSubview(subview)
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[subview]|",
             options: NSLayoutFormatOptions.allZeros,
             metrics: nil,
             views: ["subview": subview]))
-        parent.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[subview]|",
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[subview]|",
             options: NSLayoutFormatOptions.allZeros,
             metrics: nil,
             views: ["subview": subview]))
     }
     
+    func addAndPinLabel(label: UILabel) {
+        addSubview(label)
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[label]-(>=20)-|",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: ["label": label]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-25-[label]",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: ["label": label]))
+    }
 }
+
+private extension AboutViewController {
+    func createNewPageView() -> UIView {
+        let pageView = UIView()
+        pageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        pageView.clipsToBounds = true
+        containerView.addSubview(pageView)
+        return pageView
+    }
+}
+
