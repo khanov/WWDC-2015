@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class AboutViewController: UIViewController, MKMapViewDelegate {
+class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
@@ -38,6 +38,7 @@ class AboutViewController: UIViewController, MKMapViewDelegate {
         view.addConstraints([leftConstraint, rightConstraint])
         
         scrollView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        scrollView.delegate = self
         containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         setupHiPage()
@@ -120,8 +121,6 @@ class AboutViewController: UIViewController, MKMapViewDelegate {
         
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "mapPageViewLongPressed:")
         mapPageView.addGestureRecognizer(longPressRecognizer)
-        
-        updatePlanePositionAndDirection()
     }
     
     func setupUSATUPage() {
@@ -243,6 +242,13 @@ class AboutViewController: UIViewController, MKMapViewDelegate {
         var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.04 * Double(NSEC_PER_SEC)))
         dispatch_after(dispatchTime, dispatch_get_main_queue()) {
             self.updatePlanePositionAndDirection()
+        }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        // Animate plane only when the map view is visible
+        if CGRectIntersectsRect(scrollView.bounds, mapPageView.frame) == true && planeAnnotationPosition == 0 {
+            updatePlanePositionAndDirection()
         }
     }
 }
