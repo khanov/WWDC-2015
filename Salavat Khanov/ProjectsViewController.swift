@@ -27,6 +27,12 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         
         setupProgressView()
         appStoreButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
+        
+        navigationController?.navigationBar.barStyle = .Black
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
     }
 
     // MARK: - Progress View

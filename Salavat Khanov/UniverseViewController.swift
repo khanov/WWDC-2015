@@ -12,8 +12,6 @@ class UniverseViewController: UIViewController {
     
     @IBOutlet weak var workButton: UIButton!
     @IBOutlet weak var sideProjectsButton: UIButton!
-    @IBOutlet weak var educationButton: UIButton!
-    @IBOutlet weak var interestsButton: UIButton!
     
 
     override func viewDidLoad() {
@@ -34,7 +32,7 @@ class UniverseViewController: UIViewController {
         let motionGroup = UIMotionEffectGroup()
         motionGroup.motionEffects = [verticalMotionEffect, horizontalMotionEffect]
         
-        let buttons = [workButton, sideProjectsButton, educationButton, interestsButton]
+        let buttons = [workButton, sideProjectsButton]
         for button in buttons {
             button.addMotionEffect(motionGroup)
         }
@@ -48,6 +46,10 @@ class UniverseViewController: UIViewController {
     @IBAction func buttonUnpressed(sender: UIButton) {
         sender.backgroundColor = UIColor.blackColor()
         sender.titleLabel?.textColor = UIColor.whiteColor()
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     // Mark: - Page View Controller

@@ -18,37 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTZ-5G-fCI" userLabel="Circle Button - Education" customClass="CircleButton" customModule="Salavat_Khanov" customModuleProvider="target">
-                                <rect key="frame" x="57" y="391" width="104" height="104"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4W7-XM-FAI">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
-                                        <state key="normal" title="education">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchDown" id="LfA-jM-wcJ"/>
-                                            <action selector="buttonUnpressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fKc-aZ-FFz"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="4W7-XM-FAI" firstAttribute="leading" secondItem="MTZ-5G-fCI" secondAttribute="leading" id="2kg-AV-mna"/>
-                                    <constraint firstAttribute="height" constant="104" id="5Xw-Z5-d66"/>
-                                    <constraint firstAttribute="bottom" secondItem="4W7-XM-FAI" secondAttribute="bottom" id="OKj-JW-dAy"/>
-                                    <constraint firstAttribute="width" constant="104" id="Y2W-Ss-uGL"/>
-                                    <constraint firstItem="4W7-XM-FAI" firstAttribute="top" secondItem="MTZ-5G-fCI" secondAttribute="top" id="pRs-Jt-Q9o"/>
-                                    <constraint firstAttribute="trailing" secondItem="4W7-XM-FAI" secondAttribute="trailing" id="zKL-SZ-4ic"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaF-uN-Lzj" userLabel="Circle Button - Side Projects" customClass="CircleButton" customModule="Salavat_Khanov" customModuleProvider="target">
                                 <rect key="frame" x="199" y="159" width="124" height="124"/>
                                 <subviews>
@@ -174,67 +143,26 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWm-4T-u7t" userLabel="Circle Button - Interests" customClass="CircleButton" customModule="Salavat_Khanov" customModuleProvider="target">
-                                <rect key="frame" x="220" y="477" width="111" height="111"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBO-Kh-pe4">
-                                        <rect key="frame" x="0.0" y="0.0" width="111" height="111"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="interests">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchDown" id="5Kb-jx-oVl"/>
-                                            <action selector="buttonUnpressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JZm-wG-gEc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="RBO-Kh-pe4" firstAttribute="leading" secondItem="zWm-4T-u7t" secondAttribute="leading" id="GcG-UA-VWM"/>
-                                    <constraint firstItem="RBO-Kh-pe4" firstAttribute="top" secondItem="zWm-4T-u7t" secondAttribute="top" id="OaW-nR-ClN"/>
-                                    <constraint firstAttribute="width" constant="111" id="SBP-Qs-zM9"/>
-                                    <constraint firstAttribute="height" constant="111" id="d5o-6k-e1l"/>
-                                    <constraint firstAttribute="trailing" secondItem="RBO-Kh-pe4" secondAttribute="trailing" id="mbA-Ar-u3q"/>
-                                    <constraint firstAttribute="bottom" secondItem="RBO-Kh-pe4" secondAttribute="bottom" id="uze-bE-gxL"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="uLg-Ta-W61" secondAttribute="centerY" id="1bJ-ZW-CVr"/>
-                            <constraint firstItem="MTZ-5G-fCI" firstAttribute="top" secondItem="uLg-Ta-W61" secondAttribute="bottom" constant="15" id="6Zj-Ws-zGE"/>
                             <constraint firstAttribute="centerX" secondItem="uLg-Ta-W61" secondAttribute="centerX" id="8kb-ox-Fct"/>
                             <constraint firstItem="uLg-Ta-W61" firstAttribute="top" secondItem="nfx-TT-ecY" secondAttribute="bottom" constant="8" id="DK8-fg-9gV"/>
-                            <constraint firstItem="MTZ-5G-fCI" firstAttribute="top" secondItem="J41-6H-tus" secondAttribute="bottom" constant="15" id="Haz-Cx-qdQ"/>
                             <constraint firstItem="llm-RX-KyF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="JWh-e4-Bt8"/>
-                            <constraint firstItem="zWm-4T-u7t" firstAttribute="top" secondItem="J41-6H-tus" secondAttribute="bottom" constant="101" id="Os5-Ql-kg0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VaF-uN-Lzj" secondAttribute="trailing" constant="36" id="WUj-ge-85E"/>
-                            <constraint firstItem="zWm-4T-u7t" firstAttribute="top" secondItem="uLg-Ta-W61" secondAttribute="bottom" constant="101" id="Z8H-PQ-pLS"/>
-                            <constraint firstItem="MTZ-5G-fCI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="41" id="ZMF-Fc-E2q"/>
                             <constraint firstItem="uLg-Ta-W61" firstAttribute="top" secondItem="VaF-uN-Lzj" secondAttribute="bottom" constant="8" id="kTh-YF-YYv"/>
                             <constraint firstItem="uLg-Ta-W61" firstAttribute="top" secondItem="llm-RX-KyF" secondAttribute="bottom" constant="47" id="s3e-1o-MVl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zWm-4T-u7t" secondAttribute="trailing" constant="28" id="s7n-7b-2Tl"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="DK8-fg-9gV"/>
-                                <exclude reference="Haz-Cx-qdQ"/>
-                                <exclude reference="Os5-Ql-kg0"/>
                             </mask>
                         </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="educationButton" destination="4W7-XM-FAI" id="BUX-mO-CKQ"/>
-                        <outlet property="interestsButton" destination="RBO-Kh-pe4" id="NsL-xy-KOJ"/>
                         <outlet property="sideProjectsButton" destination="nfx-TT-ecY" id="uBH-fw-xdL"/>
                         <outlet property="workButton" destination="L9H-CP-FZE" id="THt-7w-sMK"/>
                     </connections>
@@ -279,10 +207,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-oh-NqR">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="640"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxt-Nu-JSk" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="642"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="624"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZK-fm-0KU" userLabel="When View">
                                                 <rect key="frame" x="0.0" y="0.0" width="568" height="280"/>
@@ -377,22 +305,29 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRe-Zj-yWL">
-                                                <rect key="frame" x="20" y="432" width="528" height="160"/>
+                                                <rect key="frame" x="20" y="432" width="528" height="142"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="528" placeholder="YES" id="Dp0-Xj-Mjn"/>
+                                                </constraints>
                                                 <string key="text">When is a countdown timer app with clean minimalistic interface design.
 
 - Beautiful progress view of your events. 
 - Sync events across your devices via iCloud.
 - Share current progress of an event.
 
-Available for iPhone and iPad on the App Store for free. Open-sourced on GitHub.
-
-Helped me get my first job.</string>
+The app is available for the iPhone and iPad on the App Store for free. Open-sourced on GitHub.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh7-1c-UY0">
+                                                <rect key="frame" x="478" y="305" width="70" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" tag="854494573" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs2-Q1-NFZ">
-                                                <rect key="frame" x="459" y="305" width="89" height="28"/>
+                                                <rect key="frame" x="459" y="338" width="89" height="28"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                                 <state key="normal" title="App Store">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -412,18 +347,28 @@ Helped me get my first job.</string>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="Fh7-1c-UY0" firstAttribute="trailing" secondItem="Bs2-Q1-NFZ" secondAttribute="trailing" id="03f-NT-mfh"/>
                                             <constraint firstItem="HRe-Zj-yWL" firstAttribute="top" secondItem="Zj1-5O-Yow" secondAttribute="bottom" constant="38" id="75a-D3-ivt"/>
                                             <constraint firstAttribute="trailing" secondItem="IZK-fm-0KU" secondAttribute="trailing" id="BaC-eR-sUK"/>
                                             <constraint firstItem="IZK-fm-0KU" firstAttribute="leading" secondItem="fxt-Nu-JSk" secondAttribute="leading" id="DKn-NW-pAu"/>
                                             <constraint firstItem="IZK-fm-0KU" firstAttribute="top" secondItem="fxt-Nu-JSk" secondAttribute="top" id="E55-lX-2V2"/>
                                             <constraint firstAttribute="trailing" secondItem="HRe-Zj-yWL" secondAttribute="trailing" constant="20" id="H9M-gQ-2yZ"/>
+                                            <constraint firstItem="Bs2-Q1-NFZ" firstAttribute="top" secondItem="Fh7-1c-UY0" secondAttribute="bottom" constant="15" id="IKk-fv-aIL"/>
                                             <constraint firstAttribute="bottom" secondItem="HRe-Zj-yWL" secondAttribute="bottom" constant="50" id="RIz-ZP-nej"/>
                                             <constraint firstItem="HRe-Zj-yWL" firstAttribute="leading" secondItem="fxt-Nu-JSk" secondAttribute="leading" constant="20" id="XV0-cQ-kmh"/>
                                             <constraint firstItem="Zj1-5O-Yow" firstAttribute="top" secondItem="IZK-fm-0KU" secondAttribute="bottom" constant="25" id="ZZc-FG-L2d"/>
                                             <constraint firstItem="Zj1-5O-Yow" firstAttribute="leading" secondItem="fxt-Nu-JSk" secondAttribute="leading" constant="20" id="cLA-NG-sz5"/>
                                             <constraint firstItem="Bs2-Q1-NFZ" firstAttribute="top" secondItem="IZK-fm-0KU" secondAttribute="bottom" constant="25" id="hFV-Im-SHn"/>
                                             <constraint firstAttribute="trailing" secondItem="Bs2-Q1-NFZ" secondAttribute="trailing" constant="20" id="q57-eI-faF"/>
+                                            <constraint firstItem="Zj1-5O-Yow" firstAttribute="top" secondItem="Fh7-1c-UY0" secondAttribute="top" id="tuC-LA-FxA"/>
+                                            <constraint firstItem="Fh7-1c-UY0" firstAttribute="top" secondItem="Bs2-Q1-NFZ" secondAttribute="bottom" constant="8" id="zuQ-wt-DkA"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="zuQ-wt-DkA"/>
+                                                <exclude reference="hFV-Im-SHn"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -436,7 +381,7 @@ Helped me get my first job.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="caS-bL-MQX" firstAttribute="top" secondItem="Fqb-oh-NqR" secondAttribute="bottom" id="3nk-cT-PHU"/>
+                            <constraint firstItem="caS-bL-MQX" firstAttribute="top" secondItem="Fqb-oh-NqR" secondAttribute="bottom" constant="60" id="3nk-cT-PHU"/>
                             <constraint firstAttribute="trailing" secondItem="Fqb-oh-NqR" secondAttribute="trailing" id="JgR-mO-7eQ"/>
                             <constraint firstItem="Fqb-oh-NqR" firstAttribute="top" secondItem="XAt-w8-ATB" secondAttribute="top" id="Nwp-Us-wvf"/>
                             <constraint firstItem="Fqb-oh-NqR" firstAttribute="leading" secondItem="XAt-w8-ATB" secondAttribute="leading" id="ci3-75-4dz"/>
@@ -490,7 +435,7 @@ Helped me get my first job.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kip-dC-0qV">
-                                <rect key="frame" x="0.0" y="20" width="740" height="530"/>
+                                <rect key="frame" x="0.0" y="20" width="740" height="520"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UG-g1-JAY" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="740" height="638"/>
@@ -595,7 +540,7 @@ Some of the things I've accomplished:
                             <constraint firstAttribute="trailing" secondItem="Kip-dC-0qV" secondAttribute="trailing" id="9Zg-Td-yVw"/>
                             <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" id="AuX-Zm-RiY"/>
                             <constraint firstItem="Kip-dC-0qV" firstAttribute="top" secondItem="Ddc-Gl-qA7" secondAttribute="bottom" id="c4L-qJ-SAl"/>
-                            <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" constant="50" id="h7O-au-RB1"/>
+                            <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" constant="60" id="h7O-au-RB1"/>
                             <constraint firstItem="Kip-dC-0qV" firstAttribute="top" secondItem="53P-2X-nSd" secondAttribute="top" id="hh9-BI-dqa"/>
                             <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" id="hqx-2k-W3D"/>
                             <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" id="qZZ-fQ-c2e"/>
@@ -656,7 +601,7 @@ Some of the things I've accomplished:
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlY-Dm-yEw">
-                                <rect key="frame" x="0.0" y="0.0" width="700" height="550"/>
+                                <rect key="frame" x="0.0" y="0.0" width="700" height="540"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSp-hb-BIP" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="702" height="621"/>
@@ -792,7 +737,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QlY-Dm-yEw" secondAttribute="trailing" id="7cE-n0-Pt6"/>
-                            <constraint firstItem="T8M-dn-sDq" firstAttribute="top" secondItem="QlY-Dm-yEw" secondAttribute="bottom" constant="50" id="Qwf-HW-WcB"/>
+                            <constraint firstItem="T8M-dn-sDq" firstAttribute="top" secondItem="QlY-Dm-yEw" secondAttribute="bottom" constant="60" id="Qwf-HW-WcB"/>
                             <constraint firstItem="QlY-Dm-yEw" firstAttribute="leading" secondItem="eV2-3P-3fI" secondAttribute="leading" id="bFK-CC-kLc"/>
                             <constraint firstItem="QlY-Dm-yEw" firstAttribute="top" secondItem="eV2-3P-3fI" secondAttribute="top" id="ztj-js-9US"/>
                         </constraints>
@@ -907,10 +852,10 @@ I worked remotely as an iOS developer. Here are a few highlights:
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROf-Sn-Gob">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="640"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brK-VV-PvB" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="469"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="433"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92z-Jl-RP7" userLabel="Video View">
                                                 <rect key="frame" x="0.0" y="0.0" width="568" height="234"/>
@@ -932,16 +877,15 @@ I worked remotely as an iOS developer. Here are a few highlights:
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgH-lG-MZE">
-                                                <rect key="frame" x="20" y="259" width="528" height="160"/>
-                                                <string key="text">When is a countdown timer app with clean minimalistic interface design.
+                                                <rect key="frame" x="20" y="259" width="528" height="124"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="528" placeholder="YES" id="l4e-NW-gsJ"/>
+                                                </constraints>
+                                                <string key="text">Back in 2012, SuperMario was my hobby project to learn Objective-C and how to make games with Cocos2D and Box2D.
 
-- Beautiful progress view of your events. 
-- Sync events across your devices via iCloud.
-- Share current progress of an event.
+The game copies the first level of the original Super Mario Bros game.
 
-Available for iPhone and iPad on the App Store for free. Open-sourced on GitHub.
-
-Helped me get my first job.</string>
+SuperMario isn't going to be released (for potential copyright issues) — I just made it for fun.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -971,7 +915,7 @@ Helped me get my first job.</string>
                         <constraints>
                             <constraint firstItem="ROf-Sn-Gob" firstAttribute="leading" secondItem="fQA-wA-RHD" secondAttribute="leading" id="0MA-Bq-AGc"/>
                             <constraint firstAttribute="trailing" secondItem="ROf-Sn-Gob" secondAttribute="trailing" id="NCo-zF-dKY"/>
-                            <constraint firstItem="zvH-4L-Sfo" firstAttribute="top" secondItem="ROf-Sn-Gob" secondAttribute="bottom" id="QlC-Bx-ORI"/>
+                            <constraint firstItem="zvH-4L-Sfo" firstAttribute="top" secondItem="ROf-Sn-Gob" secondAttribute="bottom" constant="60" id="QlC-Bx-ORI"/>
                             <constraint firstItem="ROf-Sn-Gob" firstAttribute="top" secondItem="fQA-wA-RHD" secondAttribute="top" id="hJD-Ux-HTr"/>
                         </constraints>
                     </view>

@@ -26,6 +26,8 @@ class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate
         // Add white borders
         iconButton.layer.borderColor = UIColor.whiteColor().CGColor
         iconButton2?.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        navigationController?.navigationBar.barStyle = .Black
     }
     
     @IBAction func appStoreButtonPressed(sender: UIButton) {
@@ -34,6 +36,10 @@ class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate
     
     func productViewControllerDidFinish(viewController: SKStoreProductViewController!) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
     }
 
 }

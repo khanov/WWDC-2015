@@ -45,6 +45,8 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
         setupMapPage()
         setupUSATUPage()
         setupMSUMPage()
+        
+        navigationController?.navigationBar.barStyle = .Black
     }
     
     override func viewDidLayoutSubviews() {
@@ -58,6 +60,10 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
     
     @IBAction func closeButtonPressed(sender: UIBarButtonItem) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
     }
     
     // MARK: - Pages
@@ -135,7 +141,7 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
     }
     
     func setupMSUMPage() {
-        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study Computer Science for a semester at Minnesota State University Moorhead.")
+        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study Computer Science for a semester at Minnesota State University Moorhead.\n\nI was awarded the Dean's List Certificate.")
         label.textColor = UIColor.whiteColor()
         label.addShadow()
         
