@@ -373,7 +373,7 @@
 2. See how much time left.
 3. Get notified.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRe-Zj-yWL">
@@ -388,7 +388,7 @@ Available for iPhone and iPad on the App Store for free. Open-sourced on GitHub.
 
 Helped me get my first job.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="854494573" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs2-Q1-NFZ">
@@ -490,10 +490,10 @@ Helped me get my first job.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kip-dC-0qV">
-                                <rect key="frame" x="0.0" y="0.0" width="740" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="740" height="530"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UG-g1-JAY" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="740" height="533"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="740" height="638"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyPocket-Cover" translatesAutoresizingMaskIntoConstraints="NO" id="K7g-1S-wGU">
                                                 <rect key="frame" x="0.0" y="0.0" width="740" height="330"/>
@@ -515,9 +515,16 @@ Helped me get my first job.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6z-4b-9gV">
-                                                <rect key="frame" x="20" y="435" width="700" height="70"/>
-                                                <string key="text">Helped build an iOS app, which was featured by Apple and hit #1 in Top Paid on the Russian App Store. 
-• Implemented app integration with Touch ID. • Added two new document templates and event tracking via analytics. • Implemented support for attaching more than one scan to a document. </string>
+                                                <rect key="frame" x="20" y="435" width="700" height="175"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="700" placeholder="YES" id="xSl-bu-807"/>
+                                                </constraints>
+                                                <mutableString key="text">MyPocket is a secure virtual wallet which allows you to store digital copies of your documents and other sensitive information.
+
+I teamed up with another iOS developer and worked on this app, which was later featured by Apple and hit #1 in Top Paid on the Russian App Store. 
+
+Some of the things I've accomplished:
+• Implemented integration with Touch ID. • Added two new document templates and event tracking via analytics. • Implemented support for attaching more than one scan to a document.</mutableString>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -587,8 +594,20 @@ Helped me get my first job.</string>
                             <constraint firstItem="Kip-dC-0qV" firstAttribute="leading" secondItem="53P-2X-nSd" secondAttribute="leading" id="85D-Hh-xdA"/>
                             <constraint firstAttribute="trailing" secondItem="Kip-dC-0qV" secondAttribute="trailing" id="9Zg-Td-yVw"/>
                             <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" id="AuX-Zm-RiY"/>
+                            <constraint firstItem="Kip-dC-0qV" firstAttribute="top" secondItem="Ddc-Gl-qA7" secondAttribute="bottom" id="c4L-qJ-SAl"/>
+                            <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" constant="50" id="h7O-au-RB1"/>
                             <constraint firstItem="Kip-dC-0qV" firstAttribute="top" secondItem="53P-2X-nSd" secondAttribute="top" id="hh9-BI-dqa"/>
+                            <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" id="hqx-2k-W3D"/>
+                            <constraint firstItem="BRJ-G4-dBZ" firstAttribute="top" secondItem="Kip-dC-0qV" secondAttribute="bottom" id="qZZ-fQ-c2e"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hh9-BI-dqa"/>
+                                <exclude reference="AuX-Zm-RiY"/>
+                                <exclude reference="hqx-2k-W3D"/>
+                                <exclude reference="qZZ-fQ-c2e"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="740" height="600"/>
@@ -637,10 +656,10 @@ Helped me get my first job.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlY-Dm-yEw">
-                                <rect key="frame" x="0.0" y="0.0" width="700" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="700" height="550"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSp-hb-BIP" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="702" height="533"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="702" height="621"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lapka-Cover" translatesAutoresizingMaskIntoConstraints="NO" id="lnf-oh-rko">
                                                 <rect key="frame" x="0.0" y="0.0" width="702" height="330"/>
@@ -662,8 +681,15 @@ Helped me get my first job.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6U-EP-baW">
-                                                <rect key="frame" x="20" y="435" width="662" height="70"/>
-                                                <string key="text">• Prototyped and rewrote Lapka Pro from scratch (major app update). • Worked on Lapka BAM’s History screen, fixed bugs, and added Russian localization. • Helped launch Lapka Developer Program by writing documentation and developing sample apps. • Developed authentication API for both Lapka BAM and Lapka Pro on iOS.</string>
+                                                <rect key="frame" x="20" y="435" width="662" height="158"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="662" placeholder="YES" id="uds-Wy-a15"/>
+                                                </constraints>
+                                                <mutableString key="text">Lapka makes personal environment sensors (like Humidity, Radiation, Organic, Temperature, and Breathalyzer) for iPhone. 
+
+I worked remotely as an iOS developer. Here are a few highlights:
+
+• Prototyped and rewrote Lapka Pro from scratch (major app update). • Worked on Lapka BAM’s History screen, fixed bugs, and added Russian localization. • Helped launch Lapka Developer Program by writing documentation and developing sample apps. • Developed authentication API for both Lapka BAM and Lapka Pro on iOS.</mutableString>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -766,7 +792,7 @@ Helped me get my first job.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QlY-Dm-yEw" secondAttribute="trailing" id="7cE-n0-Pt6"/>
-                            <constraint firstItem="T8M-dn-sDq" firstAttribute="top" secondItem="QlY-Dm-yEw" secondAttribute="bottom" id="Qwf-HW-WcB"/>
+                            <constraint firstItem="T8M-dn-sDq" firstAttribute="top" secondItem="QlY-Dm-yEw" secondAttribute="bottom" constant="50" id="Qwf-HW-WcB"/>
                             <constraint firstItem="QlY-Dm-yEw" firstAttribute="leading" secondItem="eV2-3P-3fI" secondAttribute="leading" id="bFK-CC-kLc"/>
                             <constraint firstItem="QlY-Dm-yEw" firstAttribute="top" secondItem="eV2-3P-3fI" secondAttribute="top" id="ztj-js-9US"/>
                         </constraints>
@@ -917,7 +943,7 @@ Available for iPhone and iPad on the App Store for free. Open-sourced on GitHub.
 
 Helped me get my first job.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
