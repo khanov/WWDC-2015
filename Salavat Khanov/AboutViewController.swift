@@ -9,17 +9,25 @@
 import UIKit
 import MapKit
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     
-    weak var hiPageView: UIView!
-    weak var mapPageView: UIView!
-    weak var usatuPageView: UIView!
-    weak var msumPageView: UIView!
+    weak var hiPageView: PageView!
+    weak var mapPageView: PageView!
+    weak var usatuPageView: PageView!
+    weak var msumPageView: PageView!
     
     var didSetupConstraints = false
+    
+    static let enableMapHintText = "Long press the map to enable scrolling\nand see it for yourself!"
+    static let disableMapHintText = "Long press the map again to disable scrolling."
+    
+    var flightpathPolyline: MKGeodesicPolyline!
+    var planeAnnotation: MKPointAnnotation!
+    var planeDirection: CLLocationDirection!
+    var planeAnnotationPosition: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,64 +62,88 @@ class AboutViewController: UIViewController {
     // MARK: - Pages
     
     func setupHiPage() {
-        let hiPageView = createNewPageView()
-        hiPageView.addPhotoBackground("Sal-Photo")
-        self.hiPageView = hiPageView
-        
         let label = UILabel(pageText: "Hi! My name is Salavat Khanov.\nIt’s nice to meet you.")
-        hiPageView.addAndPinPageLabel(label)
+        
+        let hiPageView = createNewPageView()
+        self.hiPageView = hiPageView
+        hiPageView.addBackgroundImageNamed("Sal-Photo")
+        hiPageView.addAndPinMainLabel(label)
     }
     
     func setupMapPage() {
-        let myCoordinates = CLLocationCoordinate2DMake(54.72455119397011, 55.94216976486916)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = myCoordinates
+        let myCoordinates = CLLocationCoordinate2DMake(54.7245, 55.9421)
+        let moscowCoordinates = CLLocationCoordinate2DMake(55.7500, 37.6167)
+        let netherlandsCoordinates = CLLocationCoordinate2DMake(52.3740, 5.55)
+        let mosconeCoordinates = CLLocationCoordinate2DMake(37.7842, -122.4016)
+        
+        var coordinates: [CLLocationCoordinate2D]
+        coordinates = [myCoordinates, moscowCoordinates, netherlandsCoordinates, mosconeCoordinates]
+        flightpathPolyline = MKGeodesicPolyline(coordinates: &coordinates, count: 4)
+        
+        let myAnnotation = MKPointAnnotation()
+        myAnnotation.title = "Salavat Khanov"
+        myAnnotation.subtitle = "Ufa, Russia"
+        myAnnotation.coordinate = myCoordinates
+        
+        let mosconeAnnotation = MKPointAnnotation()
+        mosconeAnnotation.title = "WWDC 2015"
+        mosconeAnnotation.subtitle = "San Francisco, CA"
+        mosconeAnnotation.coordinate = mosconeCoordinates
+        
+        planeAnnotation = MKPointAnnotation()
+        planeAnnotation!.title = "Plane"
         
         let mapView = MKMapView()
         mapView.setTranslatesAutoresizingMaskIntoConstraints(false)
         mapView.scrollEnabled = false
         mapView.zoomEnabled = false
         mapView.rotateEnabled = false
-        mapView.addAnnotation(annotation)
+        mapView.setRegion(MKCoordinateRegion(center: myCoordinates, span: MKCoordinateSpanMake(17, 177)), animated: false)
+        mapView.delegate = self
+        mapView.addAnnotation(myAnnotation)
+        mapView.addAnnotation(mosconeAnnotation)
+        mapView.addAnnotation(planeAnnotation!)
+        mapView.addOverlay(flightpathPolyline)
+        
+        let mainLabel = UILabel(pageText: "I am from Ufa, Russia.\n\nSiri told me that’s 6K+ miles away from San Francisco and we have exactly 12 hours time difference.")
+        
+        let hintLabel = UILabel(metaText: AboutViewController.enableMapHintText)
+        hintLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.8)
+        hintLabel.layer.cornerRadius = 5
+        hintLabel.clipsToBounds = true
         
         let mapPageView = createNewPageView()
         self.mapPageView = mapPageView
         mapPageView.addAndPinSubviewToEdges(mapView)
-        
-        let mainLabel = UILabel(pageText: "I am from Ufa, Russia.\n\nSiri told me that’s 6K+ miles away from San Francisco and we have exactly 12 hours time difference.")
-        mapPageView.addAndPinPageLabel(mainLabel)
-        
-        let hintLabel = UILabel(metaText: "Long-press the map to enable scrolling\nand see for yourself!")
-        hintLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.8)
-        hintLabel.layer.cornerRadius = 5
-        hintLabel.clipsToBounds = true
+        mapPageView.addAndPinMainLabel(mainLabel)
         mapPageView.addAndPinMetaLabel(hintLabel)
         
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "mapPageViewLongPressed:")
         mapPageView.addGestureRecognizer(longPressRecognizer)
+        
+        updatePlanePositionAndDirection()
     }
     
     func setupUSATUPage() {
-        let usatuPageView = createNewPageView()
-        usatuPageView.addPhotoBackground("USATU-Photo")
-        self.usatuPageView = usatuPageView
-        
         let label = UILabel(pageText: "I'm currently pursuing my Bachelor's degree of Software Engineering at Ufa State Aviation Technical University.")
         label.textColor = UIColor.whiteColor()
-        usatuPageView.addAndPinPageLabel(label)
+        label.addShadow()
+        
+        let usatuPageView = createNewPageView()
+        self.usatuPageView = usatuPageView
+        usatuPageView.addBackgroundImageNamed("USATU-Photo")
+        usatuPageView.addAndPinMainLabel(label)
     }
     
     func setupMSUMPage() {
-        let msumPageView = createNewPageView()
-        msumPageView.addPhotoBackground("MSUM-Photo")
-        self.msumPageView = msumPageView
-        
-        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study for a semester Computer Science at Minnesota State University Moorhead.")
+        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study Computer Science for a semester at Minnesota State University Moorhead.")
         label.textColor = UIColor.whiteColor()
-        label.layer.shadowColor = UIColor.blackColor().CGColor
-        label.layer.shadowOpacity = 0.7
-        label.layer.shadowOffset = CGSizeMake(1.0, 1.0);
-        msumPageView.addAndPinPageLabel(label)
+        label.addShadow()
+        
+        let msumPageView = createNewPageView()
+        self.msumPageView = msumPageView
+        msumPageView.addBackgroundImageNamed("MSUM-Photo")
+        msumPageView.addAndPinMainLabel(label)
     }
     
     // MARK: - Constraints
@@ -151,6 +183,66 @@ class AboutViewController: UIViewController {
             mapView.zoomEnabled = enableMap
             mapView.rotateEnabled = enableMap
             scrollView.scrollEnabled = !enableMap
+            mapPageView.mainLabel.alpha = enableMap ? 0.0 : 1.0
+            mapPageView.metaLabel.text = enableMap ? AboutViewController.disableMapHintText : AboutViewController.enableMapHintText
+        }
+    }
+    
+    // MARK: - MKMapViewDelegate
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKPolyline {
+            var polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            polylineRenderer.strokeColor = UIColor.blueColor()
+            polylineRenderer.lineWidth = 3
+            polylineRenderer.alpha = 0.5
+            return polylineRenderer
+        }
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if annotation.isEqual(planeAnnotation) == false {
+            return nil
+        }
+        
+        let pinIdentifier = "Pin"
+        
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(pinIdentifier)
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)
+        }
+        
+        annotationView.image = UIImage(named: "Plane")
+        return annotationView
+    }
+    
+    // MARK: - Plane
+    
+    func updatePlanePositionAndDirection() {
+        let step = 8
+        
+        if planeAnnotationPosition + step >= flightpathPolyline.pointCount {
+            planeAnnotationPosition = 0
+        }
+        
+        let previousMapPoint = flightpathPolyline.points()[planeAnnotationPosition]
+        planeAnnotationPosition += step
+        let nextMapPoint = flightpathPolyline.points()[planeAnnotationPosition]
+        
+        planeDirection = directionBetweenPoints(previousMapPoint, nextMapPoint)
+        planeAnnotation.coordinate = MKCoordinateForMapPoint(nextMapPoint)
+        
+        if let mapView = mapPageView.subviews.first as? MKMapView, planeAnnotationView = mapView.viewForAnnotation(planeAnnotation) {
+            planeAnnotationView.transform = CGAffineTransformRotate(mapView.transform, CGFloat(degreesToRadians(planeDirection)))
+            if mapView.scrollEnabled == false {
+                mapView.setRegion(MKCoordinateRegion(center: planeAnnotation.coordinate, span: MKCoordinateSpanMake(17, 177)), animated: false)
+            }
+        }
+        
+        var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.04 * Double(NSEC_PER_SEC)))
+        dispatch_after(dispatchTime, dispatch_get_main_queue()) {
+            self.updatePlanePositionAndDirection()
         }
     }
 }
@@ -163,7 +255,7 @@ private extension UILabel {
         setTranslatesAutoresizingMaskIntoConstraints(false)
         numberOfLines = 0
         text = pageText
-        font = UIFont(name: "HelveticaNeue-Thin", size: 19)
+        font = UIFont(name: "HelveticaNeue-Light", size: 19)
         textColor = UIColor.blackColor()
         sizeToFit()
     }
@@ -177,61 +269,35 @@ private extension UILabel {
         textAlignment = .Center
         sizeToFit()
     }
-}
-
-private extension UIView {
-    func addPhotoBackground(photoNamed: String) {
-        let photo = UIImage(named: photoNamed)
-        let imageView = UIImageView(image: photo!)
-        imageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        imageView.contentMode = .ScaleAspectFill
-        addAndPinSubviewToEdges(imageView)
-    }
     
-    func addAndPinSubviewToEdges(subview: UIView) {
-        addSubview(subview)
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[subview]|",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["subview": subview]))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[subview]|",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["subview": subview]))
-    }
-    
-    func addAndPinPageLabel(label: UILabel) {
-        addSubview(label)
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[label]-(>=20)-|",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-25-[label]",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
-    }
-    
-    func addAndPinMetaLabel(label: UILabel) {
-        addSubview(label)
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[label]-20-|",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[label]-15-|",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
+    func addShadow() {
+        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowOpacity = 0.7
+        layer.shadowOffset = CGSizeMake(1.0, 1.0);
     }
 }
 
 private extension AboutViewController {
-    func createNewPageView() -> UIView {
-        let pageView = UIView()
+    func createNewPageView() -> PageView {
+        let pageView = PageView()
         pageView.setTranslatesAutoresizingMaskIntoConstraints(false)
         pageView.clipsToBounds = true
         containerView.addSubview(pageView)
         return pageView
     }
+}
+
+func directionBetweenPoints(sourcePoint: MKMapPoint, destinationPoint: MKMapPoint) -> CLLocationDirection {
+    let x = destinationPoint.x - sourcePoint.x
+    let y = destinationPoint.y - sourcePoint.y
+    return fmod(radiansToDegrees(atan2(y, x)), 360.0) + 90.0
+}
+
+private func radiansToDegrees(radians: Double) -> Double {
+    return radians * 180 / M_PI
+}
+
+private func degreesToRadians(degrees: Double) -> Double {
+    return degrees * M_PI / 180
 }
 

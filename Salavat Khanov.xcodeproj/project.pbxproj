@@ -22,6 +22,7 @@
 		A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69AFAC41AE17B800055559C /* CircleButton.swift */; };
 		A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */; };
 		A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D045711AE2BE8200865491 /* SKProgressIndicator.m */; };
+		A6D4792E1AE6A6C50058014D /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4792D1AE6A6C50058014D /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		A6D0456F1AE2BE6500865491 /* SKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProgressIndicator.h; sourceTree = "<group>"; };
 		A6D045711AE2BE8200865491 /* SKProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProgressIndicator.m; sourceTree = "<group>"; };
+		A6D4792D1AE6A6C50058014D /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +86,7 @@
 				A6D0456C1AE2B7DB00865491 /* Universe */,
 				A6D045701AE2BE7000865491 /* Side Projects */,
 				A661FE641ADFDA9900394718 /* WorkViewController.swift */,
-				A6800E3D1AE3D89600894E0A /* AboutViewController.swift */,
+				A6D4792F1AE6A6E60058014D /* About */,
 				A61B7C8A1ADE4E7F00FFF0AD /* Main.storyboard */,
 				A61B7C8D1ADE4E7F00FFF0AD /* Images.xcassets */,
 				A61B7C8F1ADE4E7F00FFF0AD /* LaunchScreen.xib */,
@@ -163,6 +165,15 @@
 			name = "Side Projects";
 			sourceTree = "<group>";
 		};
+		A6D4792F1AE6A6E60058014D /* About */ = {
+			isa = PBXGroup;
+			children = (
+				A6800E3D1AE3D89600894E0A /* AboutViewController.swift */,
+				A6D4792D1AE6A6C50058014D /* PageView.swift */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */,
+				A6D4792E1AE6A6C50058014D /* PageView.swift in Sources */,
 				A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */,
 				A6800E3E1AE3D89600894E0A /* AboutViewController.swift in Sources */,
 				A61B7C891ADE4E7F00FFF0AD /* UniverseViewController.swift in Sources */,
