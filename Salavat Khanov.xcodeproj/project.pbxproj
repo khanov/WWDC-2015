@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DDF362F1061B9569B5AB70A /* Pods_Salavat_Khanov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8206971B7BDE83C90D5BA09C /* Pods_Salavat_Khanov.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A61B7C871ADE4E7F00FFF0AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B7C861ADE4E7F00FFF0AD /* AppDelegate.swift */; };
 		A61B7C891ADE4E7F00FFF0AD /* UniverseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B7C881ADE4E7F00FFF0AD /* UniverseViewController.swift */; };
 		A61B7C8C1ADE4E7F00FFF0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61B7C8A1ADE4E7F00FFF0AD /* Main.storyboard */; };
@@ -16,7 +17,7 @@
 		A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = A65513FE1AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m */; };
 		A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65514011AE0FA12005DB5AD /* SLPagingViewController.m */; };
 		A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A661FE641ADFDA9900394718 /* WorkViewController.swift */; };
-		A6800E391AE3821900894E0A /* UIViewController+SKStoreProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6800E381AE3821900894E0A /* UIViewController+SKStoreProductViewController.swift */; };
+		A6800E391AE3821900894E0A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6800E381AE3821900894E0A /* UIViewController.swift */; };
 		A6800E3C1AE38DB900894E0A /* SuperMario.mov in Resources */ = {isa = PBXBuildFile; fileRef = A6800E3B1AE38DB900894E0A /* SuperMario.mov */; };
 		A6800E3E1AE3D89600894E0A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6800E3D1AE3D89600894E0A /* AboutViewController.swift */; };
 		A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69AFAC41AE17B800055559C /* CircleButton.swift */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8206971B7BDE83C90D5BA09C /* Pods_Salavat_Khanov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Salavat_Khanov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95877295AA784C20752C2608 /* Pods-Salavat Khanov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salavat Khanov.release.xcconfig"; path = "Pods/Target Support Files/Pods-Salavat Khanov/Pods-Salavat Khanov.release.xcconfig"; sourceTree = "<group>"; };
 		A61B7C811ADE4E7F00FFF0AD /* Salavat Khanov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Salavat Khanov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B7C851ADE4E7F00FFF0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A61B7C861ADE4E7F00FFF0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +45,7 @@
 		A65514011AE0FA12005DB5AD /* SLPagingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLPagingViewController.m; path = Dependencies/SLPagingView/SLPagingViewController.m; sourceTree = "<group>"; };
 		A655140A1AE0FAAC005DB5AD /* Salavat_Khanov-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Salavat_Khanov-Bridging-Header.h"; sourceTree = "<group>"; };
 		A661FE641ADFDA9900394718 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
-		A6800E381AE3821900894E0A /* UIViewController+SKStoreProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SKStoreProductViewController.swift"; sourceTree = "<group>"; };
+		A6800E381AE3821900894E0A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A6800E3B1AE38DB900894E0A /* SuperMario.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = SuperMario.mov; path = Resources/SuperMario.mov; sourceTree = "<group>"; };
 		A6800E3D1AE3D89600894E0A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A69AFAC41AE17B800055559C /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		A6D0456F1AE2BE6500865491 /* SKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProgressIndicator.h; sourceTree = "<group>"; };
 		A6D045711AE2BE8200865491 /* SKProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProgressIndicator.m; sourceTree = "<group>"; };
 		A6D4792D1AE6A6C50058014D /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		DED92BF1347FE0C9D4101252 /* Pods-Salavat Khanov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salavat Khanov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Salavat Khanov/Pods-Salavat Khanov.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DDF362F1061B9569B5AB70A /* Pods_Salavat_Khanov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E059D067DD28AE8AF52D593 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DED92BF1347FE0C9D4101252 /* Pods-Salavat Khanov.debug.xcconfig */,
+				95877295AA784C20752C2608 /* Pods-Salavat Khanov.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2C31E3360C14048D6BCB585 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8206971B7BDE83C90D5BA09C /* Pods_Salavat_Khanov.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A61B7C781ADE4E7F00FFF0AD = {
 			isa = PBXGroup;
 			children = (
 				A61B7C831ADE4E7F00FFF0AD /* Salavat Khanov */,
 				A61B7C821ADE4E7F00FFF0AD /* Products */,
+				8E059D067DD28AE8AF52D593 /* Pods */,
+				A2C31E3360C14048D6BCB585 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,7 +165,7 @@
 		A6800E3A1AE3822400894E0A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A6800E381AE3821900894E0A /* UIViewController+SKStoreProductViewController.swift */,
+				A6800E381AE3821900894E0A /* UIViewController.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -181,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A61B7CA01ADE4E7F00FFF0AD /* Build configuration list for PBXNativeTarget "Salavat Khanov" */;
 			buildPhases = (
+				406897E42527F98419356A05 /* Check Pods Manifest.lock */,
 				A61B7C7D1ADE4E7F00FFF0AD /* Sources */,
 				A61B7C7E1ADE4E7F00FFF0AD /* Frameworks */,
 				A61B7C7F1ADE4E7F00FFF0AD /* Resources */,
+				19995643EFC7D4283AD6F2F5 /* Embed Pods Frameworks */,
+				FAF8DC602ED9A4A10EE89709 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +267,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19995643EFC7D4283AD6F2F5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Salavat Khanov/Pods-Salavat Khanov-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		406897E42527F98419356A05 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FAF8DC602ED9A4A10EE89709 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Salavat Khanov/Pods-Salavat Khanov-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A61B7C7D1ADE4E7F00FFF0AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -254,7 +329,7 @@
 				A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */,
 				A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */,
 				A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */,
-				A6800E391AE3821900894E0A /* UIViewController+SKStoreProductViewController.swift in Sources */,
+				A6800E391AE3821900894E0A /* UIViewController.swift in Sources */,
 				A65514021AE0FA12005DB5AD /* UIColor+SLAddition.m in Sources */,
 				A61B7C871ADE4E7F00FFF0AD /* AppDelegate.swift in Sources */,
 			);
@@ -365,6 +440,7 @@
 		};
 		A61B7CA11ADE4E7F00FFF0AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DED92BF1347FE0C9D4101252 /* Pods-Salavat Khanov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Salavat Khanov/Info.plist";
@@ -376,6 +452,7 @@
 		};
 		A61B7CA21ADE4E7F00FFF0AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95877295AA784C20752C2608 /* Pods-Salavat Khanov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Salavat Khanov/Info.plist";

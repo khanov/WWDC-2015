@@ -344,6 +344,24 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                                                     <action selector="appStoreButtonPressed:" destination="8RR-Sb-4Zz" eventType="touchUpInside" id="3mB-RL-h7c"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nn-Yo-EfN">
+                                                <rect key="frame" x="459" y="374" width="89" height="28"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <state key="normal" title="GitHub">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="githubButtonPressed:" destination="8RR-Sb-4Zz" eventType="touchUpInside" id="tyq-6W-4uT"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -354,11 +372,14 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                                             <constraint firstItem="IZK-fm-0KU" firstAttribute="top" secondItem="fxt-Nu-JSk" secondAttribute="top" id="E55-lX-2V2"/>
                                             <constraint firstAttribute="trailing" secondItem="HRe-Zj-yWL" secondAttribute="trailing" constant="20" id="H9M-gQ-2yZ"/>
                                             <constraint firstItem="Bs2-Q1-NFZ" firstAttribute="top" secondItem="Fh7-1c-UY0" secondAttribute="bottom" constant="15" id="IKk-fv-aIL"/>
+                                            <constraint firstItem="2nn-Yo-EfN" firstAttribute="top" secondItem="Bs2-Q1-NFZ" secondAttribute="bottom" constant="8" id="Lxn-ue-a5G"/>
+                                            <constraint firstItem="Bs2-Q1-NFZ" firstAttribute="width" secondItem="2nn-Yo-EfN" secondAttribute="width" id="QZH-R1-tfJ"/>
                                             <constraint firstAttribute="bottom" secondItem="HRe-Zj-yWL" secondAttribute="bottom" constant="50" id="RIz-ZP-nej"/>
                                             <constraint firstItem="HRe-Zj-yWL" firstAttribute="leading" secondItem="fxt-Nu-JSk" secondAttribute="leading" constant="20" id="XV0-cQ-kmh"/>
                                             <constraint firstItem="Zj1-5O-Yow" firstAttribute="top" secondItem="IZK-fm-0KU" secondAttribute="bottom" constant="25" id="ZZc-FG-L2d"/>
                                             <constraint firstItem="Zj1-5O-Yow" firstAttribute="leading" secondItem="fxt-Nu-JSk" secondAttribute="leading" constant="20" id="cLA-NG-sz5"/>
                                             <constraint firstItem="Bs2-Q1-NFZ" firstAttribute="top" secondItem="IZK-fm-0KU" secondAttribute="bottom" constant="25" id="hFV-Im-SHn"/>
+                                            <constraint firstItem="Bs2-Q1-NFZ" firstAttribute="centerX" secondItem="2nn-Yo-EfN" secondAttribute="centerX" id="oFj-yG-eAu"/>
                                             <constraint firstAttribute="trailing" secondItem="Bs2-Q1-NFZ" secondAttribute="trailing" constant="20" id="q57-eI-faF"/>
                                             <constraint firstItem="Zj1-5O-Yow" firstAttribute="top" secondItem="Fh7-1c-UY0" secondAttribute="top" id="tuC-LA-FxA"/>
                                             <constraint firstItem="Fh7-1c-UY0" firstAttribute="top" secondItem="Bs2-Q1-NFZ" secondAttribute="bottom" constant="8" id="zuQ-wt-DkA"/>
@@ -392,6 +413,7 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                     <connections>
                         <outlet property="appStoreButton" destination="Bs2-Q1-NFZ" id="3CK-AZ-8O0"/>
                         <outlet property="containerView" destination="fxt-Nu-JSk" id="fNa-zb-OSY"/>
+                        <outlet property="githubButton" destination="2nn-Yo-EfN" id="ILf-Nf-21J"/>
                         <outlet property="progressIndicator" destination="LOp-sE-bsU" id="Iyw-xu-jyW"/>
                     </connections>
                 </viewController>
@@ -464,12 +486,12 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="700" placeholder="YES" id="xSl-bu-807"/>
                                                 </constraints>
-                                                <mutableString key="text">MyPocket is a secure virtual wallet which allows you to store digital copies of your documents and other sensitive information.
+                                                <string key="text">MyPocket is a secure virtual wallet which allows you to store digital copies of your documents and other sensitive information.
 
 I teamed up with another iOS developer and worked on this app, which was later featured by Apple and hit #1 in Top Paid on the Russian App Store. 
 
 Some of the things I've accomplished:
-• Implemented integration with Touch ID. • Added two new document templates and event tracking via analytics. • Implemented support for attaching more than one scan to a document.</mutableString>
+• Implemented integration with Touch ID. • Added two new document templates and event tracking via analytics. • Implemented support for attaching more than one scan to a document.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -630,11 +652,11 @@ Some of the things I've accomplished:
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="662" placeholder="YES" id="uds-Wy-a15"/>
                                                 </constraints>
-                                                <mutableString key="text">Lapka makes personal environment sensors (like Humidity, Radiation, Organic, Temperature, and Breathalyzer) for iPhone. 
+                                                <string key="text">Lapka makes personal environment sensors (like Humidity, Radiation, Organic, Temperature, and Breathalyzer) for iPhone. 
 
 I worked remotely as an iOS developer. Here are a few highlights:
 
-• Prototyped and rewrote Lapka Pro from scratch (major app update). • Worked on Lapka BAM’s History screen, fixed bugs, and added Russian localization. • Helped launch Lapka Developer Program by writing documentation and developing sample apps. • Developed authentication API for both Lapka BAM and Lapka Pro on iOS.</mutableString>
+• Prototyped and rewrote Lapka Pro from scratch (major app update). • Worked on Lapka BAM’s History screen, fixed bugs, and added Russian localization. • Helped launch Lapka Developer Program by writing documentation and developing sample apps. • Developed authentication API for both Lapka BAM and Lapka Pro on iOS.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

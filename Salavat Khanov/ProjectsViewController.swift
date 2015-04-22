@@ -16,6 +16,7 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var progressIndicator: SKProgressIndicator!
     @IBOutlet weak var appStoreButton: UIButton!
+    @IBOutlet weak var githubButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         
         setupProgressView()
         appStoreButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
+        githubButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
         
         navigationController?.navigationBar.barStyle = .Black
     }
@@ -75,10 +77,14 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         return NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
     }
     
-    // MARK: - App Store Button
+    // MARK: - App Store / GitHub Button
     
     @IBAction func appStoreButtonPressed(sender: UIButton) {
         presentStoreProductViewController(iTunesItemIdentifier: "\(sender.tag)", delegate: self)
+    }
+    
+    @IBAction func githubButtonPressed(sender: UIButton) {
+        presentWebBrowserWithURL("https://github.com/khanov/When")
     }
     
     func productViewControllerDidFinish(viewController: SKStoreProductViewController!) {

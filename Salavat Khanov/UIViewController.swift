@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import KINWebBrowser
 
 extension UIViewController {
     
@@ -25,4 +26,14 @@ extension UIViewController {
         }
         
     }
+    
+    func presentWebBrowserWithURL(url: String) {
+        let browser = KINWebBrowserViewController.webBrowser()
+        navigationController?.pushViewController(browser, animated: true)
+        browser.loadURLString(url)
+        browser.barTintColor = UIColor.blackColor()
+        browser.tintColor = UIColor.whiteColor()
+        browser.actionButtonHidden = true
+    }
+    
 }

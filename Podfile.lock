@@ -1,0 +1,25 @@
+PODS:
+  - ARChromeActivity (1.0.2)
+  - KINWebBrowser (1.1.0):
+    - ARChromeActivity (= 1.0.2)
+    - TUSafariActivity (= 1.0.2)
+  - TUSafariActivity (1.0.2)
+
+DEPENDENCIES:
+  - KINWebBrowser (from `https://github.com/rinatkhanov/KINWebBrowser.git`)
+
+EXTERNAL SOURCES:
+  KINWebBrowser:
+    :git: https://github.com/rinatkhanov/KINWebBrowser.git
+
+CHECKOUT OPTIONS:
+  KINWebBrowser:
+    :commit: e307a8fe06cc829abe373460ed3c05a841faabe8
+    :git: https://github.com/rinatkhanov/KINWebBrowser.git
+
+SPEC CHECKSUMS:
+  ARChromeActivity: 6488aedc8dd0624b103ea8caf6218e52692aaf77
+  KINWebBrowser: 6aeaf6f34a99ed31a49eebf5457581718f08961e
+  TUSafariActivity: 32e3e5dc9123e5533a42d41e1c3246d12911a4a2
+
+COCOAPODS: 0.36.0.beta.2

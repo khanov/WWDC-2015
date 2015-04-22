@@ -37,9 +37,9 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
         let rightConstraint = NSLayoutConstraint(item: containerView, attribute: .Trailing, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1.0, constant: -0)
         view.addConstraints([leftConstraint, rightConstraint])
         
+        containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
         scrollView.setTranslatesAutoresizingMaskIntoConstraints(false)
         scrollView.delegate = self
-        containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         setupHiPage()
         setupMapPage()
