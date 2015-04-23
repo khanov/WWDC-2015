@@ -38,21 +38,41 @@ extension UIViewController {
     }
     
     func presentViewController(viewControllerToPresent: UIViewController, fromLocation location: CGPoint, completion: (() -> Void)?) {
-        let rectView = UIView(frame: CGRectMake(location.x, location.y, 0, 0))
+        let rectView = UIView(frame: CGRectMake(0, 0, 100, 100))
+        rectView.center = CGPointMake(location.x, location.y)
         rectView.backgroundColor = .whiteColor()
+        rectView.layer.cornerRadius = rectView.frame.width / 2
         view.addSubview(rectView)
         
-        let fillAnimation = POPBasicAnimation(propertyNamed: kPOPViewFrame)
-        fillAnimation.toValue = NSValue(CGRect: view.frame)
-        fillAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        fillAnimation.completionBlock = { (animation, finished) in
+        let points = [view.frame.origin,
+            CGPointMake(view.frame.origin.x + view.frame.width, view.frame.origin.y + view.frame.height),
+            CGPointMake(0, view.frame.origin.y + view.frame.height),
+            CGPointMake(view.frame.origin.x + view.frame.width, 0),
+            CGPointZero
+        ]
+        var longestDistance = -Double.infinity
+        for point in points {
+            let distance = Double(hypotf(Float(location.x - point.x), Float(location.y - point.y)))
+            if distance > longestDistance {
+                longestDistance = distance
+            }
+        }
+        let scale = CGFloat(longestDistance) / rectView.layer.cornerRadius
+        
+        let animation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        animation.fromValue = NSValue(CGSize: CGSizeMake(1, 1))
+        animation.toValue = NSValue(CGSize: CGSizeMake(scale, scale))
+        animation.completionBlock = { (animation, finished) in
             if finished {
                 self.presentViewController(viewControllerToPresent, animated: false) {
                     rectView.removeFromSuperview()
                 }
+                completion?()
             }
         }
-        
-        rectView.layer.pop_addAnimation(fillAnimation, forKey: "FullScreenRectangle")
+
+        rectView.layer.pop_addAnimation(animation, forKey: "FrameAnimation")
     }
+    
 }

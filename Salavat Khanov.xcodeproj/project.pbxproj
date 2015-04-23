@@ -24,10 +24,10 @@
 		A69700CF1AE8C26E007038D8 /* UniverseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69700CE1AE8C26E007038D8 /* UniverseScene.swift */; };
 		A69700D11AE8C461007038D8 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69700D01AE8C461007038D8 /* SpriteKit.framework */; };
 		A69700D31AE8D96E007038D8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69700D21AE8D96E007038D8 /* CoreMotion.framework */; };
-		A69700D71AE90A95007038D8 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69700D61AE90A95007038D8 /* pop.framework */; };
 		A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */; };
 		A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D045711AE2BE8200865491 /* SKProgressIndicator.m */; };
 		A6D4792E1AE6A6C50058014D /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4792D1AE6A6C50058014D /* PageView.swift */; };
+		A6FB16811AE95D8F00D330C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FB16801AE95D8F00D330C0 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +61,7 @@
 		A6D0456F1AE2BE6500865491 /* SKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProgressIndicator.h; sourceTree = "<group>"; };
 		A6D045711AE2BE8200865491 /* SKProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProgressIndicator.m; sourceTree = "<group>"; };
 		A6D4792D1AE6A6C50058014D /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		A6FB16801AE95D8F00D330C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DED92BF1347FE0C9D4101252 /* Pods-Salavat Khanov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salavat Khanov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Salavat Khanov/Pods-Salavat Khanov.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69700D71AE90A95007038D8 /* pop.framework in Frameworks */,
+				A6FB16811AE95D8F00D330C0 /* QuartzCore.framework in Frameworks */,
 				A69700D31AE8D96E007038D8 /* CoreMotion.framework in Frameworks */,
 				A69700D11AE8C461007038D8 /* SpriteKit.framework in Frameworks */,
 				5DDF362F1061B9569B5AB70A /* Pods_Salavat_Khanov.framework in Frameworks */,
@@ -91,6 +92,7 @@
 		A2C31E3360C14048D6BCB585 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6FB16801AE95D8F00D330C0 /* QuartzCore.framework */,
 				A69700D61AE90A95007038D8 /* pop.framework */,
 				A69700D21AE8D96E007038D8 /* CoreMotion.framework */,
 				A69700D01AE8C461007038D8 /* SpriteKit.framework */,

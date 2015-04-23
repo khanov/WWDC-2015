@@ -11,6 +11,17 @@ import SpriteKit
 class UniverseScene: SKScene {
     
     var touchDelegate: UniverseSceneDelegate?
+    
+    override func didMoveToView(view: SKView) {
+        for childNode in scene!.children as! [SKShapeNode] {            
+            let width = childNode.frame.size.width
+            let radius = width/2
+            
+            childNode.path = CGPathCreateWithRoundedRect(CGRectMake(-radius, -radius, width, width), radius, radius, nil)
+            childNode.physicsBody = SKPhysicsBody(circleOfRadius: radius)
+            childNode.physicsBody?.restitution = 0.8
+        }
+    }
    
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         let touch = touches.first as? UITouch
