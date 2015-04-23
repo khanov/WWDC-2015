@@ -24,7 +24,7 @@
 		A69700CF1AE8C26E007038D8 /* UniverseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69700CE1AE8C26E007038D8 /* UniverseScene.swift */; };
 		A69700D11AE8C461007038D8 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69700D01AE8C461007038D8 /* SpriteKit.framework */; };
 		A69700D31AE8D96E007038D8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69700D21AE8D96E007038D8 /* CoreMotion.framework */; };
-		A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69AFAC41AE17B800055559C /* CircleButton.swift */; };
+		A69700D71AE90A95007038D8 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69700D61AE90A95007038D8 /* pop.framework */; };
 		A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */; };
 		A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D045711AE2BE8200865491 /* SKProgressIndicator.m */; };
 		A6D4792E1AE6A6C50058014D /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4792D1AE6A6C50058014D /* PageView.swift */; };
@@ -56,7 +56,7 @@
 		A69700CE1AE8C26E007038D8 /* UniverseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseScene.swift; sourceTree = "<group>"; };
 		A69700D01AE8C461007038D8 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		A69700D21AE8D96E007038D8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		A69AFAC41AE17B800055559C /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		A69700D61AE90A95007038D8 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = "Pods/build/Debug-iphoneos/Pods-Salavat Khanov/pop.framework"; sourceTree = "<group>"; };
 		A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		A6D0456F1AE2BE6500865491 /* SKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProgressIndicator.h; sourceTree = "<group>"; };
 		A6D045711AE2BE8200865491 /* SKProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProgressIndicator.m; sourceTree = "<group>"; };
@@ -69,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69700D71AE90A95007038D8 /* pop.framework in Frameworks */,
 				A69700D31AE8D96E007038D8 /* CoreMotion.framework in Frameworks */,
 				A69700D11AE8C461007038D8 /* SpriteKit.framework in Frameworks */,
 				5DDF362F1061B9569B5AB70A /* Pods_Salavat_Khanov.framework in Frameworks */,
@@ -90,6 +91,7 @@
 		A2C31E3360C14048D6BCB585 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A69700D61AE90A95007038D8 /* pop.framework */,
 				A69700D21AE8D96E007038D8 /* CoreMotion.framework */,
 				A69700D01AE8C461007038D8 /* SpriteKit.framework */,
 				8206971B7BDE83C90D5BA09C /* Pods_Salavat_Khanov.framework */,
@@ -186,9 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				A61B7C881ADE4E7F00FFF0AD /* UniverseViewController.swift */,
-				A69700CC1AE8C227007038D8 /* UniverseScene.sks */,
 				A69700CE1AE8C26E007038D8 /* UniverseScene.swift */,
-				A69AFAC41AE17B800055559C /* CircleButton.swift */,
+				A69700CC1AE8C227007038D8 /* UniverseScene.sks */,
 			);
 			name = Universe;
 			sourceTree = "<group>";
@@ -338,7 +339,6 @@
 				A69700CF1AE8C26E007038D8 /* UniverseScene.swift in Sources */,
 				A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */,
 				A6D4792E1AE6A6C50058014D /* PageView.swift in Sources */,
-				A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */,
 				A6800E3E1AE3D89600894E0A /* AboutViewController.swift in Sources */,
 				A61B7C891ADE4E7F00FFF0AD /* UniverseViewController.swift in Sources */,
 				A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */,
@@ -459,6 +459,11 @@
 			baseConfigurationReference = DED92BF1347FE0C9D4101252 /* Pods-Salavat Khanov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos/Pods-Salavat",
+					Khanov,
+				);
 				INFOPLIST_FILE = "Salavat Khanov/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -471,6 +476,11 @@
 			baseConfigurationReference = 95877295AA784C20752C2608 /* Pods-Salavat Khanov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos/Pods-Salavat",
+					Khanov,
+				);
 				INFOPLIST_FILE = "Salavat Khanov/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

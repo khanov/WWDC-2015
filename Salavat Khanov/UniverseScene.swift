@@ -13,21 +13,21 @@ class UniverseScene: SKScene {
     var touchDelegate: UniverseSceneDelegate?
    
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch: AnyObject? = touches.first
+        let touch = touches.first as? UITouch
         let location = touch?.locationInNode(self)
         let node = self.nodeAtPoint(location!)
         
-        if node.name == nil {
+        if node.name == nil || touch == nil {
             return
         }
         
         switch node.name! {
         case "AboutShape", "AboutLabel":
-            touchDelegate?.sceneDidPressAboutButton(self)
+            touchDelegate?.scene(self, didPressAboutButtonWithTouch: touch!)
         case "WorkShape", "WorkLabel":
-            touchDelegate?.sceneDidPressWorkButton(self)
+            touchDelegate?.scene(self, didPressWorkButtonWithTouch: touch!)
         case "ProjectsShape", "ProjectsLabel":
-            touchDelegate?.sceneDidPressProjectsButton(self)
+            touchDelegate?.scene(self, didPressProjectsButtonWithTouch: touch!)
         default:
             break
         }
@@ -36,7 +36,7 @@ class UniverseScene: SKScene {
 }
 
 protocol UniverseSceneDelegate {
-    func sceneDidPressAboutButton(scene: UniverseScene)
-    func sceneDidPressWorkButton(scene: UniverseScene)
-    func sceneDidPressProjectsButton(scene: UniverseScene)
+    func scene(scene: UniverseScene, didPressAboutButtonWithTouch touch: UITouch)
+    func scene(scene: UniverseScene, didPressWorkButtonWithTouch touch: UITouch)
+    func scene(scene: UniverseScene, didPressProjectsButtonWithTouch touch: UITouch)
 }

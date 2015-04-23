@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import KINWebBrowser
+import pop
 
 extension UIViewController {
     
@@ -36,4 +37,22 @@ extension UIViewController {
         browser.actionButtonHidden = true
     }
     
+    func presentViewController(viewControllerToPresent: UIViewController, fromLocation location: CGPoint, completion: (() -> Void)?) {
+        let rectView = UIView(frame: CGRectMake(location.x, location.y, 0, 0))
+        rectView.backgroundColor = .whiteColor()
+        view.addSubview(rectView)
+        
+        let fillAnimation = POPBasicAnimation(propertyNamed: kPOPViewFrame)
+        fillAnimation.toValue = NSValue(CGRect: view.frame)
+        fillAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        fillAnimation.completionBlock = { (animation, finished) in
+            if finished {
+                self.presentViewController(viewControllerToPresent, animated: false) {
+                    rectView.removeFromSuperview()
+                }
+            }
+        }
+        
+        rectView.layer.pop_addAnimation(fillAnimation, forKey: "FullScreenRectangle")
+    }
 }

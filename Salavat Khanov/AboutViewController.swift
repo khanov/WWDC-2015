@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import pop
 
 class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDelegate {
 
@@ -29,6 +30,8 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
     var planeDirection: CLLocationDirection!
     var planeAnnotationPosition: Int = 0
     
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,8 +48,6 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
         setupMapPage()
         setupUSATUPage()
         setupMSUMPage()
-        
-        navigationController?.navigationBar.barStyle = .Black
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,6 +57,25 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
             setupPageConstraints()
             didSetupConstraints = true
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        scrollView.alpha = 0.0
+        navigationController?.navigationBar.alpha = 0.0
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let appearAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        appearAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        appearAnimation.fromValue = 0.0
+        appearAnimation.toValue = 1.0
+        
+        navigationController?.navigationBar.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
+        scrollView.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
     }
     
     @IBAction func closeButtonPressed(sender: UIBarButtonItem) {

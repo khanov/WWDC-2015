@@ -21,7 +21,7 @@
                     <connections>
                         <segue destination="i4y-9Z-4O4" kind="show" identifier="showWorkScreen" id="F5v-az-gkq"/>
                         <segue destination="m97-cg-xsd" kind="show" identifier="showProjectsScreen" id="lFO-x1-7xH"/>
-                        <segue destination="VC1-dX-TfK" kind="show" identifier="showAboutScreen" id="kUj-Ub-0qs"/>
+                        <segue destination="VC1-dX-TfK" kind="presentation" identifier="showAboutScreen" animates="NO" id="kUj-Ub-0qs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STC-UT-z66" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -59,7 +59,7 @@
                         <viewControllerLayoutGuide type="top" id="CW4-eI-rjP"/>
                         <viewControllerLayoutGuide type="bottom" id="caS-bL-MQX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XAt-w8-ATB">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="XAt-w8-ATB">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -309,7 +309,7 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                         <viewControllerLayoutGuide type="top" id="Ddc-Gl-qA7"/>
                         <viewControllerLayoutGuide type="bottom" id="BRJ-G4-dBZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="53P-2X-nSd">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="53P-2X-nSd">
                         <rect key="frame" x="0.0" y="0.0" width="740" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -447,9 +447,9 @@ Some of the things I've accomplished:
         <!--Navigation Controller-->
         <scene sceneID="ilb-hz-OJC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i4y-9Z-4O4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="WorkScreen" automaticallyAdjustsScrollViewInsets="NO" id="i4y-9Z-4O4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3JB-aF-aL3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="3JB-aF-aL3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -698,9 +698,9 @@ I worked remotely as an iOS developer. Here are a few highlights:
         <!--Navigation Controller-->
         <scene sceneID="kMU-l0-HaJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m97-cg-xsd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProjectsScreen" automaticallyAdjustsScrollViewInsets="NO" id="m97-cg-xsd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aw0-sS-Icc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="aw0-sS-Icc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -819,9 +819,9 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
         <!--Navigation Controller-->
         <scene sceneID="yXQ-q8-U3R">
             <objects>
-                <navigationController id="VC1-dX-TfK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AboutScreen" id="VC1-dX-TfK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hRT-Rn-Qsa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hRT-Rn-Qsa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

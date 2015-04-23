@@ -8,12 +8,14 @@
 
 import UIKit
 import StoreKit
+import pop
 
 class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var iconButton2: UIButton?
+    var showAppearAnimation = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,33 @@ class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate
         iconButton.layer.borderColor = UIColor.whiteColor().CGColor
         iconButton2?.layer.borderColor = UIColor.whiteColor().CGColor
         
-        navigationController?.navigationBar.barStyle = .Black
+        showAppearAnimation = (view.tag == 1)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if showAppearAnimation {
+            containerView.alpha = 0.0
+            navigationController?.navigationBar.alpha = 0.0
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if showAppearAnimation {
+            let appearAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            appearAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            appearAnimation.fromValue = 0.0
+            appearAnimation.toValue = 1.0
+            
+            navigationController?.navigationBar.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
+            containerView.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
+            
+            // don't show anymore
+            showAppearAnimation = false
+        }
     }
     
     @IBAction func appStoreButtonPressed(sender: UIButton) {

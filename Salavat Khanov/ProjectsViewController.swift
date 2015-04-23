@@ -10,6 +10,7 @@ import UIKit
 import StoreKit
 import AVKit
 import AVFoundation
+import pop
 
 class ProjectsViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
@@ -17,6 +18,10 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
     @IBOutlet weak var progressIndicator: SKProgressIndicator!
     @IBOutlet weak var appStoreButton: UIButton!
     @IBOutlet weak var githubButton: UIButton!
+    
+    var showAppearAnimation = false
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,33 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         githubButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
         
         navigationController?.navigationBar.barStyle = .Black
+        showAppearAnimation = (view.tag == 1)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if showAppearAnimation {
+            containerView.alpha = 0.0
+            navigationController?.navigationBar.alpha = 0.0
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if showAppearAnimation {
+            let appearAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            appearAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            appearAnimation.fromValue = 0.0
+            appearAnimation.toValue = 1.0
+            
+            navigationController?.navigationBar.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
+            containerView.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
+            
+            // don't show anymore
+            showAppearAnimation = false
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {

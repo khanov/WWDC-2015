@@ -3,10 +3,12 @@ PODS:
   - KINWebBrowser (1.1.0):
     - ARChromeActivity (= 1.0.2)
     - TUSafariActivity (= 1.0.2)
+  - pop (1.0.7)
   - TUSafariActivity (1.0.2)
 
 DEPENDENCIES:
   - KINWebBrowser (from `https://github.com/rinatkhanov/KINWebBrowser.git`)
+  - pop (~> 1.0)
 
 EXTERNAL SOURCES:
   KINWebBrowser:
@@ -20,6 +22,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ARChromeActivity: 6488aedc8dd0624b103ea8caf6218e52692aaf77
   KINWebBrowser: 6aeaf6f34a99ed31a49eebf5457581718f08961e
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   TUSafariActivity: 32e3e5dc9123e5533a42d41e1c3246d12911a4a2
 
 COCOAPODS: 0.36.0.beta.2

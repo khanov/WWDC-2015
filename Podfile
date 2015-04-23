@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'Salavat Khanov' do
   pod 'KINWebBrowser', :git => 'https://github.com/rinatkhanov/KINWebBrowser.git'
+  pod 'pop', '~> 1.0'
 end
