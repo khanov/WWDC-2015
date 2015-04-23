@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Universe View Controller-->
@@ -17,177 +16,17 @@
                     <view key="view" contentMode="scaleToFill" id="PO2-uC-jrl" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96470588239999999" green="0.93333333330000001" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="i4y-9Z-4O4" kind="show" identifier="showWorkScreen" id="F5v-az-gkq"/>
+                        <segue destination="m97-cg-xsd" kind="show" identifier="showProjectsScreen" id="lFO-x1-7xH"/>
+                        <segue destination="VC1-dX-TfK" kind="show" identifier="showAboutScreen" id="kUj-Ub-0qs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STC-UT-z66" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="1061"/>
-        </scene>
-        <!--Universe-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController title="Universe" id="vXZ-lx-hvc" customClass="UniverseViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaF-uN-Lzj" userLabel="Circle Button - Side Projects" customClass="CircleButton" customModule="Salavat_Khanov" customModuleProvider="target">
-                                <rect key="frame" x="199" y="159" width="124" height="124"/>
-                                <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfx-TT-ecY">
-                                        <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="side projects">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchDown" id="nfg-5J-Xsp"/>
-                                            <action selector="buttonUnpressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eKk-x0-9jB"/>
-                                            <segue destination="m97-cg-xsd" kind="show" identifier="showProjectsScreen" id="0nY-oD-BHl"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nfx-TT-ecY" secondAttribute="trailing" id="Bxz-1i-0c1"/>
-                                    <constraint firstItem="nfx-TT-ecY" firstAttribute="leading" secondItem="VaF-uN-Lzj" secondAttribute="leading" id="D2j-vn-leR"/>
-                                    <constraint firstAttribute="height" constant="124" id="N6S-UN-PEW"/>
-                                    <constraint firstItem="nfx-TT-ecY" firstAttribute="top" secondItem="VaF-uN-Lzj" secondAttribute="top" id="WUb-aQ-iBn"/>
-                                    <constraint firstAttribute="bottom" secondItem="nfx-TT-ecY" secondAttribute="bottom" id="iRT-Ta-ez0"/>
-                                    <constraint firstAttribute="width" constant="124" id="zWU-7d-fc4"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llm-RX-KyF" userLabel="Circle Button - Work" customClass="CircleButton" customModule="Salavat_Khanov" customModuleProvider="target">
-                                <rect key="frame" x="31" y="120" width="124" height="124"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9H-CP-FZE">
-                                        <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
-                                        <state key="normal" title="work">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchDown" id="9VS-ln-yko"/>
-                                            <action selector="buttonUnpressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FMl-3Q-d7m"/>
-                                            <segue destination="i4y-9Z-4O4" kind="show" identifier="showWorkScreen" id="9aE-3v-R8P"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="L9H-CP-FZE" firstAttribute="leading" secondItem="llm-RX-KyF" secondAttribute="leading" id="1fg-S5-loE"/>
-                                    <constraint firstItem="L9H-CP-FZE" firstAttribute="top" secondItem="llm-RX-KyF" secondAttribute="top" id="7Ay-Gs-CVB"/>
-                                    <constraint firstAttribute="bottom" secondItem="L9H-CP-FZE" secondAttribute="bottom" id="Fi9-dG-lE3"/>
-                                    <constraint firstAttribute="height" constant="124" id="URh-gQ-V03"/>
-                                    <constraint firstAttribute="centerX" secondItem="L9H-CP-FZE" secondAttribute="centerX" id="X87-ja-j8b"/>
-                                    <constraint firstAttribute="width" constant="124" id="cgX-m4-NL9"/>
-                                    <constraint firstAttribute="centerY" secondItem="L9H-CP-FZE" secondAttribute="centerY" id="rkd-C9-iSf"/>
-                                    <constraint firstAttribute="trailing" secondItem="L9H-CP-FZE" secondAttribute="trailing" id="sfi-qQ-4ww"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="X87-ja-j8b"/>
-                                        <exclude reference="rkd-C9-iSf"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLg-Ta-W61" userLabel="Circle Button - About" customClass="CircleButton" customModule="Salavat_Khanov" customModuleProvider="target">
-                                <rect key="frame" x="145" y="291" width="85" height="85"/>
-                                <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J41-6H-tus">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
-                                        <state key="normal" title="about">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchDown" id="tGc-d3-fM2"/>
-                                            <action selector="buttonUnpressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IQQ-dy-Ovu"/>
-                                            <segue destination="VC1-dX-TfK" kind="show" identifier="showAboutScreen" id="AzN-s4-4Ci"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="J41-6H-tus" firstAttribute="top" secondItem="uLg-Ta-W61" secondAttribute="top" id="1Vi-nM-E0d"/>
-                                    <constraint firstAttribute="bottom" secondItem="J41-6H-tus" secondAttribute="bottom" id="4za-Hl-Btl"/>
-                                    <constraint firstAttribute="bottom" secondItem="J41-6H-tus" secondAttribute="bottom" id="91p-Bl-ha9"/>
-                                    <constraint firstItem="J41-6H-tus" firstAttribute="leading" secondItem="uLg-Ta-W61" secondAttribute="leading" id="BEb-Za-VQA"/>
-                                    <constraint firstItem="J41-6H-tus" firstAttribute="top" secondItem="uLg-Ta-W61" secondAttribute="top" id="Nqu-qg-573"/>
-                                    <constraint firstAttribute="width" constant="85" id="jqJ-4g-yds"/>
-                                    <constraint firstAttribute="trailing" secondItem="J41-6H-tus" secondAttribute="trailing" id="tmg-o6-jt4"/>
-                                    <constraint firstAttribute="trailing" secondItem="J41-6H-tus" secondAttribute="trailing" id="vsg-ZL-jS0"/>
-                                    <constraint firstAttribute="height" constant="85" id="yCy-PN-97x"/>
-                                    <constraint firstItem="J41-6H-tus" firstAttribute="leading" secondItem="uLg-Ta-W61" secondAttribute="leading" id="yF7-Bf-G7N"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1Vi-nM-E0d"/>
-                                        <exclude reference="91p-Bl-ha9"/>
-                                        <exclude reference="BEb-Za-VQA"/>
-                                        <exclude reference="tmg-o6-jt4"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="uLg-Ta-W61" secondAttribute="centerY" id="1bJ-ZW-CVr"/>
-                            <constraint firstAttribute="centerX" secondItem="uLg-Ta-W61" secondAttribute="centerX" id="8kb-ox-Fct"/>
-                            <constraint firstItem="uLg-Ta-W61" firstAttribute="top" secondItem="nfx-TT-ecY" secondAttribute="bottom" constant="8" id="DK8-fg-9gV"/>
-                            <constraint firstItem="llm-RX-KyF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="JWh-e4-Bt8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VaF-uN-Lzj" secondAttribute="trailing" constant="36" id="WUj-ge-85E"/>
-                            <constraint firstItem="uLg-Ta-W61" firstAttribute="top" secondItem="VaF-uN-Lzj" secondAttribute="bottom" constant="8" id="kTh-YF-YYv"/>
-                            <constraint firstItem="uLg-Ta-W61" firstAttribute="top" secondItem="llm-RX-KyF" secondAttribute="bottom" constant="47" id="s3e-1o-MVl"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="DK8-fg-9gV"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
-                    <connections>
-                        <outlet property="sideProjectsButton" destination="nfx-TT-ecY" id="uBH-fw-xdL"/>
-                        <outlet property="workButton" destination="L9H-CP-FZE" id="THt-7w-sMK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="700.5" y="1060.5"/>
+            <point key="canvasLocation" x="571" y="1060"/>
         </scene>
         <!--Paging View Controller-->
         <scene sceneID="iht-7h-pxg">
@@ -198,7 +37,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JdE-eP-dwx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Tyw-jV-jV1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -448,7 +287,7 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                         <viewControllerLayoutGuide type="bottom" id="ONO-K1-41K"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Eb8-eQ-vb0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -626,7 +465,7 @@ Some of the things I've accomplished:
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KY9-0U-XTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497.5" y="1060.5"/>
+            <point key="canvasLocation" x="1351" y="1060"/>
         </scene>
         <!--Lapka-->
         <scene sceneID="Ee8-ui-B5L">
@@ -803,11 +642,11 @@ I worked remotely as an iOS developer. Here are a few highlights:
                         <viewControllerLayoutGuide type="bottom" id="t28-pp-ZZ2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1It-fF-zNh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhX-Ud-2s5">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqL-Dv-guE" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
@@ -854,7 +693,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUl-sG-bWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057.5" y="1974.5"/>
+            <point key="canvasLocation" x="2250" y="1974"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kMU-l0-HaJ">
@@ -877,7 +716,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsV-RB-z0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497.5" y="-64.5"/>
+            <point key="canvasLocation" x="1295" y="-65"/>
         </scene>
         <!--SuperMario Clone-->
         <scene sceneID="DGX-Zq-tkN">

@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import CoreMotion
 
-class UniverseViewController: UIViewController {
+class UniverseViewController: UIViewController, UniverseSceneDelegate {
     
     let motionManager: CMMotionManager = CMMotionManager()
     
@@ -33,6 +33,7 @@ class UniverseViewController: UIViewController {
             scene.scaleMode = .AspectFit
             scene.size = skView.bounds.size
             scene.physicsBody = SKPhysicsBody(edgeLoopFromRect: scene.frame)
+            scene.touchDelegate = self
             skView.presentScene(scene)
         }
     }
@@ -41,6 +42,52 @@ class UniverseViewController: UIViewController {
         return true
     }
     
+    // MARK: - Shape touches
+    
+    func sceneDidPressAboutButton(scene: UniverseScene) {
+        performSegueWithIdentifier("showAboutScreen", sender: self)
+    }
+    
+    func sceneDidPressWorkButton(scene: UniverseScene) {
+        performSegueWithIdentifier("showWorkScreen", sender: self)
+        
+    }
+    
+    func sceneDidPressProjectsButton(scene: UniverseScene) {
+        performSegueWithIdentifier("showProjectsScreen", sender: self)
+    }
+    
+    // Mark: - Page View Controller
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showWorkScreen" || segue.identifier == "showProjectsScreen" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let pageViewContoller = navigationController.viewControllers.first as! SLPagingViewController
+            configurePageViewController(pageViewContoller)
+        }
+    }
+    
+    func configurePageViewController(controller: SLPagingViewController) {
+        controller.pagingViewMovingRedefine = { (scrollView, subviews) -> Void in
+            // Twitter Like
+            let width = UIScreen.mainScreen().bounds.size.width
+            let mid = width/2 - 45
+            let xOffset = scrollView.contentOffset.x
+            for (i, v) in enumerate(subviews as! [UILabel]) {
+                var alpha: CGFloat = 0.0
+                if v.frame.origin.x < mid {
+                    alpha = 1 - (xOffset - CGFloat(i)*width) / width;
+                }
+                else if v.frame.origin.x > mid {
+                    alpha = (xOffset - CGFloat(i)*width) / width + 1
+                }
+                else if v.frame.origin.x == mid-5 {
+                    alpha = 1.0;
+                }
+                v.alpha = alpha
+            }
+        }
+    }
 }
 
 private extension SKNode {
