@@ -20,6 +20,10 @@
 		A6800E391AE3821900894E0A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6800E381AE3821900894E0A /* UIViewController.swift */; };
 		A6800E3C1AE38DB900894E0A /* SuperMario.mov in Resources */ = {isa = PBXBuildFile; fileRef = A6800E3B1AE38DB900894E0A /* SuperMario.mov */; };
 		A6800E3E1AE3D89600894E0A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6800E3D1AE3D89600894E0A /* AboutViewController.swift */; };
+		A69700CD1AE8C227007038D8 /* UniverseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A69700CC1AE8C227007038D8 /* UniverseScene.sks */; };
+		A69700CF1AE8C26E007038D8 /* UniverseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69700CE1AE8C26E007038D8 /* UniverseScene.swift */; };
+		A69700D11AE8C461007038D8 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69700D01AE8C461007038D8 /* SpriteKit.framework */; };
+		A69700D31AE8D96E007038D8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69700D21AE8D96E007038D8 /* CoreMotion.framework */; };
 		A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69AFAC41AE17B800055559C /* CircleButton.swift */; };
 		A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */; };
 		A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D045711AE2BE8200865491 /* SKProgressIndicator.m */; };
@@ -48,6 +52,10 @@
 		A6800E381AE3821900894E0A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A6800E3B1AE38DB900894E0A /* SuperMario.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = SuperMario.mov; path = Resources/SuperMario.mov; sourceTree = "<group>"; };
 		A6800E3D1AE3D89600894E0A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A69700CC1AE8C227007038D8 /* UniverseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UniverseScene.sks; sourceTree = "<group>"; };
+		A69700CE1AE8C26E007038D8 /* UniverseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseScene.swift; sourceTree = "<group>"; };
+		A69700D01AE8C461007038D8 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		A69700D21AE8D96E007038D8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A69AFAC41AE17B800055559C /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		A6D0456D1AE2BC0D00865491 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		A6D0456F1AE2BE6500865491 /* SKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProgressIndicator.h; sourceTree = "<group>"; };
@@ -61,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69700D31AE8D96E007038D8 /* CoreMotion.framework in Frameworks */,
+				A69700D11AE8C461007038D8 /* SpriteKit.framework in Frameworks */,
 				5DDF362F1061B9569B5AB70A /* Pods_Salavat_Khanov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +90,8 @@
 		A2C31E3360C14048D6BCB585 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A69700D21AE8D96E007038D8 /* CoreMotion.framework */,
+				A69700D01AE8C461007038D8 /* SpriteKit.framework */,
 				8206971B7BDE83C90D5BA09C /* Pods_Salavat_Khanov.framework */,
 			);
 			name = Frameworks;
@@ -174,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				A61B7C881ADE4E7F00FFF0AD /* UniverseViewController.swift */,
+				A69700CC1AE8C227007038D8 /* UniverseScene.sks */,
+				A69700CE1AE8C26E007038D8 /* UniverseScene.swift */,
 				A69AFAC41AE17B800055559C /* CircleButton.swift */,
 			);
 			name = Universe;
@@ -262,6 +276,7 @@
 				A6800E3C1AE38DB900894E0A /* SuperMario.mov in Resources */,
 				A61B7C911ADE4E7F00FFF0AD /* LaunchScreen.xib in Resources */,
 				A61B7C8E1ADE4E7F00FFF0AD /* Images.xcassets in Resources */,
+				A69700CD1AE8C227007038D8 /* UniverseScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69700CF1AE8C26E007038D8 /* UniverseScene.swift in Sources */,
 				A6D0456E1AE2BC0D00865491 /* ProjectsViewController.swift in Sources */,
 				A6D4792E1AE6A6C50058014D /* PageView.swift in Sources */,
 				A69AFAC51AE17B800055559C /* CircleButton.swift in Sources */,

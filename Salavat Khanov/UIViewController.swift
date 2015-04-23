@@ -31,8 +31,8 @@ extension UIViewController {
         let browser = KINWebBrowserViewController.webBrowser()
         navigationController?.pushViewController(browser, animated: true)
         browser.loadURLString(url)
-        browser.barTintColor = UIColor.blackColor()
-        browser.tintColor = UIColor.whiteColor()
+        browser.barTintColor = .blackColor()
+        browser.tintColor = .whiteColor()
         browser.actionButtonHidden = true
     }
     
