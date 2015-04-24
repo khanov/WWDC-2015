@@ -161,7 +161,7 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
     }
     
     func setupMSUMPage() {
-        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study Computer Science for a semester at Minnesota State University Moorhead.\n\nI was awarded the Dean's List Certificate.")
+        let label = UILabel(pageText: "In 2013, I won a scholarship from the US Government to study Computer Science for a semester at Minnesota State University Moorhead.\n\nI was lucky enough to be awarded the Dean's List Certificate.")
         label.textColor = UIColor.whiteColor()
         label.addShadow()
         
@@ -208,7 +208,11 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
             mapView.zoomEnabled = enableMap
             mapView.rotateEnabled = enableMap
             scrollView.scrollEnabled = !enableMap
-            mapPageView.mainLabel.alpha = enableMap ? 0.0 : 1.0
+            
+            let animation = POPSpringAnimation(propertyNamed: kPOPViewAlpha)
+            animation.toValue = enableMap ? 0.0 : 1.0
+            mapPageView.mainLabel.pop_addAnimation(animation, forKey: "alpha")
+            
             mapPageView.metaLabel.text = enableMap ? AboutViewController.disableMapHintText : AboutViewController.enableMapHintText
         }
     }

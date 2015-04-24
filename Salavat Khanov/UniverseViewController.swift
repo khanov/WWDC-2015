@@ -26,7 +26,7 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
             motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) { [weak scene] (motion, error) in
                 let gravity = motion.gravity
                 dispatch_async(dispatch_get_main_queue()) {
-                    scene?.physicsWorld.gravity = CGVectorMake(CGFloat(gravity.x*5), CGFloat(gravity.y*5))
+                    scene?.physicsWorld.gravity = CGVectorMake(CGFloat(gravity.x*10), CGFloat(gravity.y*10))
                 }
             }
             
