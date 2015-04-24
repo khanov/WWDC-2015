@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5DDF362F1061B9569B5AB70A /* Pods_Salavat_Khanov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8206971B7BDE83C90D5BA09C /* Pods_Salavat_Khanov.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A60A4D551AEAAC84002AEA2F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A4D541AEAAC84002AEA2F /* MapViewController.swift */; };
 		A61B7C871ADE4E7F00FFF0AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B7C861ADE4E7F00FFF0AD /* AppDelegate.swift */; };
 		A61B7C891ADE4E7F00FFF0AD /* UniverseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B7C881ADE4E7F00FFF0AD /* UniverseViewController.swift */; };
 		A61B7C8C1ADE4E7F00FFF0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61B7C8A1ADE4E7F00FFF0AD /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		8206971B7BDE83C90D5BA09C /* Pods_Salavat_Khanov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Salavat_Khanov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95877295AA784C20752C2608 /* Pods-Salavat Khanov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salavat Khanov.release.xcconfig"; path = "Pods/Target Support Files/Pods-Salavat Khanov/Pods-Salavat Khanov.release.xcconfig"; sourceTree = "<group>"; };
+		A60A4D541AEAAC84002AEA2F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A61B7C811ADE4E7F00FFF0AD /* Salavat Khanov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Salavat Khanov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B7C851ADE4E7F00FFF0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A61B7C861ADE4E7F00FFF0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				A6D0456C1AE2B7DB00865491 /* Universe */,
 				A6D045701AE2BE7000865491 /* Side Projects */,
 				A661FE641ADFDA9900394718 /* WorkViewController.swift */,
+				A60A4D541AEAAC84002AEA2F /* MapViewController.swift */,
 				A6D4792F1AE6A6E60058014D /* About */,
 				A61B7C8A1ADE4E7F00FFF0AD /* Main.storyboard */,
 				A61B7C8D1ADE4E7F00FFF0AD /* Images.xcassets */,
@@ -344,6 +347,7 @@
 				A6800E3E1AE3D89600894E0A /* AboutViewController.swift in Sources */,
 				A61B7C891ADE4E7F00FFF0AD /* UniverseViewController.swift in Sources */,
 				A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */,
+				A60A4D551AEAAC84002AEA2F /* MapViewController.swift in Sources */,
 				A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */,
 				A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */,
 				A6D045721AE2BE8200865491 /* SKProgressIndicator.m in Sources */,

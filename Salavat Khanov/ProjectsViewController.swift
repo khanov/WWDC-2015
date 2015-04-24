@@ -31,6 +31,16 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         let rightConstraint = NSLayoutConstraint(item: containerView, attribute: .Trailing, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1.0, constant: -0)
         view.addConstraints([leftConstraint, rightConstraint])
         
+        view.backgroundColor = navigationController?.navigationBar.barTintColor
+        containerView.backgroundColor = navigationController?.navigationBar.barTintColor
+        
+        // Transparent Navigation Bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.translucent = true
+        navigationController?.navigationBar.backgroundColor = .clearColor()
+        navigationController?.view.backgroundColor = .clearColor()
+        
         setupProgressView()
         appStoreButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
         githubButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
@@ -123,6 +133,10 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func closeButtonPressed(sender: UIBarButtonItem) {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: - Video
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -131,9 +145,9 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
             let filePath = NSBundle.mainBundle().pathForResource("SuperMario", ofType: "mov")!
             let fileURL = NSURL(fileURLWithPath: filePath)
             playerViewController.player = AVPlayer(URL: fileURL)
+            playerViewController.videoGravity = AVLayerVideoGravityResizeAspectFill
         }
     }
-
 }
 
 // MARK: - Helper

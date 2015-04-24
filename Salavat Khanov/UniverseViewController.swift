@@ -50,27 +50,26 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
     
     // MARK: - Shape touches
     
-    func scene(scene: UniverseScene, didPressNodeType node: NodeType, withTouch touch: UITouch, color: UIColor) {        
-        var controller = storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
+    func scene(scene: UniverseScene, didPressNodeType node: NodeType, withTouch touch: UITouch, color: UIColor) {
+        var controller: UINavigationController
         
         switch node {
         case .About:
             controller = storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
         case .Map:
-            break
+            controller = storyboard?.instantiateViewControllerWithIdentifier("MapScreen") as! UINavigationController
         case .MyPocket:
             controller = storyboard?.instantiateViewControllerWithIdentifier("MyPocketScreen") as! UINavigationController
         case .Lapka:
-            break
+            controller = storyboard?.instantiateViewControllerWithIdentifier("LapkaScreen") as! UINavigationController
         case .When:
-            break
+            controller = storyboard?.instantiateViewControllerWithIdentifier("WhenScreen") as! UINavigationController
         case .Mario:
-            break
+            controller = storyboard?.instantiateViewControllerWithIdentifier("MarioScreen") as! UINavigationController
         }
         
-        controller.navigationBar.barTintColor = color
-        
         let location = touch.locationInView(view)
+        controller.navigationBar.barTintColor = color
         presentViewController(controller, fromLocation: location, color: color, completion: nil)
     }
     
