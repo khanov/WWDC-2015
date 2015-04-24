@@ -37,7 +37,7 @@ extension PageView {
             views: ["subview": subview]))
     }
     
-    func addAndPinMainLabel(label: UILabel, leadingSpacing: Double = 20, trailingSpacing: Double = 20, topSpacing: Double = 25) {
+    func addAndPinMainLabel(label: UILabel, leadingSpacing: Double = 20, trailingSpacing: Double = 20, topSpacing: Double = 45) {
         mainLabel = label
         addSubview(label)
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-\(leadingSpacing)-[label]-(>=\(trailingSpacing))-|",

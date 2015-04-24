@@ -44,8 +44,16 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
         scrollView.setTranslatesAutoresizingMaskIntoConstraints(false)
         scrollView.delegate = self
         
+        view.backgroundColor = navigationController?.navigationBar.barTintColor
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.translucent = true
+        navigationController?.navigationBar.backgroundColor = .clearColor()
+        navigationController?.view.backgroundColor = .clearColor()
+        
         setupHiPage()
-        setupMapPage()
+//        setupMapPage()
         setupUSATUPage()
         setupMSUMPage()
     }
@@ -175,7 +183,7 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
     
     func setupPageConstraints() {
 
-        let pages = [hiPageView, mapPageView, usatuPageView, msumPageView]
+        let pages = [hiPageView, usatuPageView, msumPageView]
         for pageView in pages {
             containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[pageView]|",
                 options: NSLayoutFormatOptions.allZeros,
@@ -193,10 +201,10 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
                 views: ["pageView": pageView, "scrollView": scrollView]))
         }
         
-        containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[hiView][mapView][usatuView][msumView]|",
+        containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[hiView][usatuView][msumView]|",
             options: NSLayoutFormatOptions.allZeros,
             metrics: nil,
-            views: ["mapView": mapPageView, "hiView": hiPageView, "usatuView": usatuPageView, "msumView": msumPageView]))
+            views: ["hiView": hiPageView, "usatuView": usatuPageView, "msumView": msumPageView]))
     }
     
     // MARK: - Gestures
@@ -275,12 +283,12 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
         }
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        // Animate plane only when the map view is visible
-        if CGRectIntersectsRect(scrollView.bounds, mapPageView.frame) == true && planeAnnotationPosition == 0 {
-            updatePlanePositionAndDirection()
-        }
-    }
+//    func scrollViewDidScroll(scrollView: UIScrollView) {
+//        // Animate plane only when the map view is visible
+//        if CGRectIntersectsRect(scrollView.bounds, mapPageView.frame) == true && planeAnnotationPosition == 0 {
+//            updatePlanePositionAndDirection()
+//        }
+//    }
 }
 
 // MARK: - Helpers

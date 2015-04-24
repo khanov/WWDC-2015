@@ -51,6 +51,7 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
     func scene(scene: UniverseScene, didPressNodeType node: NodeType, withTouch touch: UITouch, color: UIColor) {        
         let location = touch.locationInView(view)
         let aboutVC = storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
+        aboutVC.navigationBar.barTintColor = color
         presentViewController(aboutVC, fromLocation: location, color: color, completion: nil)
     }
     
