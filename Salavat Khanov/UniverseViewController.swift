@@ -21,6 +21,8 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
             
             let skView = self.view as! SKView
             skView.ignoresSiblingOrder = true
+            skView.showsFPS = true
+            skView.showsNodeCount = true
             
             motionManager.deviceMotionUpdateInterval = 0.025
             motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) { [weak scene] (motion, error) in
@@ -49,10 +51,27 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
     // MARK: - Shape touches
     
     func scene(scene: UniverseScene, didPressNodeType node: NodeType, withTouch touch: UITouch, color: UIColor) {        
+        var controller = storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
+        
+        switch node {
+        case .About:
+            controller = storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
+        case .Map:
+            break
+        case .MyPocket:
+            controller = storyboard?.instantiateViewControllerWithIdentifier("MyPocketScreen") as! UINavigationController
+        case .Lapka:
+            break
+        case .When:
+            break
+        case .Mario:
+            break
+        }
+        
+        controller.navigationBar.barTintColor = color
+        
         let location = touch.locationInView(view)
-        let aboutVC = storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
-        aboutVC.navigationBar.barTintColor = color
-        presentViewController(aboutVC, fromLocation: location, color: color, completion: nil)
+        presentViewController(controller, fromLocation: location, color: color, completion: nil)
     }
     
     func scene(scene: UniverseScene, didPressAboutButtonWithTouch touch: UITouch) {

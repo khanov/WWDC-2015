@@ -44,8 +44,9 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
         scrollView.setTranslatesAutoresizingMaskIntoConstraints(false)
         scrollView.delegate = self
         
-        view.backgroundColor = navigationController?.navigationBar.barTintColor
+        view.backgroundColor = .blackColor()
         
+        // Transparent Navigation Bar
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.translucent = true

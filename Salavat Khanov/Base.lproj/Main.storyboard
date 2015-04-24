@@ -22,8 +22,8 @@
                     <connections>
                         <segue destination="i4y-9Z-4O4" kind="show" identifier="showWorkScreen" id="F5v-az-gkq"/>
                         <segue destination="m97-cg-xsd" kind="show" identifier="showProjectsScreen" id="lFO-x1-7xH"/>
-                        <segue destination="VC1-dX-TfK" kind="presentation" identifier="" animates="NO" id="kUj-Ub-0qs"/>
                         <segue destination="ijc-4H-cJS" kind="presentation" identifier="showAboutScreen" animates="NO" id="l1P-zk-ae5"/>
+                        <segue destination="lmS-dM-45w" kind="presentation" identifier="showMyPocketScreen" id="w9D-9e-SHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STC-UT-z66" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hn5-TX-dd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057.5" y="-64.5"/>
+            <point key="canvasLocation" x="2869" y="-65"/>
         </scene>
         <!--When-->
         <scene sceneID="OGU-RZ-DIt">
@@ -635,68 +635,6 @@ I worked remotely as an iOS developer. Here are a few highlights:
             </objects>
             <point key="canvasLocation" x="2973" y="1428"/>
         </scene>
-        <!--About-->
-        <scene sceneID="qE9-Ax-peD">
-            <objects>
-                <viewController title="About" automaticallyAdjustsScrollViewInsets="NO" id="Kze-x4-all" customClass="AboutViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jr8-Pm-bum"/>
-                        <viewControllerLayoutGuide type="bottom" id="t28-pp-ZZ2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1It-fF-zNh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhX-Ud-2s5">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqL-Dv-guE" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="603" placeholder="YES" id="2bL-2D-g8d"/>
-                                            <constraint firstAttribute="width" constant="375" placeholder="YES" id="GGa-fb-UTb"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="aqL-Dv-guE" firstAttribute="leading" secondItem="qhX-Ud-2s5" secondAttribute="leading" id="AJ3-DO-vLz"/>
-                                    <constraint firstItem="aqL-Dv-guE" firstAttribute="top" secondItem="qhX-Ud-2s5" secondAttribute="top" id="R3p-z3-0dD"/>
-                                    <constraint firstAttribute="trailing" secondItem="aqL-Dv-guE" secondAttribute="trailing" id="TBO-q6-Pqa"/>
-                                    <constraint firstAttribute="bottom" secondItem="aqL-Dv-guE" secondAttribute="bottom" id="jxE-Oy-e8X"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="qhX-Ud-2s5" firstAttribute="top" secondItem="1It-fF-zNh" secondAttribute="top" id="5er-LS-pnb"/>
-                            <constraint firstItem="qhX-Ud-2s5" firstAttribute="leading" secondItem="1It-fF-zNh" secondAttribute="leading" id="FOy-nf-vsw"/>
-                            <constraint firstItem="t28-pp-ZZ2" firstAttribute="top" secondItem="qhX-Ud-2s5" secondAttribute="bottom" id="JMp-2l-BTp"/>
-                            <constraint firstAttribute="trailing" secondItem="qhX-Ud-2s5" secondAttribute="trailing" id="JYS-jR-eoL"/>
-                            <constraint firstItem="qhX-Ud-2s5" firstAttribute="top" secondItem="Jr8-Pm-bum" secondAttribute="bottom" id="xkN-AR-XAy"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5er-LS-pnb"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="About" id="jN4-ve-czP">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="XgB-ly-sGZ">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="closeButtonPressed:" destination="Kze-x4-all" id="Qqv-Oa-h9d"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="containerView" destination="aqL-Dv-guE" id="yuj-8e-Mnz"/>
-                        <outlet property="scrollView" destination="qhX-Ud-2s5" id="yKL-4w-32d"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qUl-sG-bWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2250" y="1974"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kMU-l0-HaJ">
             <objects>
@@ -718,7 +656,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsV-RB-z0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1295" y="-65"/>
+            <point key="canvasLocation" x="2107" y="-65"/>
         </scene>
         <!--SuperMario Clone-->
         <scene sceneID="DGX-Zq-tkN">
@@ -808,7 +746,7 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piF-Aa-exc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2907" y="-64"/>
+            <point key="canvasLocation" x="3719" y="-64"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="gua-ZN-kei">
@@ -816,29 +754,7 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
                 <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="98U-Fi-au9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLE-3P-d7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3671" y="-64"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yXQ-q8-U3R">
-            <objects>
-                <navigationController id="VC1-dX-TfK" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hRT-Rn-Qsa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Kze-x4-all" kind="relationship" relationship="rootViewController" id="DYO-cX-B2z"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HBB-Yi-SPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1497.5" y="1974.5"/>
+            <point key="canvasLocation" x="4483" y="-64"/>
         </scene>
         <!--About-->
         <scene sceneID="kdd-iW-kAf">
@@ -905,7 +821,7 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ff-Fa-Q0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="2719"/>
+            <point key="canvasLocation" x="1545" y="1837"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HOo-n3-wih">
@@ -926,7 +842,178 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N80-KY-jRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="1963"/>
+            <point key="canvasLocation" x="863" y="1837"/>
+        </scene>
+        <!--VKarmane-->
+        <scene sceneID="tuN-Eb-1DE">
+            <objects>
+                <viewController title="VKarmane" automaticallyAdjustsScrollViewInsets="NO" id="WQx-TC-68D" customClass="WorkViewController" customModule="Salavat_Khanov" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="omb-Wg-Oa1"/>
+                        <viewControllerLayoutGuide type="bottom" id="IQJ-Fw-YgT"/>
+                    </layoutGuides>
+                    <view key="view" tag="1" contentMode="scaleToFill" id="WoT-nO-00y">
+                        <rect key="frame" x="0.0" y="0.0" width="740" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-wX-qvU">
+                                <rect key="frame" x="0.0" y="0.0" width="740" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ce8-nX-fzB" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="740" height="638"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyPocket-Cover" translatesAutoresizingMaskIntoConstraints="NO" id="59L-Bp-yoF">
+                                                <rect key="frame" x="0.0" y="0.0" width="740" height="330"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="330" id="LM6-6d-muw"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmE-Vk-TUs">
+                                                <rect key="frame" x="20" y="354" width="129" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 2014 - Dec 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAa-Fc-1LQ">
+                                                <rect key="frame" x="20" y="382" width="141" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFE-Ag-NUA">
+                                                <rect key="frame" x="20" y="435" width="700" height="175"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="700" placeholder="YES" id="tBp-yV-py6"/>
+                                                </constraints>
+                                                <string key="text">MyPocket is a secure virtual wallet which allows you to store digital copies of your documents and other sensitive information.
+
+I teamed up with another iOS developer and worked on this app, which was later featured by Apple and hit #1 in Top Paid on the Russian App Store. 
+
+Some of the things I've accomplished:
+• Implemented integration with Touch ID. • Added two new document templates and event tracking via analytics. • Implemented support for attaching more than one scan to a document.</string>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="639393959" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYi-94-xD5">
+                                                <rect key="frame" x="640" y="377" width="74" height="34"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="MyPocket">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="WQx-TC-68D" eventType="touchUpInside" id="EYv-zK-I6a"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="639393959" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3C-PY-fhG">
+                                                <rect key="frame" x="641" y="303" width="72" height="72"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="4hW-iB-es1"/>
+                                                    <constraint firstAttribute="height" constant="72" id="neq-Ac-esc"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="MyPocket-Icon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="appStoreButtonPressed:" destination="WQx-TC-68D" eventType="touchUpInside" id="5rP-Sj-VzC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="sYi-94-xD5" firstAttribute="top" secondItem="S3C-PY-fhG" secondAttribute="bottom" constant="2" id="4j3-uj-cB5"/>
+                                            <constraint firstAttribute="bottom" secondItem="FFE-Ag-NUA" secondAttribute="bottom" constant="28" id="Cl2-EF-dYm"/>
+                                            <constraint firstItem="PAa-Fc-1LQ" firstAttribute="top" secondItem="QmE-Vk-TUs" secondAttribute="bottom" constant="4" id="Lau-d7-KMA"/>
+                                            <constraint firstAttribute="trailing" secondItem="S3C-PY-fhG" secondAttribute="trailing" constant="27" id="YFd-QH-fd4"/>
+                                            <constraint firstItem="QmE-Vk-TUs" firstAttribute="top" secondItem="59L-Bp-yoF" secondAttribute="bottom" constant="24" id="ZiX-Fo-Drq"/>
+                                            <constraint firstItem="59L-Bp-yoF" firstAttribute="leading" secondItem="ce8-nX-fzB" secondAttribute="leading" id="aXu-jY-VWV"/>
+                                            <constraint firstItem="FFE-Ag-NUA" firstAttribute="leading" secondItem="ce8-nX-fzB" secondAttribute="leading" constant="20" id="deC-bH-1yg"/>
+                                            <constraint firstAttribute="trailing" secondItem="59L-Bp-yoF" secondAttribute="trailing" id="dpG-dP-1ic"/>
+                                            <constraint firstItem="PAa-Fc-1LQ" firstAttribute="leading" secondItem="ce8-nX-fzB" secondAttribute="leading" constant="20" id="gs0-Ho-NIE"/>
+                                            <constraint firstItem="59L-Bp-yoF" firstAttribute="top" secondItem="ce8-nX-fzB" secondAttribute="top" id="lcB-eF-lmc"/>
+                                            <constraint firstItem="FFE-Ag-NUA" firstAttribute="top" secondItem="PAa-Fc-1LQ" secondAttribute="bottom" constant="35" id="mdA-Va-1bH"/>
+                                            <constraint firstAttribute="trailing" secondItem="FFE-Ag-NUA" secondAttribute="trailing" constant="20" id="txm-4i-YVp"/>
+                                            <constraint firstItem="QmE-Vk-TUs" firstAttribute="leading" secondItem="ce8-nX-fzB" secondAttribute="leading" constant="20" id="v0h-u3-fOS"/>
+                                            <constraint firstAttribute="trailing" secondItem="sYi-94-xD5" secondAttribute="trailing" constant="26" id="wbw-gn-p4W"/>
+                                            <constraint firstItem="FFE-Ag-NUA" firstAttribute="top" secondItem="S3C-PY-fhG" secondAttribute="bottom" constant="60" id="xnt-lg-WHR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ce8-nX-fzB" secondAttribute="trailing" id="1VS-2d-uPU"/>
+                                    <constraint firstItem="ce8-nX-fzB" firstAttribute="leading" secondItem="ab4-wX-qvU" secondAttribute="leading" id="Abs-0s-9gH"/>
+                                    <constraint firstAttribute="bottom" secondItem="ce8-nX-fzB" secondAttribute="bottom" id="f7G-6y-1aY"/>
+                                    <constraint firstItem="ce8-nX-fzB" firstAttribute="top" secondItem="ab4-wX-qvU" secondAttribute="top" id="pGi-BN-a3v"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ab4-wX-qvU" secondAttribute="trailing" id="3fN-6W-gzQ"/>
+                            <constraint firstItem="ab4-wX-qvU" firstAttribute="leading" secondItem="WoT-nO-00y" secondAttribute="leading" id="WXD-mq-JgW"/>
+                            <constraint firstItem="ab4-wX-qvU" firstAttribute="top" secondItem="WoT-nO-00y" secondAttribute="topMargin" id="ZyO-Mf-zWQ"/>
+                            <constraint firstItem="IQJ-Fw-YgT" firstAttribute="top" secondItem="ab4-wX-qvU" secondAttribute="bottom" id="dGa-J8-dQ8"/>
+                            <constraint firstItem="ab4-wX-qvU" firstAttribute="top" secondItem="WoT-nO-00y" secondAttribute="top" id="gzI-ks-eUG"/>
+                            <constraint firstItem="ab4-wX-qvU" firstAttribute="top" secondItem="omb-Wg-Oa1" secondAttribute="bottom" id="kUP-Lm-OFs"/>
+                            <constraint firstItem="IQJ-Fw-YgT" firstAttribute="top" secondItem="ab4-wX-qvU" secondAttribute="bottom" id="rar-Z0-lag"/>
+                            <constraint firstItem="IQJ-Fw-YgT" firstAttribute="top" secondItem="ab4-wX-qvU" secondAttribute="bottom" id="t5e-8v-hh3"/>
+                            <constraint firstItem="IQJ-Fw-YgT" firstAttribute="top" secondItem="ab4-wX-qvU" secondAttribute="bottom" id="tcI-1L-noe"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gzI-ks-eUG"/>
+                                <exclude reference="kUP-Lm-OFs"/>
+                                <exclude reference="dGa-J8-dQ8"/>
+                                <exclude reference="t5e-8v-hh3"/>
+                                <exclude reference="tcI-1L-noe"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="ExO-fe-CDH">
+                        <barButtonItem key="rightBarButtonItem" title="╳" style="plain" id="lww-p0-eY5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="WQx-TC-68D" id="ZY1-Ea-rpw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="740" height="600"/>
+                    <connections>
+                        <outlet property="containerView" destination="ce8-nX-fzB" id="udb-mu-7Yk"/>
+                        <outlet property="iconButton" destination="S3C-PY-fhG" id="ovS-uW-kbs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hiZ-kR-njD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="9"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Ky-ji-xhG">
+            <objects>
+                <navigationController storyboardIdentifier="MyPocketScreen" automaticallyAdjustsScrollViewInsets="NO" id="lmS-dM-45w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="AuL-ke-tdx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WQx-TC-68D" kind="relationship" relationship="rootViewController" id="lAW-ZC-bQK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LR1-Xb-hRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="9"/>
         </scene>
     </scenes>
     <resources>

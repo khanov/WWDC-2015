@@ -29,7 +29,19 @@ class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate
         iconButton.layer.borderColor = UIColor.whiteColor().CGColor
         iconButton2?.layer.borderColor = UIColor.whiteColor().CGColor
         
+        view.backgroundColor = navigationController?.navigationBar.barTintColor
+        containerView.backgroundColor = navigationController?.navigationBar.barTintColor
+        
+        // Transparent Navigation Bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.translucent = true
+        navigationController?.navigationBar.backgroundColor = .clearColor()
+        navigationController?.view.backgroundColor = .clearColor()
+        
         showAppearAnimation = (view.tag == 1)
+        
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,6 +68,10 @@ class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate
             // don't show anymore
             showAppearAnimation = false
         }
+    }
+    
+    @IBAction func closeButtonPressed(sender: UIBarButtonItem) {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func appStoreButtonPressed(sender: UIButton) {
