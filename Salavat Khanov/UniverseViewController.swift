@@ -48,6 +48,12 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
     
     // MARK: - Shape touches
     
+    func scene(scene: UniverseScene, didPressNodeType node: NodeType, withTouch touch: UITouch, color: UIColor) {        
+        let location = touch.locationInView(view)
+        let aboutVC = storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
+        presentViewController(aboutVC, fromLocation: location, color: color, completion: nil)
+    }
+    
     func scene(scene: UniverseScene, didPressAboutButtonWithTouch touch: UITouch) {
         let location = touch.locationInView(view)
         let aboutVC = self.storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
@@ -108,6 +114,34 @@ private extension SKNode {
             archiver.finishDecoding()
             return scene
         } else {
+            return nil
+        }
+    }
+}
+
+enum NodeType: String {
+    case About = "AboutShape"
+    case Map = "MapShape"
+    case MyPocket = "MyPocketShape"
+    case Lapka = "LapkaShape"
+    case When = "WhenShape"
+    case Mario = "SuperMarioShape"
+    
+    static func findByName(name: String) -> NodeType? {
+        switch name {
+        case NodeType.About.rawValue:
+            return .About
+        case NodeType.Map.rawValue:
+            return .Map
+        case NodeType.MyPocket.rawValue:
+            return .MyPocket
+        case NodeType.Lapka.rawValue:
+            return .Lapka
+        case NodeType.When.rawValue:
+            return .When
+        case NodeType.Mario.rawValue:
+            return .Mario
+        default:
             return nil
         }
     }
