@@ -17,6 +17,7 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
     
     weak var hiPageView: PageView!
     weak var mapPageView: PageView!
+    weak var storyPageView: PageView!
     weak var usatuPageView: PageView!
     weak var msumPageView: PageView!
     
@@ -57,6 +58,7 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
 //        setupMapPage()
         setupUSATUPage()
         setupMSUMPage()
+        setupStoryPage()
     }
     
     override func viewDidLayoutSubviews() {
@@ -180,11 +182,33 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
         msumPageView.addAndPinMainLabel(label)
     }
     
+    func setupStoryPage() {
+        let label = UILabel(pageText: "What’s your story?\n\nHere’s mine.\n\nSix years ago, because I liked technology and design and wanted to learn more how to make websites, I decided to create a blog. It was dedicated to the Mac and iPhone.\n\nLater, I got my first iPhone and was fascinated by its camera capabilities and all the apps available to process photos. I thought it would be cool to create another blog — about taking photos on the iPhone — iPhoneography.\n\nSoon, I realized that I was becoming more interested in app development than just writing about them. So I started to learn Objective-C. All the good Objective-C books were in English at the time. For me, that meant I had to work on my English skills first. So I did that.\n\nWhile still learning Objective-C, I thought that I need a little side project to practice Objective-C. That’s how I ended up creating a Mac game like Super Mario. I had never developed games before and knew nothing about it — this was so much fun!\n\nThen something big happened. I won a scholarship to study Computer Science in the US for one semester. Since I had never been abroad, you can imagine how excited I was to visit America!\n\nAfter coming back home from the US, I had half a year of free time (I had to take one year off at my home university to study in the US). During this time I released my first iOS app on the App Store.\n\nShortly, I landed a job at Lapka as an iOS Developer. The team was located in Moscow, so I worked remotely from my home town. While working at Lapka, I learned many things about iOS development and working for startups. I was pleasently surprised that they were not afraid to give me the freedom of doing whatever I think is best for Lapka, even though I didn’t have a lot of experience.\n\nSoon, WWDC ’14 was announced and Lapka said I’m going! For a few years, I had been only dreaming of going to WWDC sometime in the future. Who would have thought I’m going in two months?! I couldn’t be more excited.\n\nWWDC was amazing. I have never met so many great iOS and Mac developers in one place. Many of them I knew only from Twitter. I left WWDC very motivated and touched by the community.\n\nI later joined another team, who worked on an app for storing personal documents and other sensitive information like passwords on iOS. I worked there only for a few months because I couldn’t study and work simultaneusly full-time. This app was featured by Apple many times and climbed to the #1 place on the Russian App Store.\n\nSo, that was my story. Like Steve Jobs said in his Stanford speech, “You can't connect the dots looking forward; you can only connect them looking backward.” When I was creating my first blog, I didn’t even think it would lead me to this amazing journey.\n\nWhat’s your story? I’d like to hear it at WWDC '15!\n\nThank you.\n\n~ Sal")
+        label.textColor = .whiteColor()
+        label.sizeToFit()
+        
+        let storyPageView = createNewPageView()
+        self.storyPageView = storyPageView
+        storyPageView.backgroundColor = .blackColor()
+        storyPageView.mainLabel = label
+        storyPageView.addSubview(label)
+        
+        storyPageView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[label]-(>=20)-|",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: ["label": label]))
+        storyPageView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-45-[label]-45-|",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: ["label": label]))
+        
+    }
+    
     // MARK: - Constraints
     
     func setupPageConstraints() {
 
-        let pages = [hiPageView, usatuPageView, msumPageView]
+        let pages = [hiPageView, usatuPageView, msumPageView, storyPageView]
         for pageView in pages {
             containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[pageView]|",
                 options: NSLayoutFormatOptions.allZeros,
@@ -196,16 +220,18 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
                 metrics: nil,
                 views: ["pageView": pageView, "scrollView": scrollView]))
             
-            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[pageView(==scrollView)]",
-                options: NSLayoutFormatOptions.allZeros,
-                metrics: nil,
-                views: ["pageView": pageView, "scrollView": scrollView]))
+            if pageView != storyPageView {
+                view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[pageView(==scrollView)]",
+                    options: NSLayoutFormatOptions.allZeros,
+                    metrics: nil,
+                    views: ["pageView": pageView, "scrollView": scrollView]))
+            }
         }
         
-        containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[hiView][usatuView][msumView]|",
+        containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[hiView][usatuView][msumView][storyView]|",
             options: NSLayoutFormatOptions.allZeros,
             metrics: nil,
-            views: ["hiView": hiPageView, "usatuView": usatuPageView, "msumView": msumPageView]))
+            views: ["hiView": hiPageView, "usatuView": usatuPageView, "msumView": msumPageView, "storyView": storyPageView]))
     }
     
     // MARK: - Gestures
@@ -284,12 +310,22 @@ class AboutViewController: UIViewController, MKMapViewDelegate, UIScrollViewDele
         }
     }
     
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        // Animate plane only when the map view is visible
-//        if CGRectIntersectsRect(scrollView.bounds, mapPageView.frame) == true && planeAnnotationPosition == 0 {
-//            updatePlanePositionAndDirection()
-//        }
-//    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        // Paged view disabled for the Story text
+        if CGRectIntersectsRect(scrollView.bounds, storyPageView.frame) == true {
+            scrollView.pagingEnabled = false
+        } else {
+            scrollView.pagingEnabled = true
+        }
+        
+        let scrollViewHeight = scrollView.frame.size.height;
+        let scrollContentSizeHeight = scrollView.contentSize.height;
+        let scrollOffset = scrollView.contentOffset.y;
+        
+        if scrollOffset + scrollViewHeight == scrollContentSizeHeight {
+//            println("bottom")
+        }
+    }
 }
 
 // MARK: - Helpers
