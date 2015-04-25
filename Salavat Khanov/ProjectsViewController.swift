@@ -34,13 +34,6 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         view.backgroundColor = navigationController?.navigationBar.barTintColor
         containerView.backgroundColor = navigationController?.navigationBar.barTintColor
         
-        // Transparent Navigation Bar
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.translucent = true
-        navigationController?.navigationBar.backgroundColor = .clearColor()
-        navigationController?.view.backgroundColor = .clearColor()
-        
         setupProgressView()
         appStoreButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
         githubButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
@@ -51,6 +44,13 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Transparent Navigation Bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.translucent = true
+        navigationController?.navigationBar.backgroundColor = .clearColor()
+        navigationController?.view.backgroundColor = .clearColor()
         
         if showAppearAnimation {
             containerView.alpha = 0.0

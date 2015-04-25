@@ -20,19 +20,23 @@ extension UIViewController {
         
         storeController.loadProductWithParameters(params) { (result, error) -> Void in
             if result {
-                self.presentViewController(storeController, animated: true, completion: nil)
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             } else {
                 UIAlertView(title: "Uh oh!", message: "There was a problem opening the App Store", delegate: nil, cancelButtonTitle: "OK").show()
             }
         }
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        presentViewController(storeController, animated: true, completion: nil)
     }
     
     func presentWebBrowserWithURL(url: String) {
+        // Restore transparent navigation bar
+        navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
+        
         let browser = KINWebBrowserViewController.webBrowser()
         navigationController?.pushViewController(browser, animated: true)
         browser.loadURLString(url)
-        browser.barTintColor = .blackColor()
         browser.tintColor = .whiteColor()
         browser.actionButtonHidden = true
     }
