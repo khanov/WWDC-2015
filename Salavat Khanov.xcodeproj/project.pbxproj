@@ -14,6 +14,7 @@
 		A61B7C8C1ADE4E7F00FFF0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61B7C8A1ADE4E7F00FFF0AD /* Main.storyboard */; };
 		A61B7C8E1ADE4E7F00FFF0AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61B7C8D1ADE4E7F00FFF0AD /* Images.xcassets */; };
 		A61B7C911ADE4E7F00FFF0AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61B7C8F1ADE4E7F00FFF0AD /* LaunchScreen.xib */; };
+		A62280F71AEBAFED00A319CF /* Sofia Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A62280F61AEBAFED00A319CF /* Sofia Pro Medium.otf */; };
 		A65514021AE0FA12005DB5AD /* UIColor+SLAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A65513FC1AE0FA12005DB5AD /* UIColor+SLAddition.m */; };
 		A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = A65513FE1AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m */; };
 		A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65514011AE0FA12005DB5AD /* SLPagingViewController.m */; };
@@ -42,6 +43,7 @@
 		A61B7C8B1ADE4E7F00FFF0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A61B7C8D1ADE4E7F00FFF0AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A61B7C901ADE4E7F00FFF0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A62280F61AEBAFED00A319CF /* Sofia Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sofia Pro Medium.otf"; path = "Resources/Sofia Pro Medium.otf"; sourceTree = "<group>"; };
 		A65513FB1AE0FA12005DB5AD /* UIColor+SLAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SLAddition.h"; sourceTree = "<group>"; };
 		A65513FC1AE0FA12005DB5AD /* UIColor+SLAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SLAddition.m"; sourceTree = "<group>"; };
 		A65513FD1AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UpdateContentSize.h"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				A61B7C851ADE4E7F00FFF0AD /* Info.plist */,
 				A655140A1AE0FAAC005DB5AD /* Salavat_Khanov-Bridging-Header.h */,
 				A6800E3B1AE38DB900894E0A /* SuperMario.mov */,
+				A62280F61AEBAFED00A319CF /* Sofia Pro Medium.otf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				A61B7C911ADE4E7F00FFF0AD /* LaunchScreen.xib in Resources */,
 				A61B7C8E1ADE4E7F00FFF0AD /* Images.xcassets in Resources */,
 				A69700CD1AE8C227007038D8 /* UniverseScene.sks in Resources */,
+				A62280F71AEBAFED00A319CF /* Sofia Pro Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

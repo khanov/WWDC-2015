@@ -21,8 +21,6 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
             
             let skView = self.view as! SKView
             skView.ignoresSiblingOrder = true
-            skView.showsFPS = true
-            skView.showsNodeCount = true
             
             motionManager.deviceMotionUpdateInterval = 0.025
             motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) { [weak scene] (motion, error) in

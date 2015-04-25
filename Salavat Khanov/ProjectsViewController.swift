@@ -146,6 +146,7 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
             let fileURL = NSURL(fileURLWithPath: filePath)
             playerViewController.player = AVPlayer(URL: fileURL)
             playerViewController.videoGravity = AVLayerVideoGravityResizeAspectFill
+            playerViewController.player.play()
         }
     }
 }

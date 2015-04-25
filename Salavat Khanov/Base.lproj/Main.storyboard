@@ -5,6 +5,18 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Sofia Pro Medium.otf">
+            <string>SofiaProMedium</string>
+            <string>SofiaProMedium</string>
+            <string>SofiaProMedium</string>
+            <string>SofiaProMedium</string>
+            <string>SofiaProMedium</string>
+            <string>SofiaProMedium</string>
+            <string>SofiaProMedium</string>
+            <string>SofiaProMedium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Map View Controller-->
         <scene sceneID="drW-zZ-Bdr">
@@ -22,14 +34,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-qf-asU">
-                                <rect key="frame" x="31" y="466" width="538" height="109"/>
+                                <rect key="frame" x="31" y="468" width="538" height="107"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVq-6h-jiF">
-                                        <rect key="frame" x="22" y="12" width="494" height="85"/>
+                                        <rect key="frame" x="22" y="12" width="494" height="83"/>
                                         <string key="text">I am from Ufa, Russia.
 
 Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 hours time difference.</string>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -68,7 +80,7 @@ Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 h
                     </view>
                     <navigationItem key="navigationItem" id="Y5c-Za-F34">
                         <barButtonItem key="rightBarButtonItem" title="╳" id="Cnb-u8-Nt3">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="closeButtonPressed:" destination="f7B-aJ-est" id="Cqb-0L-b8u"/>
                             </connections>
@@ -111,7 +123,7 @@ Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 h
         <!--AV Player View Controller-->
         <scene sceneID="gua-ZN-kei">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspectFill" id="98U-Fi-au9" sceneMemberID="viewController"/>
+                <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspectFill" id="98U-Fi-au9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLE-3P-d7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2833" y="890"/>
@@ -213,14 +225,14 @@ Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 h
                         <viewControllerLayoutGuide type="bottom" id="IQJ-Fw-YgT"/>
                     </layoutGuides>
                     <view key="view" tag="1" contentMode="scaleToFill" id="WoT-nO-00y">
-                        <rect key="frame" x="0.0" y="0.0" width="740" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="740" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-wX-qvU">
-                                <rect key="frame" x="0.0" y="0.0" width="740" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="740" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ce8-nX-fzB" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="740" height="638"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="740" height="670"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyPocket-Cover" translatesAutoresizingMaskIntoConstraints="NO" id="59L-Bp-yoF">
                                                 <rect key="frame" x="0.0" y="0.0" width="740" height="330"/>
@@ -230,8 +242,8 @@ Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 h
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmE-Vk-TUs">
-                                                <rect key="frame" x="20" y="354" width="129" height="24"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <rect key="frame" x="20" y="354" width="158" height="24"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="24"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -241,23 +253,23 @@ Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 h
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFE-Ag-NUA">
-                                                <rect key="frame" x="20" y="435" width="700" height="175"/>
+                                                <rect key="frame" x="20" y="435" width="700" height="207"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="700" placeholder="YES" id="tBp-yV-py6"/>
                                                 </constraints>
-                                                <string key="text">MyPocket is a secure virtual wallet which allows you to store digital copies of your documents and other sensitive information.
+                                                <mutableString key="text">MyPocket is a secure virtual wallet which allows you to store digital copies of your documents and other sensitive information.
 
 I teamed up with another iOS developer and worked on this app, which was later featured by Apple and hit #1 in Top Paid on the Russian App Store. 
 
 Some of the things I've accomplished:
-• Implemented integration with Touch ID. • Added two new document templates and event tracking via analytics. • Implemented support for attaching more than one scan to a document.</string>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+• Implemented integration with Touch ID. • Added two new document templates and event tracking via analytics. • Implemented support for attaching multiple scans to a document.</mutableString>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="639393959" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYi-94-xD5">
-                                                <rect key="frame" x="640" y="377" width="74" height="34"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                <rect key="frame" x="642" y="377" width="72" height="28"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="16"/>
                                                 <state key="normal" title="MyPocket">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -347,7 +359,7 @@ Some of the things I've accomplished:
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="740" height="600"/>
+                    <size key="freeformSize" width="740" height="700"/>
                     <connections>
                         <outlet property="containerView" destination="ce8-nX-fzB" id="udb-mu-7Yk"/>
                         <outlet property="iconButton" destination="S3C-PY-fhG" id="ovS-uW-kbs"/>
@@ -384,14 +396,14 @@ Some of the things I've accomplished:
                         <viewControllerLayoutGuide type="bottom" id="Xka-0w-q3Q"/>
                     </layoutGuides>
                     <view key="view" tag="1" contentMode="scaleToFill" id="mlr-to-EPU">
-                        <rect key="frame" x="0.0" y="0.0" width="700" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="imT-8s-zkS">
-                                <rect key="frame" x="0.0" y="0.0" width="700" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="700" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNi-bH-dj0" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="702" height="621"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="702" height="670"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lapka-Cover" translatesAutoresizingMaskIntoConstraints="NO" id="8h6-Ga-D52">
                                                 <rect key="frame" x="0.0" y="0.0" width="702" height="330"/>
@@ -401,8 +413,8 @@ Some of the things I've accomplished:
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfE-FS-ce6">
-                                                <rect key="frame" x="20" y="354" width="129" height="24"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <rect key="frame" x="20" y="354" width="158" height="24"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="24"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -412,22 +424,22 @@ Some of the things I've accomplished:
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iya-NO-z52">
-                                                <rect key="frame" x="20" y="435" width="662" height="158"/>
+                                                <rect key="frame" x="20" y="435" width="662" height="207"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="662" placeholder="YES" id="j1g-ff-4yf"/>
                                                 </constraints>
-                                                <string key="text">Lapka makes personal environment sensors (like Humidity, Radiation, Organic, Temperature, and Breathalyzer) for iPhone. 
+                                                <mutableString key="text">Lapka makes personal environment sensors (like Humidity, Radiation, Organic, Temperature, and Breathalyzer) for iPhone. 
 
 I worked remotely as an iOS developer. Here are a few highlights:
 
-• Prototyped and rewrote Lapka Pro from scratch (major app update). • Worked on Lapka BAM’s History screen, fixed bugs, and added Russian localization. • Helped launch Lapka Developer Program by writing documentation and developing sample apps. • Developed authentication API for both Lapka BAM and Lapka Pro on iOS.</string>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+• Prototyped and rewrote Lapka Pro from scratch (major app update). • Worked on Lapka BAM’s History screen, fixed bugs, and added Russian localization. • Helped launch Lapka Developer Program by writing documentation and developing sample apps. • Developed authentication API for both Lapka BAM and Lapka Pro on iOS.</mutableString>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="643688346" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIz-6F-F1p">
-                                                <rect key="frame" x="614" y="377" width="76" height="34"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                <rect key="frame" x="615" y="377" width="74" height="28"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="16"/>
                                                 <state key="normal" title="Lapka Pro">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -458,8 +470,8 @@ I worked remotely as an iOS developer. Here are a few highlights:
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="765019245" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeC-1O-oU4">
-                                                <rect key="frame" x="514" y="377" width="87" height="34"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                                <rect key="frame" x="515" y="377" width="84" height="28"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="16"/>
                                                 <state key="normal" title="Lapka BAM">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -539,7 +551,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="700" height="600"/>
+                    <size key="freeformSize" width="700" height="700"/>
                     <connections>
                         <outlet property="containerView" destination="tNi-bH-dj0" id="KH4-ax-8pg"/>
                         <outlet property="iconButton" destination="lRt-kn-REV" id="73q-eV-YkS"/>
@@ -548,7 +560,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCx-O7-4SW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="2420"/>
+            <point key="canvasLocation" x="1429" y="2470"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gh6-2h-9pP">
@@ -584,7 +596,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWO-cu-bzO" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="519"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="621"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WN2-AM-ZJC" userLabel="Video View">
                                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
@@ -606,7 +618,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85p-On-RH5">
-                                                <rect key="frame" x="20" y="345" width="528" height="124"/>
+                                                <rect key="frame" x="20" y="426" width="528" height="145"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="528" placeholder="YES" id="ulV-Nl-dAm"/>
                                                 </constraints>
@@ -615,21 +627,43 @@ I worked remotely as an iOS developer. Here are a few highlights:
 The game copies the first level of the original Super Mario Bros game.
 
 SuperMario isn't going to be released (for potential copyright issues) — I just made it for fun.</string>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mario" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je3-vf-ojh">
+                                                <rect key="frame" x="20" y="345" width="66" height="24"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="24"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feb — Apr, 2012" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rd-gq-WXl">
+                                                <rect key="frame" x="20" y="373" width="113" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="WN2-AM-ZJC" firstAttribute="leading" secondItem="HWO-cu-bzO" secondAttribute="leading" id="4Iw-jx-LzT"/>
+                                            <constraint firstItem="Je3-vf-ojh" firstAttribute="leading" secondItem="HWO-cu-bzO" secondAttribute="leading" constant="20" id="7Pe-b5-uuz"/>
+                                            <constraint firstItem="Je3-vf-ojh" firstAttribute="leading" secondItem="2rd-gq-WXl" secondAttribute="leading" id="LOl-mk-S7l"/>
+                                            <constraint firstItem="Je3-vf-ojh" firstAttribute="top" secondItem="WN2-AM-ZJC" secondAttribute="bottom" constant="25" id="OEr-Uz-Keh"/>
                                             <constraint firstItem="85p-On-RH5" firstAttribute="top" secondItem="WN2-AM-ZJC" secondAttribute="bottom" constant="25" id="UdR-Ws-5WP"/>
                                             <constraint firstAttribute="bottom" secondItem="85p-On-RH5" secondAttribute="bottom" constant="50" id="WQb-no-fNd"/>
+                                            <constraint firstItem="85p-On-RH5" firstAttribute="top" secondItem="2rd-gq-WXl" secondAttribute="bottom" constant="35" id="YFv-3v-UKy"/>
+                                            <constraint firstItem="2rd-gq-WXl" firstAttribute="top" secondItem="Je3-vf-ojh" secondAttribute="bottom" constant="4" id="eKG-LS-O3j"/>
                                             <constraint firstItem="WN2-AM-ZJC" firstAttribute="top" secondItem="HWO-cu-bzO" secondAttribute="top" id="lfg-ka-CZA"/>
                                             <constraint firstAttribute="trailing" secondItem="85p-On-RH5" secondAttribute="trailing" constant="20" id="nK0-rD-wYb"/>
                                             <constraint firstAttribute="trailing" secondItem="WN2-AM-ZJC" secondAttribute="trailing" id="tFQ-Ks-3UU"/>
                                             <constraint firstItem="85p-On-RH5" firstAttribute="leading" secondItem="HWO-cu-bzO" secondAttribute="leading" constant="20" id="uGE-Rs-JOb"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="UdR-Ws-5WP"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -693,14 +727,14 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
                         <viewControllerLayoutGuide type="bottom" id="SHP-kf-hdd"/>
                     </layoutGuides>
                     <view key="view" tag="1" contentMode="scaleToFill" id="IhT-vv-fga">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-rD-fNe">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="750"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="689-4w-idc" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="694"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="754"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIF-jb-CwT" userLabel="When View">
                                                 <rect key="frame" x="0.0" y="0.0" width="568" height="350"/>
@@ -778,35 +812,35 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="3hM-p8-bMQ"/>
-                                                        <exclude reference="hqy-V6-qhl"/>
                                                         <exclude reference="Rqi-UV-hi0"/>
+                                                        <exclude reference="hqy-V6-qhl"/>
                                                     </mask>
                                                 </variation>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppr-Eh-1qq">
-                                                <rect key="frame" x="20" y="375" width="173" height="89"/>
+                                                <rect key="frame" x="20" y="375" width="193" height="104"/>
                                                 <string key="text">For events that matter.
 
 1. Set a timer. 
 2. See how much time left.
 3. Get notified.</string>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVG-km-2rc">
-                                                <rect key="frame" x="20" y="502" width="528" height="142"/>
+                                                <rect key="frame" x="20" y="517" width="528" height="187"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="528" placeholder="YES" id="f8c-MN-Tku"/>
                                                 </constraints>
                                                 <string key="text">When is a countdown timer app with clean minimalistic interface design.
 
-- Beautiful progress view of your events. 
-- Sync events across your devices via iCloud.
-- Share current progress of an event.
+• Beautiful progress view of your events. 
+• Sync events across your devices via iCloud.
+• Share current progress of an event.
 
 The app is available for the iPhone and iPad on the App Store for free. Open-sourced on GitHub.</string>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -816,7 +850,8 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="854494573" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teE-Oe-7lU">
-                                                <rect key="frame" x="459" y="408" width="89" height="28"/>
+                                                <rect key="frame" x="455" y="408" width="93" height="26"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="16"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                                 <state key="normal" title="App Store">
@@ -836,7 +871,8 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ4-8F-l9D">
-                                                <rect key="frame" x="459" y="444" width="89" height="28"/>
+                                                <rect key="frame" x="455" y="442" width="93" height="26"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="16"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                                 <state key="normal" title="GitHub">
@@ -910,7 +946,7 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="568" height="700"/>
+                    <size key="freeformSize" width="568" height="750"/>
                     <connections>
                         <outlet property="appStoreButton" destination="teE-Oe-7lU" id="6fi-0M-Bsk"/>
                         <outlet property="containerView" destination="689-4w-idc" id="prP-IF-7CU"/>
@@ -945,7 +981,7 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
             <objects>
                 <navigationController storyboardIdentifier="MapScreen" automaticallyAdjustsScrollViewInsets="NO" id="os3-32-iBs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="pQG-o7-Ey7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pQG-o7-Ey7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

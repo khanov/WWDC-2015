@@ -29,6 +29,7 @@ class UniverseScene: SKScene {
         let node = nodeAtPoint(location)
         
         if let nodeType = findNodeTypeForNode(node), circleNode = circleNodeForNode(node) {
+            circleNode.alpha = 0.6
             touchDelegate?.scene(self, didPressNodeType: nodeType, withTouch: touch, color: circleNode.fillColor)
         }
     }
