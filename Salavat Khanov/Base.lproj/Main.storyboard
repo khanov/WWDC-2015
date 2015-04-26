@@ -15,6 +15,7 @@
             <string>SofiaProMedium</string>
             <string>SofiaProMedium</string>
             <string>SofiaProMedium</string>
+            <string>SofiaProMedium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -33,7 +34,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tf4-C4-LCG" userLabel="Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-Ye-eKZ">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-Ye-eKZ">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </mapView>
                                 </subviews>
@@ -105,7 +106,7 @@ Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmc-Or-A39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309" y="81"/>
+            <point key="canvasLocation" x="1429" y="-705"/>
         </scene>
         <!--Universe View Controller-->
         <scene sceneID="yxb-E5-g5a">
@@ -383,7 +384,7 @@ Some of the things I've accomplished:
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiZ-kR-njD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="-839"/>
+            <point key="canvasLocation" x="3524" y="-839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Ky-ji-xhG">
@@ -401,7 +402,7 @@ Some of the things I've accomplished:
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LR1-Xb-hRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="-839"/>
+            <point key="canvasLocation" x="2599" y="-705"/>
         </scene>
         <!--Lapka-->
         <scene sceneID="g7k-e2-Dey">
@@ -419,7 +420,7 @@ Some of the things I've accomplished:
                                 <rect key="frame" x="0.0" y="0.0" width="700" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNi-bH-dj0" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="702" height="670"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="702" height="671"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lapka-Cover" translatesAutoresizingMaskIntoConstraints="NO" id="8h6-Ga-D52">
                                                 <rect key="frame" x="0.0" y="0.0" width="702" height="330"/>
@@ -435,12 +436,12 @@ Some of the things I've accomplished:
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feb 2014 - Aug 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zc8-pw-UJV">
-                                                <rect key="frame" x="20" y="382" width="142" height="18"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <rect key="frame" x="20" y="382" width="134" height="19"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iya-NO-z52">
-                                                <rect key="frame" x="20" y="435" width="662" height="207"/>
+                                                <rect key="frame" x="20" y="436" width="662" height="207"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="662" placeholder="YES" id="j1g-ff-4yf"/>
                                                 </constraints>
@@ -623,7 +624,7 @@ I worked remotely as an iOS developer. Here are a few highlights:
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWO-cu-bzO" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="621"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="622"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WN2-AM-ZJC" userLabel="Video View">
                                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
@@ -645,15 +646,15 @@ I worked remotely as an iOS developer. Here are a few highlights:
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85p-On-RH5">
-                                                <rect key="frame" x="20" y="426" width="528" height="145"/>
+                                                <rect key="frame" x="20" y="427" width="528" height="145"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="528" placeholder="YES" id="ulV-Nl-dAm"/>
                                                 </constraints>
-                                                <string key="text">Back in 2012, SuperMario was my hobby project to learn Objective-C and how to make games with Cocos2D and Box2D.
+                                                <string key="text">Back in 2012, Mario is my hobby project to learn Objective-C and how to make games with Cocos2D and Box2D.
 
 The game copies the first level of the original Super Mario Bros game.
 
-SuperMario isn't going to be released (for potential copyright issues) — I just made it for fun.</string>
+Mario was never released (for potential copyright issues) — I just made it for fun.</string>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -665,8 +666,8 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feb — Apr, 2012" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rd-gq-WXl">
-                                                <rect key="frame" x="20" y="373" width="113" height="18"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <rect key="frame" x="20" y="373" width="108" height="19"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -872,15 +873,15 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5L-i8-aIu">
-                                                <rect key="frame" x="478" y="375" width="70" height="18"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                <rect key="frame" x="480" y="375" width="68" height="15"/>
+                                                <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="15"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="854494573" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teE-Oe-7lU">
-                                                <rect key="frame" x="455" y="408" width="93" height="26"/>
+                                                <rect key="frame" x="455" y="405" width="93" height="30"/>
                                                 <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="16"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="7" maxX="10" maxY="7"/>
                                                 <state key="normal" title="App Store">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -898,10 +899,10 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ4-8F-l9D">
-                                                <rect key="frame" x="455" y="442" width="93" height="26"/>
+                                                <rect key="frame" x="455" y="443" width="93" height="30"/>
                                                 <fontDescription key="fontDescription" name="SofiaProMedium" family="Sofia Pro" pointSize="16"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="7" maxX="10" maxY="7"/>
                                                 <state key="normal" title="GitHub">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1020,7 +1021,7 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Elk-0v-8oD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-447" y="81"/>
+            <point key="canvasLocation" x="715" y="-347"/>
         </scene>
     </scenes>
     <resources>

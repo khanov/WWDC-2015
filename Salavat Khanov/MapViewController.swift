@@ -54,7 +54,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
         
         var coordinates: [CLLocationCoordinate2D]
         coordinates = [myCoordinates, moscowCoordinates, netherlandsCoordinates, mosconeCoordinates]
-        flightpathPolyline = MKGeodesicPolyline(coordinates: &coordinates, count: 4)
+        flightpathPolyline = MKGeodesicPolyline(coordinates: &coordinates, count: coordinates.count)
         
         let myAnnotation = MKPointAnnotation()
         myAnnotation.title = "Salavat Khanov"
@@ -124,13 +124,11 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
         
         if let planeAnnotationView = mapView.viewForAnnotation(planeAnnotation) {
             planeAnnotationView.transform = CGAffineTransformRotate(mapView.transform, CGFloat(degreesToRadians(planeDirection)))
-            if mapView.scrollEnabled == false {
-                mapView.setRegion(MKCoordinateRegion(center: planeAnnotation.coordinate, span: MKCoordinateSpanMake(17, 177)), animated: false)
-            }
+            mapView.setRegion(MKCoordinateRegion(center: planeAnnotation.coordinate, span: MKCoordinateSpanMake(17, 50)), animated: false)
         }
         
         if shouldUpdatePlanePosition {
-            var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.04 * Double(NSEC_PER_SEC)))
+            var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.025 * Double(NSEC_PER_SEC)))
             dispatch_after(dispatchTime, dispatch_get_main_queue()) {
                 self.updatePlanePositionAndDirection()
             }

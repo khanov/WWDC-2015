@@ -11,9 +11,10 @@ import SpriteKit
 class UniverseScene: SKScene {
     
     var touchDelegate: UniverseSceneDelegate?
+    var shouldMarkTouchedNode = true
     
     override func didMoveToView(view: SKView) {
-        for childNode in scene!.children as! [SKShapeNode] {            
+        for childNode in circleNodes {
             let width = childNode.frame.size.width
             let radius = width/2
             
@@ -29,8 +30,23 @@ class UniverseScene: SKScene {
         let node = nodeAtPoint(location)
         
         if let nodeType = findNodeTypeForNode(node), circleNode = circleNodeForNode(node) {
-            circleNode.alpha = 0.6
+            if shouldMarkTouchedNode {
+                circleNode.alpha = 0.35
+            }
             touchDelegate?.scene(self, didPressNodeType: nodeType, withTouch: touch, color: circleNode.fillColor)
+        } else {
+            
+            // Push all circles
+            for childNode in circleNodes {
+                var randomNumber = CGFloat(50 + arc4random() % 100)
+                randomNumber *= (randomNumber % 2 == 0) ? 1 : -1
+                childNode.physicsBody?.applyImpulse(CGVectorMake(randomNumber, 250))
+            }
+        }
+        
+        if allCirclesWereMarkedTouched {
+            unmarkTouchedNodes()
+            shouldMarkTouchedNode = false
         }
     }
     
@@ -54,6 +70,26 @@ class UniverseScene: SKScene {
             return node.parent as? SKShapeNode
         }
         return nil
+    }
+    
+    func unmarkTouchedNodes() {
+        for childNode in circleNodes {
+            childNode.alpha = 1.0
+        }
+    }
+    
+    var circleNodes: [SKShapeNode] {
+        return scene!.children as! [SKShapeNode]
+    }
+    
+    var allCirclesWereMarkedTouched: Bool {
+        var result = true
+        for childNode in circleNodes {
+            if childNode.alpha == 1.0 {
+                result = false
+            }
+        }
+        return result
     }
     
 }

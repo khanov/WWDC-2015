@@ -139,7 +139,6 @@
 				A61B7C8D1ADE4E7F00FFF0AD /* Images.xcassets */,
 				A61B7C8F1ADE4E7F00FFF0AD /* LaunchScreen.xib */,
 				A6800E3A1AE3822400894E0A /* Helpers */,
-				A65514091AE0FA57005DB5AD /* Dependencies */,
 				A61B7C841ADE4E7F00FFF0AD /* Supporting Files */,
 			);
 			path = "Salavat Khanov";
@@ -179,18 +178,11 @@
 			name = SLPagingView;
 			sourceTree = "<group>";
 		};
-		A65514091AE0FA57005DB5AD /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				A65514051AE0FA19005DB5AD /* SLPagingView */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
 		A6800E3A1AE3822400894E0A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				A6800E381AE3821900894E0A /* UIViewController.swift */,
+				A65514051AE0FA19005DB5AD /* SLPagingView */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";

@@ -12,7 +12,6 @@ class PageView: UIView {
 
     weak var backgroundImageView: UIImageView!
     weak var mainLabel: UILabel!
-    weak var metaLabel: UILabel!
 }
 
 extension PageView {
@@ -45,19 +44,6 @@ extension PageView {
             metrics: nil,
             views: ["label": label]))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-\(topSpacing)-[label]",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
-    }
-    
-    func addAndPinMetaLabel(label: UILabel, leadingSpacing: Double = 20, trailingSpacing: Double = 20, bottomSpacing: Double = 15) {
-        metaLabel = label
-        addSubview(label)
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-\(leadingSpacing)-[label]-\(trailingSpacing)-|",
-            options: NSLayoutFormatOptions.allZeros,
-            metrics: nil,
-            views: ["label": label]))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[label]-\(bottomSpacing)-|",
             options: NSLayoutFormatOptions.allZeros,
             metrics: nil,
             views: ["label": label]))
