@@ -7,76 +7,25 @@
 //
 
 import UIKit
-import StoreKit
 import AVKit
 import AVFoundation
-import pop
 
-class ProjectsViewController: UIViewController, SKStoreProductViewControllerDelegate {
+class ProjectsViewController: BaseViewController {
 
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var progressIndicator: SKProgressIndicator!
     @IBOutlet weak var appStoreButton: UIButton!
     @IBOutlet weak var githubButton: UIButton!
-    
-    var showAppearAnimation = false
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Pin content view to screen width
-        let leftConstraint = NSLayoutConstraint(item: containerView, attribute: .Leading, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1.0, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: containerView, attribute: .Trailing, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1.0, constant: -0)
-        view.addConstraints([leftConstraint, rightConstraint])
-        
-        view.backgroundColor = navigationController?.navigationBar.barTintColor
-        containerView.backgroundColor = navigationController?.navigationBar.barTintColor
         
         setupProgressView()
+        
         appStoreButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
         githubButton?.layer.borderColor = appStoreButton?.tintColor?.CGColor
-        
-        navigationController?.navigationBar.barStyle = .Black
-        showAppearAnimation = (view.tag == 1)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Transparent Navigation Bar
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.translucent = true
-        navigationController?.navigationBar.backgroundColor = .clearColor()
-        navigationController?.view.backgroundColor = .clearColor()
-        
-        if showAppearAnimation {
-            containerView.alpha = 0.0
-            navigationController?.navigationBar.alpha = 0.0
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if showAppearAnimation {
-            let appearAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
-            appearAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-            appearAnimation.fromValue = 0.0
-            appearAnimation.toValue = 1.0
-            
-            navigationController?.navigationBar.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
-            containerView.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
-            
-            // don't show anymore
-            showAppearAnimation = false
-        }
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return false
+        statusBarColor = .White
     }
 
     // MARK: - Progress View
@@ -119,22 +68,10 @@ class ProjectsViewController: UIViewController, SKStoreProductViewControllerDele
         return NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
     }
     
-    // MARK: - App Store / GitHub Button
-    
-    @IBAction func appStoreButtonPressed(sender: UIButton) {
-        presentStoreProductViewController(iTunesItemIdentifier: "\(sender.tag)", delegate: self)
-    }
+    // MARK: - GitHub Button
     
     @IBAction func githubButtonPressed(sender: UIButton) {
         presentWebBrowserWithURL("https://github.com/khanov/When")
-    }
-    
-    func productViewControllerDidFinish(viewController: SKStoreProductViewController!) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func closeButtonPressed(sender: UIBarButtonItem) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Video

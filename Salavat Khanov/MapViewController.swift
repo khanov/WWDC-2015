@@ -8,9 +8,8 @@
 
 import UIKit
 import MapKit
-import pop
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: BaseViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -18,53 +17,35 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var planeAnnotation: MKPointAnnotation!
     var planeDirection: CLLocationDirection!
     var planeAnnotationPosition: Int = 0
+    
+    var shouldUpdatePlanePosition = true
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Transparent Navigation Bar
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.translucent = true
-        navigationController?.navigationBar.backgroundColor = .clearColor()
-        navigationController?.view.backgroundColor = .clearColor()
+        
+        appearAnimationCompletionBlock = { _ in
+            self.mapView.alpha = 1.0
+            self.navigationController?.navigationBar.alpha = 1.0
+        }
         
         setupMapPage()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        mapView.alpha = 0.0
-        navigationController?.navigationBar.alpha = 0.0
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let appearAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
-        appearAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        appearAnimation.fromValue = 0.0
-        appearAnimation.toValue = 1.0
-        appearAnimation.completionBlock = { _ in
-            self.mapView.alpha = 1.0
-            self.navigationController?.navigationBar.alpha = 1.0
-        }
-        
-        navigationController?.navigationBar.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
-        mapView.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
-        
         updatePlanePositionAndDirection()
     }
     
-    @IBAction func closeButtonPressed(sender: UIBarButtonItem) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    override func viewWillDisappear(animated: Bool) {
+        shouldUpdatePlanePosition = false
+        super.viewWillDisappear(animated)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return false
-    }
-
+    // MARK: - Map
+    
     func setupMapPage() {
         let myCoordinates = CLLocationCoordinate2DMake(54.7245, 55.9421)
         let moscowCoordinates = CLLocationCoordinate2DMake(55.7500, 37.6167)
@@ -148,9 +129,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
         
-        var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.04 * Double(NSEC_PER_SEC)))
-        dispatch_after(dispatchTime, dispatch_get_main_queue()) {
-            self.updatePlanePositionAndDirection()
+        if shouldUpdatePlanePosition {
+            var dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.04 * Double(NSEC_PER_SEC)))
+            dispatch_after(dispatchTime, dispatch_get_main_queue()) {
+                self.updatePlanePositionAndDirection()
+            }
         }
     }
     

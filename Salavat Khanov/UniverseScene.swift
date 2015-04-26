@@ -59,8 +59,5 @@ class UniverseScene: SKScene {
 }
 
 protocol UniverseSceneDelegate {
-    func scene(scene: UniverseScene, didPressAboutButtonWithTouch touch: UITouch)
-    func scene(scene: UniverseScene, didPressWorkButtonWithTouch touch: UITouch)
-    func scene(scene: UniverseScene, didPressProjectsButtonWithTouch touch: UITouch)
     func scene(scene: UniverseScene, didPressNodeType node: NodeType, withTouch touch: UITouch, color: UIColor)
 }

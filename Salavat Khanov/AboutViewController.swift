@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import pop
 
 class AboutViewController: BaseViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var containerView: UIView!
     
     weak var hiPageView: PageView!
     weak var usatuPageView: PageView!
@@ -25,18 +23,15 @@ class AboutViewController: BaseViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Pin content view to screen width
-        let leftConstraint = NSLayoutConstraint(item: containerView, attribute: .Leading, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1.0, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: containerView, attribute: .Trailing, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1.0, constant: -0)
-        view.addConstraints([leftConstraint, rightConstraint])
         
-        containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
         scrollView.setTranslatesAutoresizingMaskIntoConstraints(false)
         scrollView.delegate = self
         
-        view.backgroundColor = .blackColor()
         statusBarColor = .Black
+        
+        appearAnimationCompletionBlock = { _ in
+            self.view.backgroundColor = .blackColor()
+        }
         
         setupHiPage()
         setupUSATUPage()
@@ -51,25 +46,6 @@ class AboutViewController: BaseViewController, UIScrollViewDelegate {
             setupPageConstraints()
             didSetupConstraints = true
         }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        scrollView.alpha = 0.0
-        navigationController?.navigationBar.alpha = 0.0
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let appearAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
-        appearAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        appearAnimation.fromValue = 0.0
-        appearAnimation.toValue = 1.0
-        
-        navigationController?.navigationBar.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
-        scrollView.pop_addAnimation(appearAnimation, forKey: "AppearAnimation")
     }
     
     // MARK: - Pages

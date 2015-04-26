@@ -39,11 +39,7 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
     }
     
     override func prefersStatusBarHidden() -> Bool {
-        return false
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        return true
     }
     
     // MARK: - Shape touches
@@ -69,30 +65,6 @@ class UniverseViewController: UIViewController, UniverseSceneDelegate {
         let location = touch.locationInView(view)
         controller.navigationBar.barTintColor = color
         presentViewController(controller, fromLocation: location, color: color, completion: nil)
-    }
-    
-    func scene(scene: UniverseScene, didPressAboutButtonWithTouch touch: UITouch) {
-        let location = touch.locationInView(view)
-        let aboutVC = self.storyboard?.instantiateViewControllerWithIdentifier("AboutScreen") as! UINavigationController
-        presentViewController(aboutVC, fromLocation: location, completion: nil)
-    }
-    
-    func scene(scene: UniverseScene, didPressWorkButtonWithTouch touch: UITouch) {
-        let location = touch.locationInView(view)
-        let workVC = self.storyboard?.instantiateViewControllerWithIdentifier("WorkScreen") as! UINavigationController
-        if let pageViewContoller = workVC.viewControllers.first as? SLPagingViewController {
-            configurePageViewController(pageViewContoller)
-        }
-        presentViewController(workVC, fromLocation: location, completion: nil)
-    }
-    
-    func scene(scene: UniverseScene, didPressProjectsButtonWithTouch touch: UITouch) {
-        let location = touch.locationInView(view)
-        let projectsVC = self.storyboard?.instantiateViewControllerWithIdentifier("ProjectsScreen") as! UINavigationController
-        if let pageViewContoller = projectsVC.viewControllers.first as? SLPagingViewController {
-            configurePageViewController(pageViewContoller)
-        }
-        presentViewController(projectsVC, fromLocation: location, completion: nil)
     }
     
     // Mark: - Page View Controller

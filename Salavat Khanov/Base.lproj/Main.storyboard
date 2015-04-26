@@ -30,9 +30,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-Ye-eKZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tf4-C4-LCG" userLabel="Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </mapView>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-Ye-eKZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UNc-Ye-eKZ" secondAttribute="trailing" id="2X9-0r-1Zs"/>
+                                    <constraint firstAttribute="bottom" secondItem="UNc-Ye-eKZ" secondAttribute="bottom" id="WGq-Ln-NXO"/>
+                                    <constraint firstItem="UNc-Ye-eKZ" firstAttribute="top" secondItem="Tf4-C4-LCG" secondAttribute="top" id="ZjD-zU-cBL"/>
+                                    <constraint firstItem="UNc-Ye-eKZ" firstAttribute="leading" secondItem="Tf4-C4-LCG" secondAttribute="leading" id="lW1-ib-B99"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-qf-asU">
                                 <rect key="frame" x="31" y="468" width="538" height="107"/>
                                 <subviews>
@@ -63,14 +75,14 @@ Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 h
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Tf4-C4-LCG" secondAttribute="trailing" placeholder="YES" id="0DM-yC-5Zc"/>
                             <constraint firstItem="yge-Xx-zVG" firstAttribute="top" secondItem="gqT-qf-asU" secondAttribute="bottom" constant="25" id="2Yo-zS-caF"/>
+                            <constraint firstItem="yge-Xx-zVG" firstAttribute="top" secondItem="Tf4-C4-LCG" secondAttribute="bottom" id="2e2-Ck-yWm"/>
+                            <constraint firstItem="Tf4-C4-LCG" firstAttribute="leading" secondItem="9Tu-8H-xjn" secondAttribute="leading" placeholder="YES" id="2i5-XF-lVC"/>
                             <constraint firstItem="gqT-qf-asU" firstAttribute="leading" secondItem="9Tu-8H-xjn" secondAttribute="leadingMargin" constant="15" id="Axs-s0-SyS"/>
-                            <constraint firstAttribute="trailing" secondItem="UNc-Ye-eKZ" secondAttribute="trailing" id="GgO-Jb-SRp"/>
-                            <constraint firstItem="UNc-Ye-eKZ" firstAttribute="leading" secondItem="9Tu-8H-xjn" secondAttribute="leading" id="Hvd-NT-7MU"/>
-                            <constraint firstItem="yge-Xx-zVG" firstAttribute="top" secondItem="UNc-Ye-eKZ" secondAttribute="bottom" id="Nwp-s8-fk7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gqT-qf-asU" secondAttribute="trailing" constant="15" id="T2e-g3-gid"/>
+                            <constraint firstItem="Tf4-C4-LCG" firstAttribute="top" secondItem="9Tu-8H-xjn" secondAttribute="top" id="Z8B-7h-93Q"/>
                             <constraint firstItem="gqT-qf-asU" firstAttribute="top" secondItem="KMo-Ij-Yo5" secondAttribute="bottom" id="fue-Cy-czo"/>
-                            <constraint firstItem="UNc-Ye-eKZ" firstAttribute="top" secondItem="9Tu-8H-xjn" secondAttribute="top" id="yvC-zK-aXK"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -87,6 +99,7 @@ Siri told me that’s 6K+ miles away from San Francisco and we have exactly 12 h
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="Tf4-C4-LCG" id="8Lm-1Y-k1U"/>
                         <outlet property="mapView" destination="UNc-Ye-eKZ" id="I8y-5U-7Z4"/>
                     </connections>
                 </viewController>
@@ -351,7 +364,7 @@ Some of the things I've accomplished:
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ExO-fe-CDH">
-                        <barButtonItem key="rightBarButtonItem" image="Close-Icon" style="plain" id="lww-p0-eY5">
+                        <barButtonItem key="rightBarButtonItem" image="Close-Icon" id="lww-p0-eY5">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="closeButtonPressed:" destination="WQx-TC-68D" id="ZY1-Ea-rpw"/>
@@ -363,6 +376,9 @@ Some of the things I've accomplished:
                     <connections>
                         <outlet property="containerView" destination="ce8-nX-fzB" id="udb-mu-7Yk"/>
                         <outlet property="iconButton" destination="S3C-PY-fhG" id="ovS-uW-kbs"/>
+                        <outlet property="mainTextTopConstraint" destination="mdA-Va-1bH" id="03I-dP-ozD"/>
+                        <outlet property="titleLabel" destination="QmE-Vk-TUs" id="Sbo-Js-DSl"/>
+                        <outlet property="titleTopConstraint" destination="ZiX-Fo-Drq" id="TxR-Y0-brD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiZ-kR-njD" userLabel="First Responder" sceneMemberID="firstResponder"/>
