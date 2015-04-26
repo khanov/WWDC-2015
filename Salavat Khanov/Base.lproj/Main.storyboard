@@ -512,10 +512,12 @@ I worked remotely as an iOS developer. Here are a few highlights:
                                             <constraint firstItem="FfE-FS-ce6" firstAttribute="top" secondItem="8h6-Ga-D52" secondAttribute="bottom" constant="24" id="GDN-xN-da2"/>
                                             <constraint firstItem="iya-NO-z52" firstAttribute="top" secondItem="zc8-pw-UJV" secondAttribute="bottom" constant="35" id="GWe-FL-UJy"/>
                                             <constraint firstItem="lRt-kn-REV" firstAttribute="centerY" secondItem="28B-ZS-2So" secondAttribute="centerY" id="KOQ-ue-wlX"/>
+                                            <constraint firstItem="28B-ZS-2So" firstAttribute="leading" secondItem="8h6-Ga-D52" secondAttribute="trailing" constant="-86" id="LbH-8V-k8H"/>
                                             <constraint firstItem="zc8-pw-UJV" firstAttribute="top" secondItem="FfE-FS-ce6" secondAttribute="bottom" constant="4" id="M1C-Ja-UgP"/>
                                             <constraint firstItem="zc8-pw-UJV" firstAttribute="leading" secondItem="tNi-bH-dj0" secondAttribute="leading" constant="20" id="M9Z-Fh-Ilm"/>
                                             <constraint firstItem="8h6-Ga-D52" firstAttribute="leading" secondItem="tNi-bH-dj0" secondAttribute="leading" id="PRK-SZ-uKo"/>
                                             <constraint firstItem="iya-NO-z52" firstAttribute="leading" secondItem="tNi-bH-dj0" secondAttribute="leading" constant="20" id="SFb-bh-lQY"/>
+                                            <constraint firstItem="28B-ZS-2So" firstAttribute="top" secondItem="8h6-Ga-D52" secondAttribute="bottom" constant="-27" id="UTa-Mb-fE7"/>
                                             <constraint firstItem="28B-ZS-2So" firstAttribute="leading" secondItem="lRt-kn-REV" secondAttribute="trailing" constant="23" id="XNU-5e-BO1"/>
                                             <constraint firstAttribute="trailing" secondItem="iya-NO-z52" secondAttribute="trailing" constant="20" id="dIO-Tg-RnT"/>
                                             <constraint firstItem="OIz-6F-F1p" firstAttribute="top" secondItem="28B-ZS-2So" secondAttribute="bottom" constant="2" id="drD-hc-7bv"/>
@@ -524,6 +526,12 @@ I worked remotely as an iOS developer. Here are a few highlights:
                                             <constraint firstItem="FfE-FS-ce6" firstAttribute="leading" secondItem="tNi-bH-dj0" secondAttribute="leading" constant="20" id="q84-CA-VAh"/>
                                             <constraint firstAttribute="trailing" secondItem="8h6-Ga-D52" secondAttribute="trailing" id="rHz-Bd-3Kr"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9Hf-wo-uoe"/>
+                                                <exclude reference="LbH-8V-k8H"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -556,6 +564,9 @@ I worked remotely as an iOS developer. Here are a few highlights:
                         <outlet property="containerView" destination="tNi-bH-dj0" id="KH4-ax-8pg"/>
                         <outlet property="iconButton" destination="lRt-kn-REV" id="73q-eV-YkS"/>
                         <outlet property="iconButton2" destination="28B-ZS-2So" id="hCg-gN-juj"/>
+                        <outlet property="mainTextTopConstraint" destination="GWe-FL-UJy" id="gR0-Pf-Chn"/>
+                        <outlet property="titleLabel" destination="FfE-FS-ce6" id="fgc-vW-cWy"/>
+                        <outlet property="titleTopConstraint" destination="GDN-xN-da2" id="5Uq-Lt-rlL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCx-O7-4SW" userLabel="First Responder" sceneMemberID="firstResponder"/>

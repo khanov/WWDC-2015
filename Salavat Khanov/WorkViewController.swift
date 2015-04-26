@@ -13,10 +13,15 @@ import pop
 class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate {
 
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var iconButton2: UIButton?
+    @IBOutlet weak var titleTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mainTextTopConstraint: NSLayoutConstraint!
+    
     var showAppearAnimation = false
-
+    var didSetupConstraints = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +47,16 @@ class WorkViewController: UIViewController, SKStoreProductViewControllerDelegate
         showAppearAnimation = (view.tag == 1)
         
         setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if didSetupConstraints == false && CGRectIntersectsRect(titleLabel.frame, iconButton.frame) == true {
+            titleTopConstraint.constant = 85
+            mainTextTopConstraint.constant = 20
+            didSetupConstraints = true
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
