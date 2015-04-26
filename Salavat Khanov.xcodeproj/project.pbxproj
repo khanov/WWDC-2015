@@ -18,6 +18,7 @@
 		A65514021AE0FA12005DB5AD /* UIColor+SLAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A65513FC1AE0FA12005DB5AD /* UIColor+SLAddition.m */; };
 		A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = A65513FE1AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m */; };
 		A65514041AE0FA12005DB5AD /* SLPagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65514011AE0FA12005DB5AD /* SLPagingViewController.m */; };
+		A65F590C1AECC6A9007766EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F590B1AECC6A9007766EA /* BaseViewController.swift */; };
 		A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A661FE641ADFDA9900394718 /* WorkViewController.swift */; };
 		A6800E391AE3821900894E0A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6800E381AE3821900894E0A /* UIViewController.swift */; };
 		A6800E3C1AE38DB900894E0A /* SuperMario.mov in Resources */ = {isa = PBXBuildFile; fileRef = A6800E3B1AE38DB900894E0A /* SuperMario.mov */; };
@@ -52,6 +53,7 @@
 		A65514001AE0FA12005DB5AD /* SLPagingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLPagingViewController.h; path = Dependencies/SLPagingView/SLPagingViewController.h; sourceTree = "<group>"; };
 		A65514011AE0FA12005DB5AD /* SLPagingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLPagingViewController.m; path = Dependencies/SLPagingView/SLPagingViewController.m; sourceTree = "<group>"; };
 		A655140A1AE0FAAC005DB5AD /* Salavat_Khanov-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Salavat_Khanov-Bridging-Header.h"; sourceTree = "<group>"; };
+		A65F590B1AECC6A9007766EA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A661FE641ADFDA9900394718 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 		A6800E381AE3821900894E0A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A6800E3B1AE38DB900894E0A /* SuperMario.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = SuperMario.mov; path = Resources/SuperMario.mov; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				A61B7C861ADE4E7F00FFF0AD /* AppDelegate.swift */,
+				A65F590B1AECC6A9007766EA /* BaseViewController.swift */,
 				A6D0456C1AE2B7DB00865491 /* Universe */,
 				A6D045701AE2BE7000865491 /* Side Projects */,
 				A661FE641ADFDA9900394718 /* WorkViewController.swift */,
@@ -350,6 +353,7 @@
 				A6D4792E1AE6A6C50058014D /* PageView.swift in Sources */,
 				A6800E3E1AE3D89600894E0A /* AboutViewController.swift in Sources */,
 				A61B7C891ADE4E7F00FFF0AD /* UniverseViewController.swift in Sources */,
+				A65F590C1AECC6A9007766EA /* BaseViewController.swift in Sources */,
 				A65514031AE0FA12005DB5AD /* UIScrollView+UpdateContentSize.m in Sources */,
 				A60A4D551AEAAC84002AEA2F /* MapViewController.swift in Sources */,
 				A661FE651ADFDA9900394718 /* WorkViewController.swift in Sources */,
