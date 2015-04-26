@@ -8,16 +8,21 @@ PODS:
 
 DEPENDENCIES:
   - KINWebBrowser (from `https://github.com/rinatkhanov/KINWebBrowser.git`)
-  - pop (~> 1.0)
+  - pop (from `https://github.com/facebook/pop.git`)
 
 EXTERNAL SOURCES:
   KINWebBrowser:
     :git: https://github.com/rinatkhanov/KINWebBrowser.git
+  pop:
+    :git: https://github.com/facebook/pop.git
 
 CHECKOUT OPTIONS:
   KINWebBrowser:
     :commit: e307a8fe06cc829abe373460ed3c05a841faabe8
     :git: https://github.com/rinatkhanov/KINWebBrowser.git
+  pop:
+    :commit: 038f29b2de47db3fce803c5a180eee604ebe1977
+    :git: https://github.com/facebook/pop.git
 
 SPEC CHECKSUMS:
   ARChromeActivity: 6488aedc8dd0624b103ea8caf6218e52692aaf77

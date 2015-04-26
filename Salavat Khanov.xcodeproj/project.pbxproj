@@ -473,11 +473,6 @@
 			baseConfigurationReference = DED92BF1347FE0C9D4101252 /* Pods-Salavat Khanov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos/Pods-Salavat",
-					Khanov,
-				);
 				INFOPLIST_FILE = "Salavat Khanov/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -490,11 +485,6 @@
 			baseConfigurationReference = 95877295AA784C20752C2608 /* Pods-Salavat Khanov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos/Pods-Salavat",
-					Khanov,
-				);
 				INFOPLIST_FILE = "Salavat Khanov/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
