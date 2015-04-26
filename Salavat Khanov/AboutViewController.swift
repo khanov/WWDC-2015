@@ -51,12 +51,12 @@ class AboutViewController: BaseViewController, UIScrollViewDelegate {
     // MARK: - Pages
     
     func setupHiPage() {
-        let label = UILabel(pageText: "Hi! My name is Salavat Khanov.\nIt’s nice to meet you.", fontSize: 21)
+        let label = UILabel(pageText: "Hi! My name is Salavat Khanov.\nIt’s nice to meet you.", fontSize: 20)
         
         let hiPageView = createNewPageView()
         self.hiPageView = hiPageView
         hiPageView.addBackgroundImageNamed("Sal-Photo")
-        hiPageView.addAndPinMainLabel(label)
+        hiPageView.addAndPinMainLabel(label, topSpacing: 55)
     }
     
     func setupUSATUPage() {
@@ -65,7 +65,7 @@ class AboutViewController: BaseViewController, UIScrollViewDelegate {
         let usatuPageView = createNewPageView()
         self.usatuPageView = usatuPageView
         usatuPageView.addBackgroundImageNamed("USATU-Photo")
-        usatuPageView.addAndPinMainLabel(label, topSpacing: 65)
+        usatuPageView.addAndPinMainLabel(label, topSpacing: 50)
     }
     
     func setupMSUMPage() {
@@ -136,10 +136,6 @@ class AboutViewController: BaseViewController, UIScrollViewDelegate {
         let scrollViewHeight = scrollView.frame.size.height
         let scrollContentSizeHeight = scrollView.contentSize.height
         let scrollOffset = scrollView.contentOffset.y
-        
-        if scrollOffset + scrollViewHeight == scrollContentSizeHeight {
-//            println("bottom")
-        }
         
         // White status bar for the MSUM and Story pages
         let whiteTextMode = CGRectIntersectsRect(scrollView.bounds, msumPageView.frame) == true || CGRectIntersectsRect(scrollView.bounds, storyPageView.frame) == true

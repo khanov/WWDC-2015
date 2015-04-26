@@ -844,7 +844,7 @@ SuperMario isn't going to be released (for potential copyright issues) — I jus
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppr-Eh-1qq">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppr-Eh-1qq">
                                                 <rect key="frame" x="20" y="375" width="193" height="104"/>
                                                 <string key="text">For events that matter.
 
@@ -930,6 +930,7 @@ The app is available for the iPhone and iPad on the App Store for free. Open-sou
                                             <constraint firstAttribute="trailing" secondItem="QIF-jb-CwT" secondAttribute="trailing" id="N0E-Ce-Seb"/>
                                             <constraint firstItem="teE-Oe-7lU" firstAttribute="top" secondItem="QIF-jb-CwT" secondAttribute="bottom" constant="25" id="NBf-FV-YUd"/>
                                             <constraint firstItem="oVG-km-2rc" firstAttribute="top" secondItem="ppr-Eh-1qq" secondAttribute="bottom" constant="38" id="ZM4-ln-64Q"/>
+                                            <constraint firstItem="sJ4-8F-l9D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ppr-Eh-1qq" secondAttribute="trailing" constant="12" id="aCi-oQ-XnO"/>
                                             <constraint firstAttribute="trailing" secondItem="teE-Oe-7lU" secondAttribute="trailing" constant="20" id="bPS-oA-9rs"/>
                                             <constraint firstAttribute="bottom" secondItem="oVG-km-2rc" secondAttribute="bottom" constant="50" id="cyK-EC-N24"/>
                                             <constraint firstItem="V5L-i8-aIu" firstAttribute="top" secondItem="teE-Oe-7lU" secondAttribute="bottom" constant="8" id="fwJ-ah-mWD"/>
