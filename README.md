@@ -1,16 +1,16 @@
 # WWDC 2015 Scholarship Application
-This is my application I submitted for the WWDC 2015 Scholarship. **I was accepted.**
+This is my application I submitted for the WWDC 2015 Scholarship. **I was accepted.** [#](https://twitter.com/khanov/status/596881457164988416)
 
 To launch, run `$ pod install` and open `.xcworkspace`.
 
-## Screenshots
+## Preview
 <img src="https://cloud.githubusercontent.com/assets/869923/7549150/44582500-f643-11e4-8c2b-55ff4c2e61ae.PNG" alt="app screenshot 1" width="32%"/>
 <img src="https://cloud.githubusercontent.com/assets/869923/7549149/44578c6c-f643-11e4-8c00-bc5391e8ded8.PNG" alt="app screenshot 2" width="32%"/>
 <img src="https://cloud.githubusercontent.com/assets/869923/7549151/44586f10-f643-11e4-839c-ad1a82564994.PNG" alt="app screenshot 3" width="32%"/>
 
-## License
+See it in action: [YouTube](https://youtu.be/uuk-5Fur9Nc)
 
-MIT License (MIT)
+## MIT License
 
 Copyright (c) 2015 Salavat Khanov (https://khanov.me).
 
